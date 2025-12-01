@@ -13,6 +13,8 @@ import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
+import "../index.css"
+import video from "../assets/video.mp4"
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -182,7 +184,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden bg-gradient-to-br from-[#FDF8F3] via-[#F8F1E9] to-[#F0E6DA]">
+    <div className="w-full hello overflow-x-hidden bg-gradient-to-br from-[#FDF8F3] via-[#F8F1E9] to-[#F0E6DA]  ">
       {/* Hero Section */}
       <Helmet>
         <title>Best Low Investment Tea Franchise in India | Tea 5 Cafe</title>
@@ -1393,6 +1395,16 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
     }
   `}</style>
       </section>
+<div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
+  <video
+    className="w-full h-full object-cover cursor-pointer"
+    src={video}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</div>
 
       {/* Favorite Coffee Section */}
       <section

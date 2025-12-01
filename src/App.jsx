@@ -144,7 +144,7 @@ const App = () => {
   return (
     <Router>
         <Header />
-      <div className="min-h-screen font-sans flex flex-col">
+      <div className="min-h-screen font-sans flex flex-col ">
       <ScrollToTop />
         
         {/* Main content with padding for fixed header */}

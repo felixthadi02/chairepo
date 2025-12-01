@@ -9,10 +9,20 @@
 @tailwind utilities;
 
 @media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
+  :root,
+  body,
+  #root {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  :root::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #root::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
   }
 }
+
 
 ::selection {
   background-color: #8dcb3f; /* highlight background */
