@@ -1,15 +1,16 @@
-// // import React from 'react'
+// import React from 'react'
 // // import ComingSoonPage from './comingSoon/ComingSoon'
+// import NotFound from './pages/NotFound'
 
-// // function App() {
-// //   return (
-// //     <div>
-// //       <ComingSoonPage/>
-// //     </div>
-// //   )
-// // }
+// function App() {
+//   return (
+//     <div>
+//       <NotFound/>
+//     </div>
+//   )
+// }
 
-// // export default App
+// export default App
 
 
 // // src/App.jsx
