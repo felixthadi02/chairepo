@@ -1,129 +1,46 @@
-// import React from 'react';
-// import icon from "../assets/bg1.jpg"; // Placeholder image (used for all gallery items)
-// import { motion } from 'framer-motion';
-// // Example array using the same placeholder image.
-// // Replace `icon` with unique images as needed.
-// const galleryItems = [
-//     { id: 1, href: '/images/gallery/1.jpg', imgSrc: icon },
-//     { id: 2, href: '/images/gallery/2.jpg', imgSrc: icon },
-//     { id: 3, href: '/images/gallery/3.jpg', imgSrc: icon },
-//     { id: 4, href: '/images/gallery/4.jpg', imgSrc: icon },
-//     { id: 5, href: '/images/gallery/5.jpg', imgSrc: icon },
-//     { id: 6, href: '/images/gallery/6.jpg', imgSrc: icon },
-// ];
-
-// const Gallery = () => {
-//     return (
-//         <div id="content" className="bg-cover bg-no-repeat">
-//             {/* Hero Section */}
-//             <section
-//                 className="relative text-white overflow-hidden"
-//                 style={{
-//                     background: '#222',
-//                     //   backgroundImage: 'url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600)',
-//                     backgroundImage: 'url(' + icon + ')',
-//                     backgroundSize: 'cover',
-//                     backgroundPosition: 'center',
-//                     backgroundAttachment: 'fixed',
-//                     padding: '170px 0 80px 0'
-//                 }}
-//             >
-//                 <div className="absolute inset-0 bg-black/50 z-0"></div>
-
-//                 <div className="container mx-auto px-4 relative z-10">
-//                     <div className="text-center">
-//                         <motion.h2
-//                             initial={{ opacity: 0, y: -50 }}
-//                             animate={{ opacity: 1, y: 0 }}
-//                             transition={{ duration: 0.8, ease: "easeOut" }}
-//                             className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4"
-//                             style={{
-//                                 fontFamily: 'serif',
-//                                 letterSpacing: '0.02em',
-//                                 opacity: 1,
-//                                 color: '#8dcb3f'
-//                             }}
-//                         >
-//                             Get In
-//                         </motion.h2>
-//                         <motion.h2
-//                             initial={{ opacity: 0, y: -50 }}
-//                             animate={{ opacity: 1, y: 0 }}
-//                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-//                             className="text-6xl md:text-7xl lg:text-8xl font-bold mb-10"
-//                             style={{
-//                                 fontFamily: 'serif',
-//                                 letterSpacing: '0.01em',
-//                                 opacity: 1
-//                             }}
-//                         >
-//                             Touch
-//                         </motion.h2>
-//                         <motion.nav
-//                             initial={{ opacity: 0, y: 20 }}
-//                             animate={{ opacity: 1, y: 0 }}
-//                             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-//                             aria-label="breadcrumb"
-//                         >
-//                             <ol className="flex justify-center items-center space-x-2 text-sm">
-//                                 <li>
-//                                     <a href="#" className="text-white hover:text-gray-300 transition-colors">
-//                                         Home
-//                                     </a>
-//                                 </li>
-//                                 <li className="text-gray-400">/</li>
-//                                 <li className="text-gray-400" aria-current="page">
-//                                     Contact
-//                                 </li>
-//                             </ol>
-//                         </motion.nav>
-//                     </div>
-//                 </div>
-//             </section>
-
-//             {/* Gallery Grid Section */}
-//             <section aria-label="section" className="bg-cover py-12">
-//                 <div className="container mx-auto px-4">
-//                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//                         {galleryItems.map((item) => (
-//                             <div key={item.id} className="group relative overflow-hidden rounded-2xl shadow-md">
-//                                 <a href={item.href} className="block">
-//                                     <img
-//                                         src={item.imgSrc}
-//                                         alt={`Gallery ${item.id}`}
-//                                         className="w-full h-64 object-cover transition-transform duration-300 transform group-hover:scale-110"
-//                                     />
-//                                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-//                                         <span className="text-white text-lg font-medium">View</span>
-//                                     </div>
-//                                 </a>
-//                             </div>
-//                         ))}
-//                     </div>
-//                 </div>
-//             </section>
-//         </div>
-//     );
-// };
-
-// export default Gallery;
-
-
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800";
+// Import all images
+import image1 from '../assets/image 1.jpg';
+import image2 from '../assets/image 2.jpg';
+import image3 from '../assets/image 3.jpg';
+import image4 from '../assets/image 4.jpg';
+import image5 from '../assets/image 5.jpg';
+import image11 from '../assets/image 11.jpg';
+import image12 from '../assets/image 12.jpg';
+import image13 from '../assets/image 13.jpg';
+import image14 from '../assets/image 14.jpg';
+import image15 from '../assets/image 15.jpg';
+import image16 from '../assets/K image 1.jpg';
+import image17 from '../assets/K image 2.jpg';
+import image18 from '../assets/K image 3.jpg';
+import image19 from '../assets/K image 4.jpg';
+import image20 from '../assets/K image 5.jpg';
 
+// Use one of the imported images as the hero icon, or keep the unsplash one
+const icon =  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+
+// Updated gallery items using imported images
 const galleryItems = [
-    { id: 1, imgSrc: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" },
-    { id: 2, imgSrc: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" },
-    { id: 3, imgSrc: "https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" },
-    { id: 4, imgSrc: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800" },
-    { id: 5, imgSrc: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800" },
-    { id: 6, imgSrc: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=800" },
+    { id: 1, imgSrc: image1, title: "Tea Moment 1" },
+    { id: 2, imgSrc: image2, title: "Tea Moment 2" },
+    { id: 3, imgSrc: image3, title: "Tea Moment 3" },
+    { id: 4, imgSrc: image4, title: "Tea Moment 4" },
+    { id: 5, imgSrc: image5, title: "Tea Moment 5" },
+    { id: 6, imgSrc: image11, title: "Cafe Interior 1" },
+    { id: 7, imgSrc: image12, title: "Cafe Interior 2" },
+    { id: 8, imgSrc: image13, title: "Cafe Interior 3" },
+    { id: 9, imgSrc: image14, title: "Cafe Interior 4" },
+    { id: 10, imgSrc: image15, title: "Cafe Interior 5" },
+    { id: 11, imgSrc: image16, title: "Kitchen View 1" },
+    { id: 12, imgSrc: image17, title: "Kitchen View 2" },
+    { id: 13, imgSrc: image18, title: "Kitchen View 3" },
+    { id: 14, imgSrc: image19, title: "Kitchen View 4" },
+    { id: 15, imgSrc: image20, title: "Kitchen View 5" },
 ];
 
 const FadeInWhenVisible = ({ children, delay = 0 }) => {
@@ -145,15 +62,34 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [activeCategory, setActiveCategory] = useState('all');
     const { scrollY } = useScroll();
 
     // Transform scroll position to opacity (fades out as you scroll down)
     const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
     const heroY = useTransform(scrollY, [0, 300], [0, -50]);
 
+    // Categories for filtering
+    const categories = [
+        { id: 'all', label: 'All Photos' },
+        { id: 'tea', label: 'Tea Moments' },
+        { id: 'cafe', label: 'Cafe Interior' },
+        { id: 'kitchen', label: 'Kitchen Views' },
+    ];
+
+    // Filter gallery items based on category
+    const filteredItems = activeCategory === 'all' 
+        ? galleryItems 
+        : galleryItems.filter(item => {
+            if (activeCategory === 'tea') return item.id >= 1 && item.id <= 5;
+            if (activeCategory === 'cafe') return item.id >= 6 && item.id <= 10;
+            if (activeCategory === 'kitchen') return item.id >= 11 && item.id <= 15;
+            return true;
+        });
+
     const openLightbox = (index) => {
         setCurrentIndex(index);
-        setSelectedImage(galleryItems[index]);
+        setSelectedImage(filteredItems[index]);
     };
 
     const closeLightbox = () => {
@@ -161,106 +97,77 @@ const Gallery = () => {
     };
 
     const goToPrevious = () => {
-        const newIndex = currentIndex === 0 ? galleryItems.length - 1 : currentIndex - 1;
+        const newIndex = currentIndex === 0 ? filteredItems.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
-        setSelectedImage(galleryItems[newIndex]);
+        setSelectedImage(filteredItems[newIndex]);
     };
 
     const goToNext = () => {
-        const newIndex = currentIndex === galleryItems.length - 1 ? 0 : currentIndex + 1;
+        const newIndex = currentIndex === filteredItems.length - 1 ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
-        setSelectedImage(galleryItems[newIndex]);
+        setSelectedImage(filteredItems[newIndex]);
     };
+
+    // Handle keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!selectedImage) return;
+            if (e.key === 'ArrowLeft') goToPrevious();
+            if (e.key === 'ArrowRight') goToNext();
+            if (e.key === 'Escape') closeLightbox();
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedImage, currentIndex]);
+
+    // Prevent body scroll when lightbox is open
+    useEffect(() => {
+        if (selectedImage) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedImage]);
 
     return (
         <div className="min-h-screen bg-[#18191b]">
             <Helmet>
-        <title>Tea Moments and Franchise Highlights | Tea 5 cafe</title>
-        <meta 
-          name="description" 
-          content="Explore our gallery filled with tea moments, cafe interiors, and franchise stories from across India. See the taste and passion behind Tea 5 cafe."
-        />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
-        />
-        <link rel="canonical" href="https://www.tea5cafe.com/gallery" />
-      </Helmet>
+                <title>Tea Moments and Franchise Highlights | Tea 5 cafe</title>
+                <meta 
+                    name="description" 
+                    content="Explore our gallery filled with tea moments, cafe interiors, and franchise stories from across India. See the taste and passion behind Tea 5 cafe."
+                />
+                <meta 
+                    name="keywords" 
+                    content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
+                />
+                <link rel="canonical" href="https://www.tea5cafe.com/gallery" />
+            </Helmet>
+
+            <style>{`
+                @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+                .font-sacramento {
+                    font-family: "Sacramento", cursive;
+                }
+            `}</style>
+
             {/* Hero Section */}
-            {/* <section
-                className="relative text-white overflow-hidden min-h-[500px] flex items-center"
-                style={{
-                    backgroundImage: `url(${icon})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    padding: '170px 0 80px 0'
-                }}
-            >
-                <div className="absolute inset-0 bg-black/60 z-0"></div>
-
-                <div className="container mx-auto px-4 relative z-10 w-full">
-                    <motion.div
-                        className="text-center"
-                        style={{ opacity: heroOpacity, y: heroY }}
-                    >
-                        <h2
-                            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4"
-                            // style={{ fontFamily: 'serif', color: '#8dcb3f' }}
-                            style={{
-                                fontFamily: "'Sacramento', cursive",
-                                fontWeight: 400,
-                                fontStyle: "normal",
-                                fontSize: "clamp(36px, 8vw, 72px)",
-                                color: "#8dcb3f",
-                                margin: 0,
-                                textShadow: "0 2px 4px rgba(0,0,0,0.1)"
-                            }}
-                        >
-                            Discover
-                        </h2>
-                        <h2
-                            // className="text-6xl md:text-7xl lg:text-8xl font-bold mb-10"
-                            // style={{ fontFamily: 'serif' }}
-                            className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
-                            style={{
-                                fontSize: '40px',
-                                lineHeight: '40px',
-                                letterSpacing: '10px',
-                                fontFamily: 'serif',
-                                color: '#fff' // Optional: use conditionally if in .text-light
-                            }}
-                        >
-                            Gallery
-                        </h2>
-                        <nav>
-                            <ol className="flex justify-center items-center space-x-3 text-sm">
-                                <li><a href="#" className="hover:text-gray-300">Home</a></li>
-                                <li className="text-gray-400">/</li>
-                                <li className="text-gray-400">Gallery</li>
-                            </ol>
-                        </nav>
-                    </motion.div>
-                </div>
-            </section> */}
-
             <section
                 className="relative text-white overflow-hidden min-h-[500px] flex items-center"
                 style={{
                     backgroundImage: `url(${icon})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'fixed', // added fixed background
+                    backgroundAttachment: 'fixed',
                     padding: '170px 0 80px 0'
                 }}
             >
                 <div className="absolute inset-0 bg-black/60 z-0"></div>
-                <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-
-        .font-sacramento {
-          font-family: "Sacramento", cursive;
-        }
-      `}</style>
 
                 <div className="container mx-auto px-4 relative z-10 w-full">
                     <motion.div
@@ -268,14 +175,11 @@ const Gallery = () => {
                         style={{ opacity: heroOpacity, y: heroY }}
                     >
                         <FadeInWhenVisible>
-                            <h2
-                                className="text-6xl  text-[#8dcb3f]  font-sacramento md:text-7xl lg:text-8xl font-bold mb-4"
-
-                            >
+                            <h2 className="text-6xl text-[#8dcb3f] font-sacramento md:text-7xl lg:text-8xl font-bold mb-4">
                                 Discover
                             </h2>
                         </FadeInWhenVisible>
-                        <FadeInWhenVisible delay={0.}>
+                        <FadeInWhenVisible delay={0.2}>
                             <h2
                                 className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
                                 style={{
@@ -290,15 +194,15 @@ const Gallery = () => {
                             </h2>
                         </FadeInWhenVisible>
                         <FadeInWhenVisible delay={0.4}>
-                            <nav>
+                            <nav className="mt-6">
                                 <ol className="flex justify-center items-center space-x-3 text-sm">
                                     <li>
-                                        <a href="#" className="hover:text-gray-300">
+                                        <a href="/" className="hover:text-[#8dcb3f] transition-colors">
                                             Home
                                         </a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="text-gray-400">Gallery</li>
+                                    <li className="text-[#8dcb3f]">Gallery</li>
                                 </ol>
                             </nav>
                         </FadeInWhenVisible>
@@ -306,32 +210,128 @@ const Gallery = () => {
                 </div>
             </section>
 
+            {/* Category Filter */}
+            <section className="py-8 px-4 bg-[#1f2023]">
+                <div className="container mx-auto">
+                    <FadeInWhenVisible>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {categories.map((category) => (
+                                <motion.button
+                                    key={category.id}
+                                    onClick={() => setActiveCategory(category.id)}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                                        activeCategory === category.id
+                                            ? 'bg-[#8dcb3f] text-white shadow-lg shadow-[#8dcb3f]/30'
+                                            : 'bg-[#2a2b2e] text-gray-300 hover:bg-[#3a3b3e]'
+                                    }`}
+                                >
+                                    {category.label}
+                                    <span className="ml-2 text-xs opacity-70">
+                                        ({category.id === 'all' 
+                                            ? galleryItems.length 
+                                            : galleryItems.filter(item => {
+                                                if (category.id === 'tea') return item.id >= 1 && item.id <= 5;
+                                                if (category.id === 'cafe') return item.id >= 6 && item.id <= 10;
+                                                if (category.id === 'kitchen') return item.id >= 11 && item.id <= 15;
+                                                return false;
+                                            }).length
+                                        })
+                                    </span>
+                                </motion.button>
+                            ))}
+                        </div>
+                    </FadeInWhenVisible>
+                </div>
+            </section>
 
             {/* Gallery Grid */}
             <section className="py-16 px-4">
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {galleryItems.map((item, index) => (
-                            <motion.div
-                                key={item.id}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
-                                onClick={() => openLightbox(index)}
-                            >
-                                <img
-                                    src={item.imgSrc}
-                                    alt={`Gallery ${item.id}`}
-                                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 group-hover:bg-[#18191b] transition-all duration-300 flex items-center justify-center">
-                                    <span className="text-white text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                                        View
-                                    </span>
-                                </div>
+                    <motion.div 
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                        layout
+                    >
+                        <AnimatePresence mode="popLayout">
+                            {filteredItems.map((item, index) => (
+                                <motion.div
+                                    key={item.id}
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.8 }}
+                                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                                    className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer aspect-square"
+                                    onClick={() => openLightbox(index)}
+                                >
+                                    <img
+                                        src={item.imgSrc}
+                                        alt={item.title || `Gallery ${item.id}`}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy"
+                                    />
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end p-6">
+                                        <motion.div
+                                            initial={{ y: 20, opacity: 0 }}
+                                            whileHover={{ y: 0, opacity: 1 }}
+                                            className="text-center"
+                                        >
+                                            <span className="text-white text-lg font-semibold block mb-2">
+                                                {item.title || `Image ${item.id}`}
+                                            </span>
+                                            <span className="inline-flex items-center gap-2 text-[#8dcb3f] text-sm font-medium">
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                                </svg>
+                                                View Full
+                                            </span>
+                                        </motion.div>
+                                    </div>
 
-                            </motion.div>
+                                    {/* Corner Badge */}
+                                    <div className="absolute top-4 right-4 bg-[#8dcb3f] text-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        {index + 1}/{filteredItems.length}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Empty State */}
+                    {filteredItems.length === 0 && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="text-center py-20"
+                        >
+                            <p className="text-gray-400 text-lg">No images found in this category.</p>
+                        </motion.div>
+                    )}
+                </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className="py-16 px-4 bg-[#1f2023]">
+                <div className="container mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {[
+                            { number: '100+', label: 'Photos' },
+                            { number: '50+', label: 'Locations' },
+                            { number: '15+', label: 'Cities' },
+                            { number: '1000+', label: 'Happy Customers' },
+                        ].map((stat, index) => (
+                            <FadeInWhenVisible key={index} delay={index * 0.1}>
+                                <div className="text-center">
+                                    <div className="text-4xl md:text-5xl font-bold text-[#8dcb3f] mb-2">
+                                        {stat.number}
+                                    </div>
+                                    <div className="text-gray-400 text-sm uppercase tracking-wider">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            </FadeInWhenVisible>
                         ))}
                     </div>
                 </div>
@@ -344,32 +344,38 @@ const Gallery = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
                         onClick={closeLightbox}
                     >
                         {/* Close Button */}
-                        <button
+                        <motion.button
                             onClick={closeLightbox}
-                            className="absolute top-4 right-4 text-white hover:text-gray-300 z-50"
+                            whileHover={{ scale: 1.1, rotate: 90 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="absolute top-6 right-6 text-white hover:text-[#8dcb3f] z-50 bg-white/10 backdrop-blur-sm p-3 rounded-full transition-colors"
                         >
-                            <X size={40} />
-                        </button>
+                            <X size={28} />
+                        </motion.button>
 
                         {/* Previous Button */}
-                        <button
+                        <motion.button
                             onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-                            className="absolute left-4 text-white hover:text-gray-300 z-50"
+                            whileHover={{ scale: 1.1, x: -5 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="absolute left-4 md:left-8 text-white hover:text-[#8dcb3f] z-50 bg-white/10 backdrop-blur-sm p-3 rounded-full transition-colors"
                         >
-                            <ChevronLeft size={50} />
-                        </button>
+                            <ChevronLeft size={32} />
+                        </motion.button>
 
                         {/* Next Button */}
-                        <button
+                        <motion.button
                             onClick={(e) => { e.stopPropagation(); goToNext(); }}
-                            className="absolute right-4 text-white hover:text-gray-300 z-50"
+                            whileHover={{ scale: 1.1, x: 5 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="absolute right-4 md:right-8 text-white hover:text-[#8dcb3f] z-50 bg-white/10 backdrop-blur-sm p-3 rounded-full transition-colors"
                         >
-                            <ChevronRight size={50} />
-                        </button>
+                            <ChevronRight size={32} />
+                        </motion.button>
 
                         {/* Image with Zoom Animation */}
                         <motion.div
@@ -377,20 +383,83 @@ const Gallery = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="max-w-5xl max-h-full"
+                            className="max-w-6xl max-h-full w-full"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            <motion.img
+                                key={selectedImage.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.3 }}
                                 src={selectedImage.imgSrc}
-                                alt={`Gallery ${selectedImage.id}`}
-                                className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                                alt={selectedImage.title || `Gallery ${selectedImage.id}`}
+                                className="max-w-full max-h-[80vh] object-contain rounded-lg mx-auto shadow-2xl"
                             />
 
-                            {/* Counter */}
-                            <div className="text-white text-center mt-4 text-lg">
-                                {currentIndex + 1} of {galleryItems.length}
-                            </div>
+                            {/* Image Info */}
+                            <motion.div 
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                                className="text-center mt-6"
+                            >
+                                <h3 className="text-white text-xl font-semibold mb-2">
+                                    {selectedImage.title || `Image ${selectedImage.id}`}
+                                </h3>
+                                <div className="flex items-center justify-center gap-4">
+                                    <span className="text-[#8dcb3f] text-sm font-medium">
+                                        {currentIndex + 1} of {filteredItems.length}
+                                    </span>
+                                    {/* Progress bar */}
+                                    <div className="w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+                                        <motion.div
+                                            className="h-full bg-[#8dcb3f] rounded-full"
+                                            initial={{ width: 0 }}
+                                            animate={{ width: `${((currentIndex + 1) / filteredItems.length) * 100}%` }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Thumbnail Navigation */}
+                            <motion.div 
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                                className="flex justify-center gap-2 mt-6 overflow-x-auto pb-4 px-4"
+                            >
+                                {filteredItems.map((item, index) => (
+                                    <motion.button
+                                        key={item.id}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setCurrentIndex(index);
+                                            setSelectedImage(item);
+                                        }}
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                                            currentIndex === index 
+                                                ? 'border-[#8dcb3f] ring-2 ring-[#8dcb3f]/50' 
+                                                : 'border-white/20 hover:border-white/50'
+                                        }`}
+                                    >
+                                        <img
+                                            src={item.imgSrc}
+                                            alt={`Thumbnail ${index + 1}`}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </motion.button>
+                                ))}
+                            </motion.div>
                         </motion.div>
+
+                        {/* Keyboard Hints */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/50 text-xs hidden md:flex items-center gap-4">
+                            <span>← → Navigate</span>
+                            <span>ESC Close</span>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
