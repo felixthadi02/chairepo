@@ -32,7 +32,7 @@ const FranchiseInfo = () => {
     {
       id: "electronic",
       label: "Electronics",
-      icon: "⚡",
+      // icon: "⚡",
       color: "#8dcb3f",
       description: "Essential electronic equipment to power your cafe",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop",
@@ -40,7 +40,7 @@ const FranchiseInfo = () => {
     {
       id: "materials",
       label: "Cafe Materials",
-      icon: "☕",
+      // icon: "☕",
       color: "#8dcb3f",
       description: "Premium tea and coffee ingredients",
       image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=600&fit=crop",
@@ -48,7 +48,7 @@ const FranchiseInfo = () => {
     {
       id: "boards",
       label: "Boards & Setup",
-      icon: "📋",
+      // icon: "📋",
       color: "#8dcb3f",
       description: "Branding and signage materials",
       image: "https://images.unsplash.com/photo-1572986258706-a8c0a6d0f2d0?w=800&h=600&fit=crop",
@@ -56,7 +56,7 @@ const FranchiseInfo = () => {
     {
       id: "kitchen",
       label: "Kitchen Equipment",
-      icon: "🔪",
+      // icon: "🔪",
       color: "#8dcb3f",
       description: "Complete kitchen setup essentials",
       image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop",
@@ -64,7 +64,7 @@ const FranchiseInfo = () => {
     {
       id: "glasses",
       label: "Glasses Kit",
-      icon: "🥤",
+      // icon: "🥤",
       color: "#8dcb3f",
       description: "Serving and packaging materials",
       image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&h=600&fit=crop",
@@ -72,7 +72,7 @@ const FranchiseInfo = () => {
     {
       id: "interior",
       label: "Interior Design",
-      icon: "🪑",
+      // icon: "🪑",
       color: "#8dcb3f",
       description: "Furniture and ambiance setup",
       image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop",
@@ -80,7 +80,7 @@ const FranchiseInfo = () => {
     {
       id: "syrups",
       label: "Syrups",
-      icon: "🍯",
+      // icon: "🍯",
       color: "#8dcb3f",
       description: "Flavored syrups for beverages",
       image: "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=800&h=600&fit=crop",
@@ -98,19 +98,19 @@ const FranchiseInfo = () => {
       { item: "Coffee Machine", qty: "1", price: "4.5" },
     ],
     materials: [
-      { item: "Tea powder", qty: "400gm", price: "3,000" },
-      { item: "Blue tea", qty: "100gm", price: "300" },
-      { item: "Rose tea", qty: "100gm", price: "300" },
-      { item: "Rooibos", qty: "100gm", price: "300" },
-      { item: "Black tea", qty: "400gm", price: "100" },
-      { item: "Lavender", qty: "100gm", price: "100" },
-      { item: "Green tea", qty: "400gm", price: "100" },
-      { item: "Lemon grass", qty: "100gm", price: "100" },
-      { item: "Hibiscus", qty: "1 packet", price: "100" },
-      { item: "White tea", qty: "1 packet", price: "100" },
-      { item: "Coffee", qty: "5pcs", price: "100" },
-      { item: "Horlicks", qty: "25pcs", price: "100" },
-      { item: "Bournvita", qty: "1 packet", price: "100" },
+      { item: "Tea powder", qty: "400gm",},
+      { item: "Blue tea", qty: "100gm", },
+      { item: "Rose tea", qty: "100gm", },
+      { item: "Rooibos", qty: "100gm", },
+      { item: "Black tea", qty: "400gm", },
+      { item: "Lavender", qty: "100gm", },
+      { item: "Green tea", qty: "400gm", },
+      { item: "Lemon grass", qty: "100gm", },
+      { item: "Hibiscus", qty: "1 packet", },
+      { item: "White tea", qty: "1 packet", },
+      { item: "Coffee", qty: "5pcs", },
+      { item: "Horlicks", qty: "25pcs", },
+      { item: "Bournvita", qty: "1 packet", },
     ],
     boards: [
       { item: "Main Board", qty: "1", price: "" },
@@ -213,12 +213,13 @@ const FranchiseInfo = () => {
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -150]);
 
+  // Fixed TimelineCard component
   const TimelineCard = ({ step, index, isLeft }) => {
     const cardRef = useRef(null);
-    const isInView = useInView(cardRef, { once: false, amount: 0.2 });
+    const isInView = useInView(cardRef, { once: true, amount: 0.1 }); // Changed to once: true
 
     return (
-      <div className="relative mb-32 last:mb-0">
+      <div ref={cardRef} className="relative mb-32 last:mb-0">
         {/* Timeline dot and connector - Desktop */}
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
           <motion.div
@@ -338,49 +339,8 @@ const FranchiseInfo = () => {
                       </div>
                     </div>
                   </motion.div>
-
-                  {/* Decorative corner elements */}
-                  <div
-                    className="absolute top-0 right-0 w-32 h-32 opacity-20"
-                    style={{
-                      background: `radial-gradient(circle at top right, ${step.color}, transparent)`,
-                    }}
-                  ></div>
-                  <div
-                    className="absolute bottom-0 left-0 w-32 h-32 opacity-20"
-                    style={{
-                      background: `radial-gradient(circle at bottom left, ${step.color}, transparent)`,
-                    }}
-                  ></div>
                 </div>
               </div>
-
-              {/* Decorative elements around image */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 blur-2xl"
-                style={{ backgroundColor: step.color }}
-              ></motion.div>
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full opacity-20 blur-2xl"
-                style={{ backgroundColor: step.color }}
-              ></motion.div>
             </motion.div>
 
             {/* Content side */}
@@ -436,28 +396,33 @@ const FranchiseInfo = () => {
                   </div>
                 </div>
 
+                {/* Table Header - Desktop */}
+                <div className="hidden md:block bg-gray-100 px-6 lg:px-8 py-3 border-b border-gray-200">
+                  <div className="grid grid-cols-12 gap-4 text-sm font-bold text-gray-600">
+                    <div className="col-span-1">#</div>
+                    <div className="col-span-6">Item Name</div>
+                    <div className="col-span-3">Quantity</div>
+                    <div className="col-span-2 text-right">Price</div>
+                  </div>
+                </div>
+
                 {/* Items list - Desktop */}
-                <div className="hidden md:block p-6 lg:p-8 max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded"
+                <div 
+                  className="hidden md:block p-6 lg:p-8 max-h-[400px] overflow-y-auto"
                   style={{
+                    scrollbarWidth: 'thin',
                     scrollbarColor: `${step.color} #f1f1f1`,
                   }}
                 >
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     {materials[step.id]?.map((item, idx) => (
-                      <motion.div
+                      <div
                         key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={
-                          isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -20 }
-                        }
-                        transition={{ delay: 0.05 * idx }}
-                        className="grid grid-cols-12 gap-4 py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors rounded-lg px-3 group"
+                        className="grid grid-cols-12 gap-4 py-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors rounded-lg px-2 group"
                       >
                         <div className="col-span-1 flex items-center">
                           <div
-                            className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-md group-hover:scale-110 transition-transform"
+                            className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-md group-hover:scale-110 transition-transform"
                             style={{ backgroundColor: step.color }}
                           >
                             {idx + 1}
@@ -469,21 +434,19 @@ const FranchiseInfo = () => {
                           </span>
                         </div>
                         <div className="col-span-3 flex items-center">
-                          <span
-                            className="bg-gray-100 px-4 py-1.5 rounded-lg text-sm font-medium text-gray-700 group-hover:bg-gray-200 transition-colors"
-                          >
+                          <span className="bg-gray-100 px-3 py-1 rounded-lg text-sm font-medium text-gray-700 group-hover:bg-gray-200 transition-colors">
                             {item.qty}
                           </span>
                         </div>
                         <div className="col-span-2 flex items-center justify-end">
                           <span
                             className="font-bold text-lg"
-                            style={{ color: step.color }}
+                            style={{ color: item.price ? step.color : '#999' }}
                           >
                             {item.price ? `₹${item.price}` : "—"}
                           </span>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -491,13 +454,8 @@ const FranchiseInfo = () => {
                 {/* Items list - Mobile */}
                 <div className="md:hidden p-4 space-y-3 max-h-[400px] overflow-y-auto">
                   {materials[step.id]?.map((item, idx) => (
-                    <motion.div
+                    <div
                       key={idx}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={
-                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                      }
-                      transition={{ delay: 0.03 * idx }}
                       className="bg-gray-50 rounded-xl p-4 border-l-4 hover:shadow-md transition-shadow"
                       style={{ borderColor: step.color }}
                     >
@@ -521,24 +479,22 @@ const FranchiseInfo = () => {
                         <div className="text-right flex-shrink-0">
                           <div
                             className="text-base font-bold"
-                            style={{ color: step.color }}
+                            style={{ color: item.price ? step.color : '#999' }}
                           >
                             {item.price ? `₹${item.price}` : "—"}
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
                 {/* Footer with total items */}
-                <div
-                  className="px-6 lg:px-8 py-4 bg-gray-50 border-t border-gray-200"
-                >
+                <div className="px-6 lg:px-8 py-4 bg-gray-50 border-t border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div
-                        className="w-2 h-2 rounded-full"
+                        className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: step.color }}
                       ></div>
                       <span className="text-sm font-semibold text-gray-700">
@@ -546,10 +502,13 @@ const FranchiseInfo = () => {
                       </span>
                     </div>
                     <button
-                      className="text-sm font-semibold hover:underline transition-all"
+                      className="text-sm font-semibold hover:underline transition-all flex items-center gap-1"
                       style={{ color: step.color }}
                     >
-                      View Details →
+                      View Details 
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -576,7 +535,7 @@ const FranchiseInfo = () => {
         <link rel="canonical" href="https://www.tea5cafe.com/startup-kit" />
       </Helmet>
 
-      <style jsx global>{`
+      <style>{`
         @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
@@ -605,14 +564,6 @@ const FranchiseInfo = () => {
 
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(180deg, #7bc42e, #6ab31d);
-        }
-
-        .scrollbar-thin::-webkit-scrollbar {
-          width: 6px;
-        }
-
-        .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
-          border-radius: 10px;
         }
       `}</style>
 
@@ -659,118 +610,20 @@ const FranchiseInfo = () => {
           className="relative z-10 container mx-auto px-4 text-center"
           style={{ y: heroY }}
         >
-          <FadeInWhenVisible delay={0.2}>
-            <div className="inline-block bg-white/10 backdrop-blur-md px-8 py-3 rounded-full mb-8 border border-white/20">
-              <span className="text-white text-sm font-semibold flex items-center gap-2">
-                <span className="text-2xl">🚀</span>
-                7-STEP FRANCHISE JOURNEY
-              </span>
-            </div>
-          </FadeInWhenVisible>
 
-          <FadeInWhenVisible delay={0.3}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
-              Your Complete
-              <span className="block text-[#8dcb3f] font-sacramento text-6xl md:text-8xl lg:text-9xl mt-4">
-                Startup Kit Timeline
-              </span>
-            </h1>
-          </FadeInWhenVisible>
 
-          <FadeInWhenVisible delay={0.4}>
-            <p className="text-white/90 text-xl md:text-2xl max-w-4xl mx-auto mb-10 leading-relaxed">
-              Follow our proven 7-step process to launch your successful cafe
-              franchise with complete guidance and support
-            </p>
-          </FadeInWhenVisible>
+          
 
-          <FadeInWhenVisible delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 60px rgba(141,203,63,0.4)" }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  document
-                    .getElementById("timeline-start")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="bg-[#8dcb3f] hover:bg-[#7bc42e] text-white font-bold px-10 py-5 rounded-full text-lg shadow-2xl inline-flex items-center gap-3 group"
-              >
-                Start Your Journey
-                <svg
-                  className="w-5 h-5 group-hover:translate-y-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
-              </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-10 py-5 rounded-full text-lg border-2 border-white/30 inline-flex items-center gap-3"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                Contact Us
-              </motion.button>
-            </div>
-          </FadeInWhenVisible>
+
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
-        >
-          <div className="text-white text-center">
-            <div className="text-sm mb-2 font-semibold">Scroll Down</div>
-            <svg
-              className="w-6 h-6 mx-auto"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
-        </motion.div>
       </section>
 
       {/* Progress Indicator - Sticky */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-2">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {timelineSteps.map((step, index) => (
               <motion.button
                 key={step.id}
@@ -984,7 +837,7 @@ const FranchiseInfo = () => {
                   {["93811 42553", "8466066425"].map((phone, idx) => (
                     <motion.a
                       key={idx}
-                      href={`tel:${phone}`}
+                      href={`tel:${phone.replace(/\s/g, '')}`}
                       whileHover={{ x: 10, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 border-2 border-white/20 hover:bg-white/20 hover:border-white/40 transition-all group"
