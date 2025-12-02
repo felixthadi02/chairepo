@@ -81,7 +81,7 @@
 //         <div className="relative container mx-auto px-4 py-6 md:py-8">
 //           {/* Compact Main Content */}
 //           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            
+
 //             {/* Contact Info - Compact */}
 //             <motion.div
 //               className="text-center md:text-left"
@@ -111,7 +111,7 @@
 //                     whileHover={{ x: 5 }}
 //                   >
 //                     <Mail className="w-4 h-4 flex-shrink-0" />
-//                     <span className="text-white/90">contact@baresto.com</span>
+//                     <span className="text-white/90">contact-us@baresto.com</span>
 //                   </motion.div>
 //                 </div>
 //               </div>
@@ -136,7 +136,7 @@
 //                     ease: "linear"
 //                   }}
 //                 />
-                
+
 //                 {/* Logo */}
 //                 <motion.div
 //                   className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white p-0.5 shadow-xl"
@@ -287,21 +287,21 @@ export default function Footer() {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
   const socialLinks = [
-    { 
-      icon: Facebook, 
-      href: "https://www.facebook.com/Tea5cafe/", 
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/Tea5cafe/",
       label: "Facebook",
       bgGradient: "from-blue-500 to-blue-600"
     },
-    { 
-      icon: Twitter, 
-      href: "https://x.com/Tea5cafe", 
+    {
+      icon: Twitter,
+      href: "https://x.com/Tea5cafe",
       label: "Twitter",
       bgGradient: "from-sky-400 to-sky-500"
     },
-    { 
-      icon: null, 
-      href: "https://www.youtube.com/@Tea5cafe", 
+    {
+      icon: null,
+      href: "https://www.youtube.com/@Tea5cafe",
       label: "YouTube",
       bgGradient: "from-red-500 to-red-600",
       customIcon: (
@@ -311,15 +311,15 @@ export default function Footer() {
         </svg>
       )
     },
-    { 
-      icon: Rss, 
-      href: "#", 
+    {
+      icon: Rss,
+      href: "#",
       label: "RSS",
       bgGradient: "from-orange-400 to-orange-500"
     },
-    { 
-      icon: Dribbble, 
-      href: "#", 
+    {
+      icon: Dribbble,
+      href: "#",
       label: "Dribbble",
       bgGradient: "from-pink-400 to-pink-500"
     },
@@ -331,14 +331,14 @@ export default function Footer() {
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Contact', path: '/contact-us' },
   ];
 
   return (
     <>
       {/* Slim Wave Separator */}
       <div className="relative">
-        <svg 
+        <svg
           className="absolute bottom-full w-full h-8 md:h-12"
           preserveAspectRatio="none"
           viewBox="0 0 1440 74"
@@ -370,7 +370,7 @@ export default function Footer() {
         <div className="relative container mx-auto px-4 py-6 md:py-8">
           {/* Compact Main Content */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            
+
             {/* Contact Info - Compact */}
             <motion.div
               className="text-center md:text-left"
@@ -381,28 +381,39 @@ export default function Footer() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-white/20">
                 <div className="space-y-2">
-                  <motion.div 
+                  <motion.div
                     className="flex items-center gap-2 text-sm justify-center md:justify-start"
                     whileHover={{ x: 5 }}
                   >
                     <MapPin className="w-4 h-4 flex-shrink-0" />
                     <span className="text-white/90">Collins St West, Victoria 8007</span>
                   </motion.div>
-                  <motion.a 
-                    href="tel:+2083339296"
+                  <motion.a
+                    href="tel:+918466066425"
                     className="flex items-center gap-2 text-sm justify-center md:justify-start hover:text-yellow-300 transition-colors"
                     whileHover={{ x: 5 }}
                   >
                     <Phone className="w-4 h-4 flex-shrink-0" />
-                    <span className="text-white/90">(208) 333 9296</span>
+                    <span className="text-white/90">8466066425</span>
                   </motion.a>
-                  <motion.a 
-                    href="mailto:contact@tea5cafe.com"
+
+                  <motion.a
+                    href="tel:+919381142553"
+                    className="flex items-center gap-2 text-sm justify-center md:justify-start hover:text-yellow-300 transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
+                    <Phone className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-white/90">9381142553</span>
+                  </motion.a>
+
+                  <motion.a
+                    href="mailto:contact-us@tea5cafe.com"
                     className="flex items-center gap-2 text-sm justify-center md:justify-start hover:text-yellow-300 transition-colors"
                     whileHover={{ x: 5 }}
                   >
                     <Mail className="w-4 h-4 flex-shrink-0" />
-                    <span className="text-white/90">contact@tea5cafe.com</span>
+                    <span className="text-white/90">tea5franchise04@gmail.com
+                    </span>
                   </motion.a>
                 </div>
 
@@ -443,11 +454,11 @@ export default function Footer() {
                     ease: "linear"
                   }}
                 />
-                
+
                 {/* Logo */}
                 <motion.div
                   className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white p-0.5 shadow-xl"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
                     rotate: [0, -5, 5, 0],
                   }}
@@ -474,7 +485,7 @@ export default function Footer() {
                     ease: "easeInOut"
                   }}
                 >
-                  <Coffee className="w-4 h-4 text-white/80" />
+                  {/* <Coffee className="w-4 h-4 text-white/80" /> */}
                 </motion.div>
               </Link>
             </motion.div>
@@ -505,7 +516,7 @@ export default function Footer() {
                     >
                       <motion.div
                         className={`relative w-10 h-10 rounded-xl bg-gradient-to-br ${social.bgGradient} shadow-md flex items-center justify-center overflow-hidden`}
-                        whileHover={{ 
+                        whileHover={{
                           scale: 1.15,
                           rotate: 5,
                         }}
@@ -530,7 +541,7 @@ export default function Footer() {
                     </motion.a>
                   ))}
                 </div>
-                <motion.p
+                {/* <motion.p
                   className="mt-3 text-white/70 text-xs text-center italic"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -538,7 +549,7 @@ export default function Footer() {
                   transition={{ delay: 0.5 }}
                 >
                   "Brewing connections ☕"
-                </motion.p>
+                </motion.p> */}
               </div>
             </motion.div>
           </div>
@@ -573,7 +584,7 @@ export default function Footer() {
               </motion.span>
               {' '}• All rights reserved
             </p>
-            
+
             {/* Legal Links */}
             <div className="mt-2 flex justify-center gap-4 text-white/50 text-xs">
               <Link to="/privacy" className="hover:text-white transition-colors">
@@ -591,7 +602,9 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <BottomBar />
+        <div className="relative bottom-0 left-0 w-full z-50 bg-[#1a1a1a]/90 backdrop-blur-md border-t border-white/10">
+          <BottomBar />
+        </div>
       </footer>
     </>
   );

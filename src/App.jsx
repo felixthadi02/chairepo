@@ -65,7 +65,7 @@
 //         {currentPage === 'blog' && <BlogList navigateTo={navigateTo} />}
 //         {currentPage === 'testimonials' && <TestimonialsPage navigateTo={navigateTo} />}
 //         {currentPage === 'services' && <ServicesPage />}
-//         {currentPage === 'contact' && <ContactPage />}
+//         {currentPage === 'contact-us' && <ContactPage />}
 //         {currentPage === "faqs" && (<Tea5Story />)}
 
 //       </main>
@@ -99,7 +99,7 @@
 //     <Router>
 //       <div className="min-h-screen font-sans">
 //         <Header />
-        
+
 //         <main>
 //           <Routes>
 //             <Route path="/" element={<HomePage />} />
@@ -109,11 +109,11 @@
 //             <Route path="/blog" element={<BlogList />} />
 //             <Route path="/testimonials" element={<TestimonialsPage />} />
 //             <Route path="/services" element={<ServicesPage />} />
-//             <Route path="/contact" element={<ContactPage />} />
+//             <Route path="/contact-us" element={<ContactPage />} />
 //             <Route path="/faqs" element={<Tea5Story />} />
 //           </Routes>
 //         </main>
-        
+
 //         <Footer />
 //       </div>
 //     </Router>
@@ -144,10 +144,10 @@ import ScrollToTop from './components/ScrollToTop';
 const App = () => {
   return (
     <Router>
-        <Header />
+      <Header />
       <div className="min-h-screen font-sans flex flex-col ">
-      <ScrollToTop />
-        
+        <ScrollToTop />
+
         {/* Main content with padding for fixed header */}
         <main className="flex-grow ">
           <Routes>
@@ -182,7 +182,7 @@ const App = () => {
             } />
           </Routes>
         </main>
-        
+
         <Footer />
       </div>
     </Router>

@@ -32,7 +32,7 @@
 //     { title: "Gallery", link: "gallery" },
 //     { title: "FAQs", link: "faqs" },
 //     { title: "Blog", link: "blog" },
-//     { title: "Contact", link: "contact" }
+//     { title: "Contact", link: "contact-us" }
 //   ];
 
 //   const leftNavItems = navItems.slice(0, 3);
@@ -99,7 +99,7 @@
 //                 className={`
 //                   c_logo_light transition-all duration-300
 //                   ${isSmaller ? 'h-[45px]' : 'h-[105px]'}
-                  
+
 //                 `}
 //                 onClick={() => navigateTo("home")}
 //                 style={{
@@ -290,10 +290,10 @@ const Header = () => {
                   to={item.link}
                   className={`
                     inline-block font-semibold transition-all
-                    ${currentPage === item.link 
-                      ? (isTop ? "text-yellow-300" : "text-white rounded-md") 
-                      : (isTop 
-                        ? "text-white hover:text-yellow-300" 
+                    ${currentPage === item.link
+                      ? (isTop ? "text-yellow-300" : "text-white rounded-md")
+                      : (isTop
+                        ? "text-white hover:text-yellow-300"
                         : "text-gray-800 hover:text-white rounded-md")
                     }
                   `}
@@ -331,10 +331,10 @@ const Header = () => {
                   to={item.link}
                   className={`
                     inline-block font-semibold transition-all
-                    ${currentPage === item.link 
-                      ? (isTop ? "text-yellow-300" : "text-white rounded-md") 
-                      : (isTop 
-                        ? "text-white hover:text-yellow-300" 
+                    ${currentPage === item.link
+                      ? (isTop ? "text-yellow-300" : "text-white rounded-md")
+                      : (isTop
+                        ? "text-white hover:text-yellow-300"
                         : "text-gray-800 hover:text-white rounded-md")
                     }
                   `}
@@ -357,8 +357,8 @@ const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`
                         block font-semibold py-4 px-6 transition-all
-                        ${currentPage === item.link 
-                          ? "text-white bg-black bg-opacity-15" 
+                        ${currentPage === item.link
+                          ? "text-white bg-black bg-opacity-15"
                           : "text-gray-800 hover:text-white hover:bg-black hover:bg-opacity-10"
                         }
                       `}
@@ -389,9 +389,8 @@ const Header = () => {
           {/* Mobile Navigation Button */}
           <div className="flex items-center">
             <button
-              className={`focus:outline-none p-2 transition-colors ${
-                isTop ? "text-white" : "text-gray-800 hover:text-white"
-              }`}
+              className={`focus:outline-none p-2 transition-colors ${isTop ? "text-white" : "text-gray-800 hover:text-white"
+                }`}
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >

@@ -123,17 +123,17 @@ const Faqs = () => {
                 }}
             >
                 <Helmet>
-        <title>Frequently Asked Questions | Tea 5 Cafe</title>
-        <meta 
-          name="description" 
-          content="Find clear answers to common franchise, cafe menu, and partner support questions. Get the information you need from Tea 5 Cafe."
-        />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
-        />
-        <link rel="canonical" href="https://www.tea5cafe.com/faqs" />
-      </Helmet>
+                    <title>Frequently Asked Questions | Tea 5 Cafe</title>
+                    <meta
+                        name="description"
+                        content="Find clear answers to common franchise, cafe menu, and partner support questions. Get the information you need from Tea 5 Cafe."
+                    />
+                    <meta
+                        name="keywords"
+                        content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+                    />
+                    <link rel="canonical" href="https://www.tea5cafe.com/faqs" />
+                </Helmet>
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <motion.h2
                         className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento"
@@ -293,8 +293,8 @@ const Faqs = () => {
                                     onClick={(e) => {
                                         e.preventDefault();
                                         window.scrollTo({ top: 0, behavior: "smooth" });
-                                        console.log("Button clicked - navigating to contact");
-                                        navigate("/contact");
+                                        console.log("Button clicked - navigating to contact-us");
+                                        navigate("/contact-us");
                                     }}
                                     className="bg-[#8dcb3f] hover:bg-[#fff] text-black font-bold py-3 px-8 rounded-full transition shadow-lg hover:text-black hover:shadow-[0_20px_40px_rgba(141,203,63,0.3)] cursor-pointer relative z-20"
                                     whileHover={{

@@ -49,7 +49,7 @@
 //           Testimonials
 //         </button>
 //         <button 
-//           onClick={() => navigateTo('contact')}
+//           onClick={() => navigateTo('contact-us')}
 //           className="border border-gray-900 text-center p-3 font-medium"
 //         >
 //           CONTACT
@@ -71,12 +71,12 @@ const MobileMenu = ({ currentPage, navigateTo, toggleMobileMenu }) => {
     <div className="fixed inset-0 z-50 flex flex-col md:hidden">
       {/* Backdrop with blur effect */}
       <div className="absolute inset-0 bg-black/20 backdrop-blur-md" onClick={toggleMobileMenu}></div>
-      
+
       {/* Menu content with glass effect */}
       <div className="relative ml-auto h-full w-4/5 max-w-sm bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col p-6 animate-slide-in">
         <div className="flex justify-end mb-8">
-          <button 
-            onClick={toggleMobileMenu} 
+          <button
+            onClick={toggleMobileMenu}
             className="focus:outline-none w-10 h-10 rounded-full flex items-center justify-center bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors duration-300"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +84,7 @@ const MobileMenu = ({ currentPage, navigateTo, toggleMobileMenu }) => {
             </svg>
           </button>
         </div>
-        
+
         <div className="flex flex-col space-y-1">
           {['home', 'about', 'services', 'testimonials'].map((page) => (
             <button
@@ -92,8 +92,8 @@ const MobileMenu = ({ currentPage, navigateTo, toggleMobileMenu }) => {
               onClick={() => navigateTo(page)}
               className={`
                 py-4 px-4 text-left rounded-lg transition-all duration-300
-                ${currentPage === page 
-                  ? "bg-amber-50 text-amber-600 font-medium border-l-4 border-amber-500" 
+                ${currentPage === page
+                  ? "bg-amber-50 text-amber-600 font-medium border-l-4 border-amber-500"
                   : "text-gray-700 hover:bg-amber-50/50 hover:text-amber-600 border-l-4 border-transparent"
                 }
               `}
@@ -108,17 +108,17 @@ const MobileMenu = ({ currentPage, navigateTo, toggleMobileMenu }) => {
               </div>
             </button>
           ))}
-          
+
           <div className="pt-6">
             <button
-              onClick={() => navigateTo('contact')}
+              onClick={() => navigateTo('contact-us')}
               className="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium py-4 px-6 rounded-lg hover:shadow-lg hover:shadow-amber-600/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
             >
               CONTACT US
             </button>
           </div>
         </div>
-        
+
         {/* Bottom decorative elements */}
         <div className="mt-auto pt-8 border-t border-gray-200">
           <div className="flex justify-center space-x-4 mb-6">

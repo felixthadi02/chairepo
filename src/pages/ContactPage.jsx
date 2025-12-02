@@ -107,18 +107,18 @@ export default function ContactSection() {
             `}</style>
 
             <div className="w-full bg-white/5">
-            <Helmet>
-        <title>Contact Us for Franchise and Support | Tea 5 cafe</title>
-        <meta 
-          name="description" 
-          content="Have a question or want to start your own franchise? Contact Tea 5 cafe for details, support, and guidance. Let’s brew success together."
-        />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
-        />
-        <link rel="canonical" href="https://www.tea5cafe.com/contact-us" />
-      </Helmet>
+                <Helmet>
+                    <title>Contact Us for Franchise and Support | Tea 5 cafe</title>
+                    <meta
+                        name="description"
+                        content="Have a question or want to start your own franchise? Contact Tea 5 cafe for details, support, and guidance. Let’s brew success together."
+                    />
+                    <meta
+                        name="keywords"
+                        content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+                    />
+                    <link rel="canonical" href="https://www.tea5cafe.com/contact-us" />
+                </Helmet>
                 {/* Hero Section */}
                 <section
                     className="relative text-white overflow-hidden min-h-[500px] flex items-center"
@@ -198,7 +198,7 @@ export default function ContactSection() {
                                 <p className="leading-relaxed text-gray-300">
                                     Collins Street West, Victoria 8007 Australia<br />
                                     T. (208) 333 9296<br />
-                                    E. contact@baresto.com
+                                    E. contact-us@baresto.com
                                 </p>
                             </motion.div>
 

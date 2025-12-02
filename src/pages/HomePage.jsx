@@ -188,13 +188,13 @@ const HomePage = () => {
       {/* Hero Section */}
       <Helmet>
         <title>Best Low Investment Tea Franchise in India | Tea 5 Cafe</title>
-        <meta 
-          name="description" 
+        <meta
+          name="description"
           content="Start your Tea 5 cafe franchise in India. Enjoy low investment, high returns, and premium tea blends from one of India’s fastest-growing tea brands."
         />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
+        <meta
+          name="keywords"
+          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
       </Helmet>
       <section className="relative h-screen" id="home">
@@ -341,7 +341,7 @@ const HomePage = () => {
                           }}
                           className="mt-6 md:mt-8 inline-block px-6 md:px-8 py-2 md:py-3 bg-[#8dcb3f] text-white text-sm md:text-base rounded-full hover:bg-[#8dcb3f]  "
                         >
-                        {slide.buttonText}
+                          {slide.buttonText}
                         </motion.a>
                       </div>
                     </div>
@@ -449,7 +449,7 @@ const HomePage = () => {
               >
                 The{" "}
                 <span className="text-[#8dcb3f] italic font-normal">
-                  Craft 
+                  Craft
                 </span>{" "}
                 Behind Every Cup
               </motion.h2>
@@ -478,7 +478,7 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness, and a deep respect for India’s tea culture. Our goal is simple: to serve quality tea that brings people together and creates a lasting impression.              </motion.p>
+                Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness, and a deep respect for India’s tea culture. Our goal is simple: to serve quality tea that brings people together and creates a lasting impression.              </motion.p>
             </motion.div>
 
             {/* Content container with golden accent */}
@@ -734,22 +734,22 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
                           {
                             icon: "M14,10H2V12H14V10M14,6H2V8H14V6M2,16H10V14H2V16M21.5,11.5L23,13L16,20L11.5,15.5L13,14L16,17L21.5,11.5Z",
                             title: "Ethically Sourced",
-                            description:"All ingredients are selected with responsibility to maintain freshness and quality."
+                            description: "All ingredients are selected with responsibility to maintain freshness and quality."
                           },
                           {
                             icon: "M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.81,2 12.5,2H11.5Z",
                             title: "Master Roasters",
-                            description:"Every recipe is created to bring out the best tea flavors in India."
+                            description: "Every recipe is created to bring out the best tea flavors in India."
                           },
                           {
                             icon: "M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3Z",
                             title: "Flavor Artistry",
-                            description:" We help every partner establish and grow a successful Tea 5 cafe franchise in India."
+                            description: " We help every partner establish and grow a successful Tea 5 cafe franchise in India."
                           },
                           {
                             icon: "M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z",
                             title: "Quality Selection",
-                            description:" Every outlet follows the same standard to ensure the perfect cup each time."
+                            description: " Every outlet follows the same standard to ensure the perfect cup each time."
                           },
                         ].map((feature, i) => (
                           <motion.div
@@ -774,7 +774,7 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
                                 {feature.title}
                               </h4>
                               <p className="text-sm text-gray-600 font-light">
-                             {feature.description}
+                                {feature.description}
                               </p>
                             </div>
                           </motion.div>
@@ -1395,16 +1395,16 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
     }
   `}</style>
       </section>
-<div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
-  <video
-    className="w-full h-full object-cover cursor-pointer"
-    src={video}
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-</div>
+      <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
+        <video
+          className="w-full h-full object-cover cursor-pointer"
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
 
       {/* Favorite Coffee Section */}
       <section
@@ -1875,7 +1875,7 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
                   </div>
 
                   <motion.a
-                    href="#contact"
+                    href="#contact-us"
                     className="px-6 py-3 bg-[#8dcb3f] text-white hover:bg-[#9fdb4f] transition-all duration-300 inline-flex items-center gap-2 group rounded-md font-semibold"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -2479,7 +2479,7 @@ Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness,
                 viewport={{ once: true }}
               >
                 <motion.a
-                  href="#contact"
+                  href="#contact-us"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#8dcb3f] font-medium rounded-full hover:bg-[#8dcb3f] hover:text-white transition-all duration-300 shadow-lg group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}

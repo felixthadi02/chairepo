@@ -240,7 +240,7 @@
 //                         </svg>
 //                     </div>
 
-                
+
 //                     {/* / When used in the Call to Action section: */}
 //                     <div className="relative z-10">
 //                         <h2 className="text-3xl font-bold mb-4">Ready to join our success stories?</h2>
@@ -249,7 +249,7 @@
 //                             Contact us today to discuss how we can help you achieve your publication goals.
 //                         </p>
 //                         <button
-//                             onClick={() => navigateTo('contact')}
+//                             onClick={() => navigateTo('contact-us')}
 //                             className="bg-white text-amber-600 font-medium py-3 px-10 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-amber-700/30 transform hover:-translate-y-1"
 //                         >
 //                             Contact Us Today
@@ -364,7 +364,7 @@ const TestimonialsPage = ({ navigateTo }) => {
       {/* Background elements */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-amber-100 rounded-full filter blur-3xl opacity-30"></div>
       <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-amber-200 rounded-full filter blur-3xl opacity-20"></div>
-      
+
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-5xl font-bold mb-4 text-center">
           What Our <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Clients</span> Say
@@ -378,7 +378,7 @@ const TestimonialsPage = ({ navigateTo }) => {
           </div>
           <div className="absolute -top-3 -left-3 w-20 h-20 border-2 border-amber-200 rounded-full opacity-40 group-hover:scale-110 transition-transform duration-500"></div>
           <div className="absolute -bottom-3 -right-3 w-20 h-20 border-2 border-amber-200 rounded-full opacity-40 group-hover:scale-110 transition-transform duration-500"></div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative h-72 md:h-96 w-full">
@@ -433,7 +433,7 @@ const TestimonialsPage = ({ navigateTo }) => {
                   })}
                 </AnimatePresence>
               </div>
-              
+
               <div className="flex flex-col justify-between h-full">
                 <motion.div
                   key={`testimonial-content-${activeIndex}`}
@@ -463,7 +463,7 @@ const TestimonialsPage = ({ navigateTo }) => {
                     </motion.p>
                   </div>
                 </motion.div>
-                
+
                 <div className="flex flex-col sm:flex-row justify-between items-center pt-4">
                   <div className="flex space-x-2 mb-4 sm:mb-0">
                     {testimonials.map((_, index) => (
@@ -475,16 +475,15 @@ const TestimonialsPage = ({ navigateTo }) => {
                           setActiveIndex(index);
                           setTimeout(() => setIsAnimating(false), 500);
                         }}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          activeIndex === index 
-                            ? 'bg-amber-500 w-6' 
-                            : 'bg-gray-300 hover:bg-amber-300'
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === index
+                          ? 'bg-amber-500 w-6'
+                          : 'bg-gray-300 hover:bg-amber-300'
+                          }`}
                         aria-label={`View testimonial ${index + 1}`}
                       />
                     ))}
                   </div>
-                  
+
                   <div className="flex space-x-4">
                     <button
                       onClick={handlePrev}
@@ -532,7 +531,7 @@ const TestimonialsPage = ({ navigateTo }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Testimonial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <AnimatePresence>
@@ -541,7 +540,7 @@ const TestimonialsPage = ({ navigateTo }) => {
                 key={`card-${index}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ 
+                transition={{
                   duration: 0.5,
                   delay: index * 0.1
                 }}
@@ -550,7 +549,7 @@ const TestimonialsPage = ({ navigateTo }) => {
               >
                 <div className="backdrop-blur-sm bg-white/70 rounded-xl shadow-lg p-6 border border-white/50 h-full relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-amber-100 rounded-full -mr-10 -mt-10 opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
-                  
+
                   <div className="flex items-start mb-4">
                     <div className="mr-4 w-12 h-12 bg-gradient-to-br from-amber-300 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-110 transition-transform duration-300">
                       {testimonial.name.split(' ')[0][0] + testimonial.name.split(' ')[1][0]}
@@ -571,9 +570,9 @@ const TestimonialsPage = ({ navigateTo }) => {
             ))}
           </AnimatePresence>
         </div>
-        
+
         {/* Statistics Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -581,17 +580,17 @@ const TestimonialsPage = ({ navigateTo }) => {
         >
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-100 rounded-full opacity-50"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-amber-100 rounded-full opacity-50"></div>
-          
+
           <h2 className="text-3xl font-bold text-center mb-4 relative z-10">Our Impact</h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-amber-400 to-amber-600 rounded-full mb-12"></div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center relative z-10">
             {stats.map((stat, index) => (
-              <motion.div 
+              <motion.div
                 key={`stat-${index}`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
+                transition={{
                   duration: 0.5,
                   delay: 0.3 + (index * 0.1)
                 }}
@@ -614,7 +613,7 @@ const TestimonialsPage = ({ navigateTo }) => {
                       </svg>
                     </div>
                   </div>
-                  <motion.p 
+                  <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
@@ -628,9 +627,9 @@ const TestimonialsPage = ({ navigateTo }) => {
             ))}
           </div>
         </motion.div>
-        
+
         {/* Call to Action */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
@@ -644,20 +643,20 @@ const TestimonialsPage = ({ navigateTo }) => {
               <path fill="#fff" d="M520 660L309 538 295 764 731 737M520 660L309 538 40 599M520 660L309 538M520 660L126.5 879.5M520 660L731 737M520 660L295 764M520 660M309 538L40 599 295 764M309 538L295 764M309 538M295 764L126.5 879.5M295 764L731 737M295 764M731 737L126.5 879.5M731 737M126.5 879.5" />
             </svg>
           </div>
-          
+
           <div className="relative z-10">
             <h2 className="text-3xl font-bold mb-4">Ready to join our success stories?</h2>
             <p className="mb-8 max-w-2xl mx-auto text-white/90">
               Experience the difference professional academic support can make in your research journey.
               Contact us today to discuss how we can help you achieve your publication goals.
             </p>
-            <motion.button 
-              whileHover={{ 
+            <motion.button
+              whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigateTo('contact')}
+              onClick={() => navigateTo('contact-us')}
               className="bg-white text-amber-600 font-medium py-3 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-amber-700/30 transform hover:-translate-y-1"
             >
               Contact Us Today
