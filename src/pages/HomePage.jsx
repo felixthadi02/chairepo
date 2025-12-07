@@ -253,7 +253,7 @@ const HomePage = () => {
               <SwiperSlide key={index}>
                 {({ isActive }) => (
                   <div
-                    className="w-full h-full bg-cover bg-center relative"
+                    className="w-full h-full bg-cover bg-center relative "
                     style={{ backgroundImage: `url(${slide.image})` }}
                   >
                     <div className="absolute inset-0 bg-black bg-opacity-40"></div>

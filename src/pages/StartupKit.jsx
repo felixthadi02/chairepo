@@ -1331,10 +1331,7 @@ const FranchiseInfo = () => {
           )}
         </div>
 
-        {/* Timeline marker for mobile */}
-        <div className="lg:hidden flex items-center justify-center mb-6">
-          
-        </div>
+
 
         {/* Content wrapper - Responsive Grid */}
         <div className="container mx-auto px-4">
@@ -1694,14 +1691,6 @@ const FranchiseInfo = () => {
         </div>
       </section>
 
-      {/* Progress Indicator - Refined design */}
-      <div className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-lg border-b border-gray-100">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-center lg:justify-start gap-3 overflow-x-auto scrollbar-hidden -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            
-          </div>
-        </div>
-      </div>
 
       {/* Timeline Section - Refined styling */}
       <div
@@ -1953,31 +1942,6 @@ const FranchiseInfo = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#3a8c3f]/50 via-[#3a8c3f]/20 to-transparent"></div>
 
-              {/* Elegant stats cards */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="absolute bottom-12 left-12 right-12 grid grid-cols-3 gap-6"
-              >
-                {[
-                  { number: "100+", label: "Franchises" },
-                  { number: "95%", label: "Success Rate" },
-                  { number: "24/7", label: "Support" },
-                ].map((stat, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white/95 backdrop-blur rounded-xl p-6 text-center shadow-xl"
-                  >
-                    <div className="text-3xl font-bold text-[#3a8c3f] mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider text-gray-600 font-medium">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
             </motion.div>
           </div>
         </div>
