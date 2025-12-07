@@ -15,6 +15,7 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
 import video from "../assets/video.mp4"
+import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -186,6 +187,7 @@ const HomePage = () => {
   return (
     <div className="w-full hello overflow-x-hidden bg-gradient-to-br from-[#FDF8F3] via-[#F8F1E9] to-[#F0E6DA]  ">
       {/* Hero Section */}
+      <FloatingWhatsapp/>
       <Helmet>
         <title>Best Low Investment Tea Franchise in India | Tea 5 Cafe</title>
         <meta
@@ -2576,30 +2578,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Back to Top Button */}
-      <motion.button
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[#8dcb3f] text-white flex items-center justify-center shadow-lg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: scrollY > 300 ? 1 : 0 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </motion.button>
+
     </div>
   );
 };

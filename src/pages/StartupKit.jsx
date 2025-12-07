@@ -27,12 +27,29 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
 const FranchiseInfo = () => {
   const [activeStep, setActiveStep] = useState(0);
   const timelineRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const timelineSteps = [
     {
       id: "electronic",
       label: "Electronics",
-      // icon: "⚡",
+      icon: "⚡",
       color: "#8dcb3f",
       description: "Essential electronic equipment to power your cafe",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop",
@@ -40,7 +57,7 @@ const FranchiseInfo = () => {
     {
       id: "materials",
       label: "Cafe Materials",
-      // icon: "☕",
+      icon: "☕",
       color: "#8dcb3f",
       description: "Premium tea and coffee ingredients",
       image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=600&fit=crop",
@@ -48,7 +65,7 @@ const FranchiseInfo = () => {
     {
       id: "boards",
       label: "Boards & Setup",
-      // icon: "📋",
+      icon: "📋",
       color: "#8dcb3f",
       description: "Branding and signage materials",
       image: "https://images.unsplash.com/photo-1572986258706-a8c0a6d0f2d0?w=800&h=600&fit=crop",
@@ -56,7 +73,7 @@ const FranchiseInfo = () => {
     {
       id: "kitchen",
       label: "Kitchen Equipment",
-      // icon: "🔪",
+      icon: "🔪",
       color: "#8dcb3f",
       description: "Complete kitchen setup essentials",
       image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop",
@@ -64,7 +81,7 @@ const FranchiseInfo = () => {
     {
       id: "glasses",
       label: "Glasses Kit",
-      // icon: "🥤",
+      icon: "🥤",
       color: "#8dcb3f",
       description: "Serving and packaging materials",
       image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&h=600&fit=crop",
@@ -72,7 +89,7 @@ const FranchiseInfo = () => {
     {
       id: "interior",
       label: "Interior Design",
-      // icon: "🪑",
+      icon: "🪑",
       color: "#8dcb3f",
       description: "Furniture and ambiance setup",
       image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop",
@@ -80,7 +97,7 @@ const FranchiseInfo = () => {
     {
       id: "syrups",
       label: "Syrups",
-      // icon: "🍯",
+      icon: "🍯",
       color: "#8dcb3f",
       description: "Flavored syrups for beverages",
       image: "https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=800&h=600&fit=crop",
@@ -213,14 +230,14 @@ const FranchiseInfo = () => {
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -150]);
 
-  // Fixed TimelineCard component
+  // Enhanced TimelineCard component with better desktop presentation
   const TimelineCard = ({ step, index, isLeft }) => {
     const cardRef = useRef(null);
-    const isInView = useInView(cardRef, { once: true, amount: 0.1 }); // Changed to once: true
+    const isInView = useInView(cardRef, { once: true, amount: 0.1 });
 
     return (
-      <div ref={cardRef} className="relative mb-32 last:mb-0">
-        {/* Timeline dot and connector - Desktop */}
+      <div ref={cardRef} className="relative mb-16 md:mb-32 last:mb-0">
+        {/* Timeline dot and connector - Desktop only */}
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
@@ -261,31 +278,50 @@ const FranchiseInfo = () => {
           )}
         </div>
 
-        {/* Content wrapper - Desktop Grid */}
+        {/* Timeline marker for mobile */}
+        <div className="lg:hidden flex items-center justify-center mb-6">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : { scale: 0 }}
+            transition={{ duration: 0.6, type: "spring" }}
+            className="w-20 h-20 rounded-full flex items-center justify-center shadow-xl relative"
+            style={{
+              background: `linear-gradient(135deg, ${step.color}, ${step.color}dd)`,
+            }}
+          >
+            <div className="text-center">
+              <div className="text-3xl mb-1 text-white">{step.icon}</div>
+              <div className="text-white font-bold text-xs">STEP {index + 1}</div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Content wrapper - Responsive Grid */}
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Image side */}
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+            {/* Image side - Enhanced for desktop */}
             <motion.div
               initial={{
                 opacity: 0,
-                x: isLeft ? -100 : 100,
+                x: isLeft ? -50 : 50,
                 scale: 0.9,
               }}
               animate={
                 isInView
                   ? { opacity: 1, x: 0, scale: 1 }
-                  : { opacity: 0, x: isLeft ? -100 : 100, scale: 0.9 }
+                  : { opacity: 0, x: isLeft ? -50 : 50, scale: 0.9 }
               }
               transition={{ duration: 0.7, delay: 0.1 }}
               className={`relative ${isLeft ? "lg:order-1" : "lg:order-2"}`}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-                {/* Image */}
-                <div className="relative h-[400px] lg:h-[500px]">
+              <div className="relative rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl group">
+                {/* Image with responsive height */}
+                <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[500px]">
                   <img
                     src={step.image}
                     alt={step.label}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
                   />
                   {/* Gradient overlay */}
                   <div
@@ -295,16 +331,16 @@ const FranchiseInfo = () => {
                     }}
                   ></div>
 
-                  {/* Floating badge */}
+                  {/* Floating badge - Responsive positioning */}
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg"
+                    className="absolute top-4 left-4 md:top-6 md:left-6 bg-white/95 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 md:gap-3">
                       <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xl"
+                        className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white text-lg md:text-xl"
                         style={{ backgroundColor: step.color }}
                       >
                         {step.icon}
@@ -313,23 +349,23 @@ const FranchiseInfo = () => {
                         <div className="text-xs text-gray-500 font-semibold">
                           STEP {index + 1}
                         </div>
-                        <div className="text-sm font-bold text-gray-800">
+                        <div className="text-xs md:text-sm font-bold text-gray-800">
                           {step.label}
                         </div>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Item count badge */}
+                  {/* Item count badge - Responsive positioning */}
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ delay: 0.6, type: "spring" }}
-                    className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg"
+                    className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-white/95 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg"
                   >
                     <div className="text-center">
                       <div
-                        className="text-2xl font-bold"
+                        className="text-xl md:text-2xl font-bold"
                         style={{ color: step.color }}
                       >
                         {materials[step.id]?.length}
@@ -343,28 +379,28 @@ const FranchiseInfo = () => {
               </div>
             </motion.div>
 
-            {/* Content side */}
+            {/* Content side - Enhanced for desktop */}
             <motion.div
               initial={{
                 opacity: 0,
-                x: isLeft ? 100 : -100,
+                x: isLeft ? 50 : -50,
               }}
               animate={
                 isInView
                   ? { opacity: 1, x: 0 }
-                  : { opacity: 0, x: isLeft ? 100 : -100 }
+                  : { opacity: 0, x: isLeft ? 50 : -50 }
               }
               transition={{ duration: 0.7, delay: 0.2 }}
               className={`relative ${isLeft ? "lg:order-2" : "lg:order-1"}`}
             >
               {/* Card content */}
               <div
-                className="bg-white rounded-2xl shadow-2xl overflow-hidden border-t-4 hover:shadow-3xl transition-all duration-300"
+                className="bg-white rounded-xl lg:rounded-2xl shadow-2xl overflow-hidden border-t-4 hover:shadow-3xl transition-all duration-300"
                 style={{ borderColor: step.color }}
               >
-                {/* Header */}
+                {/* Header - Responsive padding */}
                 <div
-                  className="p-6 lg:p-8 text-white relative overflow-hidden"
+                  className="p-4 sm:p-6 lg:p-8 text-white relative overflow-hidden"
                   style={{
                     background: `linear-gradient(135deg, ${step.color}, ${step.color}dd)`,
                   }}
@@ -381,16 +417,16 @@ const FranchiseInfo = () => {
                   </div>
 
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="text-5xl">{step.icon}</div>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                      <div className="text-3xl sm:text-4xl lg:text-5xl">{step.icon}</div>
                       <div>
-                        <div className="text-sm text-white/80 font-semibold">
+                        <div className="text-xs sm:text-sm text-white/80 font-semibold">
                           STEP {index + 1} OF {timelineSteps.length}
                         </div>
-                        <h3 className="text-3xl font-bold">{step.label}</h3>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">{step.label}</h3>
                       </div>
                     </div>
-                    <p className="text-white/90 text-base leading-relaxed">
+                    <p className="text-white/90 text-sm sm:text-base leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -406,9 +442,9 @@ const FranchiseInfo = () => {
                   </div>
                 </div>
 
-                {/* Items list - Desktop */}
+                {/* Items list - Desktop with better scrollbar */}
                 <div 
-                  className="hidden md:block p-6 lg:p-8 max-h-[400px] overflow-y-auto"
+                  className="hidden md:block p-4 sm:p-6 lg:p-8 max-h-[300px] lg:max-h-[400px] overflow-y-auto"
                   style={{
                     scrollbarWidth: 'thin',
                     scrollbarColor: `${step.color} #f1f1f1`,
@@ -451,18 +487,18 @@ const FranchiseInfo = () => {
                   </div>
                 </div>
 
-                {/* Items list - Mobile */}
-                <div className="md:hidden p-4 space-y-3 max-h-[400px] overflow-y-auto">
+                {/* Items list - Mobile with improved touch targets */}
+                <div className="md:hidden p-3 space-y-2 max-h-[300px] overflow-y-auto">
                   {materials[step.id]?.map((item, idx) => (
                     <div
                       key={idx}
-                      className="bg-gray-50 rounded-xl p-4 border-l-4 hover:shadow-md transition-shadow"
+                      className="bg-gray-50 rounded-xl p-3 sm:p-4 border-l-4 hover:shadow-md transition-shadow touch-manipulation"
                       style={{ borderColor: step.color }}
                     >
-                      <div className="flex items-start justify-between gap-3 mb-2">
-                        <div className="flex items-center gap-3 flex-1">
+                      <div className="flex items-start justify-between gap-2 sm:gap-3">
+                        <div className="flex items-center gap-2 sm:gap-3 flex-1">
                           <div
-                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md"
+                            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md"
                             style={{ backgroundColor: step.color }}
                           >
                             {idx + 1}
@@ -489,24 +525,24 @@ const FranchiseInfo = () => {
                   ))}
                 </div>
 
-                {/* Footer with total items */}
-                <div className="px-6 lg:px-8 py-4 bg-gray-50 border-t border-gray-200">
+                {/* Footer with total items - Responsive padding */}
+                <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-gray-50 border-t border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div
                         className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: step.color }}
                       ></div>
-                      <span className="text-sm font-semibold text-gray-700">
+                      <span className="text-xs sm:text-sm font-semibold text-gray-700">
                         Total Items: {materials[step.id]?.length}
                       </span>
                     </div>
                     <button
-                      className="text-sm font-semibold hover:underline transition-all flex items-center gap-1"
+                      className="text-xs sm:text-sm font-semibold hover:underline transition-all flex items-center gap-1 px-2 py-2 touch-manipulation"
                       style={{ color: step.color }}
                     >
                       View Details 
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
@@ -533,6 +569,7 @@ const FranchiseInfo = () => {
           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
         <link rel="canonical" href="https://www.tea5cafe.com/startup-kit" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
       </Helmet>
 
       <style>{`
@@ -542,6 +579,7 @@ const FranchiseInfo = () => {
 
         * {
           font-family: "Inter", "Poppins", sans-serif;
+          -webkit-tap-highlight-color: transparent;
         }
 
         .font-sacramento {
@@ -549,7 +587,7 @@ const FranchiseInfo = () => {
         }
 
         ::-webkit-scrollbar {
-          width: 8px;
+          width: 6px;
         }
 
         ::-webkit-scrollbar-track {
@@ -565,20 +603,54 @@ const FranchiseInfo = () => {
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(180deg, #7bc42e, #6ab31d);
         }
+        
+        /* Hide scrollbar for mobile */
+        @media (max-width: 768px) {
+          .scrollbar-hidden {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          
+          .scrollbar-hidden::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        
+        /* Improve touch targets */
+        @media (max-width: 768px) {
+          button, a {
+            min-height: 44px;
+            min-width: 44px;
+          }
+        }
+
+        /* Enhanced desktop experience */
+        @media (min-width: 1280px) {
+          .container {
+            max-width: 1200px;
+          }
+        }
+        
+        @media (min-width: 1536px) {
+          .container {
+            max-width: 1400px;
+          }
+        }
       `}</style>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Responsive height with enhanced desktop experience */}
+      <section className="relative min-h-[60vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&h=900&fit=crop')`,
+              backgroundAttachment: "fixed",
             }}
           ></div>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-[#8dcb3f]/50"></div>
           
-          {/* Animated circles */}
+          {/* Animated circles - Enhanced for desktop */}
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -589,7 +661,7 @@ const FranchiseInfo = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-20 right-20 w-64 h-64 rounded-full bg-[#8dcb3f]/30 blur-3xl"
+            className="absolute top-1/4 right-1/4 w-32 sm:w-48 md:w-64 lg:w-96 h-32 sm:h-48 md:h-64 lg:h-96 rounded-full bg-[#8dcb3f]/30 blur-3xl"
           ></motion.div>
           <motion.div
             animate={{
@@ -602,28 +674,43 @@ const FranchiseInfo = () => {
               ease: "easeInOut",
               delay: 1,
             }}
-            className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#8dcb3f]/20 blur-3xl"
+            className="absolute bottom-1/4 left-1/4 w-48 sm:w-64 md:w-96 lg:w-[30rem] h-48 sm:h-64 md:h-96 lg:h-[30rem] rounded-full bg-[#8dcb3f]/20 blur-3xl"
           ></motion.div>
         </div>
-
-        <motion.div
-          className="relative z-10 container mx-auto px-4 text-center"
-          style={{ y: heroY }}
-        >
-
-
-          
-
-
-
-        </motion.div>
-
+        
+        {/* Hero content - Enhanced for desktop */}
+        <div className="relative z-10 container mx-auto px-4 py-12 md:py-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6">
+              Complete Franchise
+              <span className="block text-[#8dcb3f] font-sacramento text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-2">
+                Startup Kit
+              </span>
+            </h1>
+            <p className="text-white/90 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed mb-8 lg:mb-12">
+              Begin your journey with Tea 5 Cafe - low investment, high returns, and complete business support
+            </p>
+            
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#8dcb3f] text-white font-bold px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm sm:text-base lg:text-lg"
+            >
+              Get Started Now
+            </motion.button>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Progress Indicator - Sticky */}
+      {/* Progress Indicator - Sticky with improved desktop experience */}
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="container mx-auto px-4 py-2 md:py-4">
+          <div className="flex items-center justify-center lg:justify-start gap-2 overflow-x-auto scrollbar-hidden pb-2 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {timelineSteps.map((step, index) => (
               <motion.button
                 key={step.id}
@@ -633,14 +720,14 @@ const FranchiseInfo = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all whitespace-nowrap shadow-md hover:shadow-xl"
+                className="flex items-center gap-2 px-3 sm:px-5 py-3 rounded-full border-2 transition-all whitespace-nowrap shadow-md hover:shadow-xl flex-shrink-0 min-h-[44px] min-w-[44px]"
                 style={{
                   borderColor: step.color,
                   backgroundColor: "white",
                 }}
               >
-                <span className="text-xl">{step.icon}</span>
-                <span className="text-sm font-semibold hidden sm:inline text-gray-700">
+                <span className="text-lg sm:text-xl">{step.icon}</span>
+                <span className="text-xs sm:text-sm font-semibold hidden sm:inline text-gray-700">
                   {step.label}
                 </span>
                 <span
@@ -655,21 +742,21 @@ const FranchiseInfo = () => {
         </div>
       </div>
 
-      {/* Timeline Section */}
+      {/* Timeline Section - Enhanced for desktop */}
       <div
         id="timeline-start"
-        className="py-20 relative"
+        className="py-12 md:py-20 lg:py-24 relative"
         ref={timelineRef}
       >
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-64 h-64 lg:w-96 lg:h-96 bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 lg:w-[30rem] lg:h-[30rem] bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Section header */}
+        {/* Section header - Enhanced for desktop */}
         <motion.div
-          className="text-center mb-24 container mx-auto px-4 relative z-10"
+          className="text-center mb-12 md:mb-24 container mx-auto px-4 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -678,27 +765,27 @@ const FranchiseInfo = () => {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="inline-block bg-[#8dcb3f]/10 px-6 py-2 rounded-full mb-6"
+            className="inline-block bg-[#8dcb3f]/10 px-4 sm:px-6 py-2 rounded-full mb-4 sm:mb-6"
           >
-            <span className="text-[#8dcb3f] font-bold text-sm">
+            <span className="text-[#8dcb3f] font-bold text-xs sm:text-sm lg:text-base">
               COMPLETE FRANCHISE KIT
             </span>
           </motion.div>
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 mb-4 md:mb-6">
             Everything You Need to
-            <span className="block text-[#8dcb3f] font-sacramento text-6xl md:text-7xl mt-2">
+            <span className="block text-[#8dcb3f] font-sacramento text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-2">
               Launch & Succeed
             </span>
           </h2>
-          <div className="h-1 w-32 bg-[#8dcb3f] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+          <div className="h-1 w-24 md:w-32 lg:w-40 bg-[#8dcb3f] mx-auto rounded-full mb-4 md:mb-6"></div>
+          <p className="text-gray-600 text-sm sm:text-base md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
             Our comprehensive 7-step startup kit includes all equipment,
             materials, and support you need to open your franchise
           </p>
         </motion.div>
 
         {/* Timeline items */}
-        <div className="relative">
+        <div className="relative max-w-[1920px] mx-auto">
           {timelineSteps.map((step, index) => (
             <div key={step.id} id={`step-${index}`}>
               <TimelineCard
@@ -711,8 +798,8 @@ const FranchiseInfo = () => {
         </div>
       </div>
 
-      {/* Benefits Section */}
-      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 relative overflow-hidden">
+      {/* Benefits Section - Enhanced for desktop */}
+      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 md:py-24 lg:py-32 relative overflow-hidden">
         {/* Background patterns */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -726,24 +813,24 @@ const FranchiseInfo = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-20 lg:mb-24"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="bg-[#8dcb3f]/20 text-[#8dcb3f] px-6 py-3 rounded-full text-sm font-bold inline-block mb-6 border border-[#8dcb3f]/30">
+            <span className="bg-[#8dcb3f]/20 text-[#8dcb3f] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base font-bold inline-block mb-4 sm:mb-6 border border-[#8dcb3f]/30">
               ⭐ WHY CHOOSE US
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6">
               Exclusive Franchise
-              <span className="block text-[#8dcb3f] font-sacramento text-5xl md:text-7xl mt-2">
+              <span className="block text-[#8dcb3f] font-sacramento text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-2">
                 Benefits & Support
               </span>
             </h2>
-            <div className="h-1 w-24 bg-[#8dcb3f] mx-auto rounded-full"></div>
+            <div className="h-1 w-16 sm:w-24 lg:w-32 bg-[#8dcb3f] mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
             {franchiseBenefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -752,40 +839,40 @@ const FranchiseInfo = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#8dcb3f]/50 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-10 border border-white/10 hover:border-[#8dcb3f]/50 transition-all duration-300 group relative overflow-hidden"
               >
                 {/* Gradient background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8dcb3f]/0 to-[#8dcb3f]/0 group-hover:from-[#8dcb3f]/10 group-hover:to-[#8dcb3f]/5 transition-all duration-300"></div>
 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-[#8dcb3f]/20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <div className="w-8 h-8 bg-[#8dcb3f] rounded-lg"></div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-[#8dcb3f]/20 rounded-xl md:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-[#8dcb3f] rounded-lg"></div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#8dcb3f] transition-colors">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-4 group-hover:text-[#8dcb3f] transition-colors">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
 
                 {/* Corner decoration */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-[#8dcb3f]/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#8dcb3f]/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* CTA Section */}
+      {/* CTA Section - Enhanced for desktop */}
       <motion.div
-        className="container mx-auto px-4 py-24"
+        className="container mx-auto px-4 py-16 md:py-24 lg:py-32"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
       >
-        <div className="bg-gradient-to-br from-[#8dcb3f] via-[#7bc42e] to-[#8dcb3f] rounded-3xl overflow-hidden shadow-2xl relative">
-          {/* Decorative elements */}
+        <div className="bg-gradient-to-br from-[#8dcb3f] via-[#7bc42e] to-[#8dcb3f] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl relative">
+          {/* Decorative elements - Enhanced for desktop */}
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
               animate={{
@@ -796,7 +883,7 @@ const FranchiseInfo = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full"
+              className="absolute -top-24 -right-24 w-48 sm:w-64 lg:w-96 h-48 sm:h-64 lg:h-96 bg-white/10 rounded-full"
             ></motion.div>
             <motion.div
               animate={{
@@ -807,44 +894,44 @@ const FranchiseInfo = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute -bottom-32 -left-32 w-96 h-96 bg-white/10 rounded-full"
+              className="absolute -bottom-32 -left-32 w-64 sm:w-96 lg:w-[40rem] h-64 sm:h-96 lg:h-[40rem] bg-white/10 rounded-full"
             ></motion.div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-0 relative z-10">
-            {/* Content side */}
-            <div className="p-12 lg:p-16 flex flex-col justify-center text-white">
+            {/* Content side - Enhanced for desktop */}
+            <div className="p-6 sm:p-8 md:p-10 lg:p-16 xl:p-20 flex flex-col justify-center text-white">
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
+                initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-block bg-white/20 px-6 py-2 rounded-full mb-6 backdrop-blur-sm">
-                  <span className="text-sm font-bold">🎯 GET STARTED TODAY</span>
+                <div className="inline-block bg-white/20 px-4 sm:px-6 py-2 rounded-full mb-4 sm:mb-6 backdrop-blur-sm">
+                  <span className="text-xs sm:text-sm lg:text-base font-bold">🎯 GET STARTED TODAY</span>
                 </div>
-                <h3 className="text-4xl lg:text-5xl font-bold mb-6">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                   Ready to Begin Your
-                  <span className="block font-sacramento text-5xl lg:text-6xl mt-2">
+                  <span className="block font-sacramento text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mt-2">
                     Franchise Journey?
                   </span>
                 </h3>
-                <p className="text-white/90 text-lg mb-10 leading-relaxed">
+                <p className="text-white/90 text-sm sm:text-base lg:text-xl mb-6 sm:mb-10 leading-relaxed">
                   Join our successful franchise network and start your
                   entrepreneurial journey with complete support and guidance.
                 </p>
 
-                <div className="space-y-4 mb-10">
+                <div className="space-y-3 sm:space-y-4 lg:space-y-5 mb-6 sm:mb-10">
                   {["93811 42553", "8466066425"].map((phone, idx) => (
                     <motion.a
                       key={idx}
                       href={`tel:${phone.replace(/\s/g, '')}`}
                       whileHover={{ x: 10, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 border-2 border-white/20 hover:bg-white/20 hover:border-white/40 transition-all group"
+                      className="flex items-center gap-3 sm:gap-4 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-5 lg:p-6 border-2 border-white/20 hover:bg-white/20 hover:border-white/40 transition-all group touch-manipulation"
                     >
-                      <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center text-[#8dcb3f] group-hover:scale-110 transition-transform shadow-lg">
+                      <div className="bg-white w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-[#8dcb3f] group-hover:scale-110 transition-transform shadow-lg">
                         <svg
-                          className="w-7 h-7"
+                          className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -858,10 +945,10 @@ const FranchiseInfo = () => {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-xs text-white/70 font-semibold">
+                        <div className="text-xs lg:text-sm text-white/70 font-semibold">
                           CALL US NOW
                         </div>
-                        <div className="text-xl font-bold">{phone}</div>
+                        <div className="text-base sm:text-xl lg:text-2xl font-bold">{phone}</div>
                       </div>
                     </motion.a>
                   ))}
@@ -870,45 +957,46 @@ const FranchiseInfo = () => {
                 <motion.button
                   whileHover={{
                     scale: 1.02,
-                    boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
+                    boxShadow: "0 15px 30px rgba(0,0,0,0.3)",
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-white text-[#8dcb3f] font-bold py-5 rounded-2xl transition-all shadow-2xl hover:shadow-3xl text-lg"
+                  className="w-full bg-white text-[#8dcb3f] font-bold py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl transition-all shadow-xl hover:shadow-2xl text-sm sm:text-lg lg:text-xl touch-manipulation"
                 >
                   Request Franchise Information
                 </motion.button>
 
                 <motion.div
-                  className="mt-8 p-5 border-2 border-white/30 rounded-2xl text-center backdrop-blur-sm bg-white/5"
+                  className="mt-6 sm:mt-8 p-4 sm:p-5 lg:p-6 border-2 border-white/30 rounded-xl sm:rounded-2xl text-center backdrop-blur-sm bg-white/5"
                   whileHover={{ borderColor: "rgba(255,255,255,0.5)" }}
                 >
-                  <p className="text-white font-bold text-lg">
+                  <p className="text-white font-bold text-base sm:text-lg lg:text-xl">
                     ✨ License Provided as Complimentary
                   </p>
                 </motion.div>
               </motion.div>
             </div>
 
-            {/* Image side */}
+            {/* Image side - Enhanced for desktop */}
             <motion.div
-              className="relative h-[500px] md:h-auto"
-              initial={{ x: 50, opacity: 0 }}
+              className="relative h-[300px] sm:h-[400px] md:h-auto"
+              initial={{ x: 30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
             >
               <img
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=800&fit=crop"
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=1200&fit=crop"
                 alt="Contact us"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#8dcb3f]/50 to-transparent"></div>
 
-              {/* Floating stats */}
+              {/* Floating stats - Enhanced for desktop */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-4"
+                className="absolute bottom-4 sm:bottom-8 lg:bottom-12 left-4 sm:left-8 lg:left-12 right-4 sm:right-8 lg:right-12 grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6"
               >
                 {[
                   { number: "100+", label: "Franchises" },
@@ -917,12 +1005,12 @@ const FranchiseInfo = () => {
                 ].map((stat, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/95 backdrop-blur-md rounded-xl p-4 text-center shadow-xl"
+                    className="bg-white/95 backdrop-blur-md rounded-lg sm:rounded-xl p-2 sm:p-4 lg:p-6 text-center shadow-xl"
                   >
-                    <div className="text-2xl font-bold text-[#8dcb3f] mb-1">
+                    <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#8dcb3f] mb-0 sm:mb-1 lg:mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-xs text-gray-600 font-semibold">
+                    <div className="text-[10px] sm:text-xs lg:text-sm text-gray-600 font-semibold">
                       {stat.label}
                     </div>
                   </div>
