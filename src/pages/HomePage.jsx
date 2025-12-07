@@ -15,6 +15,9 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
 import video from "../assets/video.mp4"
+import image1 from '../assets/1.png'
+import image2 from '../assets/2.png'
+import image3 from '../assets/3.png'
 import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -221,7 +224,7 @@ const HomePage = () => {
             {[
               {
                 image:
-                  "https://madebydesignesia.com/themes/baresto/02_images/slider/slide-1.jpg",
+                  image1,
                 line1: "Dream Blend",
                 line2: "Flavour",
                 buttonText: "Start Your Franchise Journey",
@@ -230,7 +233,16 @@ const HomePage = () => {
               },
               {
                 image:
-                  "https://madebydesignesia.com/themes/baresto/02_images/slider/slide-2.jpg",
+                  image2,
+                line1: "Tasty Growth",
+                line2: "Taste",
+                buttonText: "Explore Franchise Options",
+                description:
+                  "Tea 5 cafe offers fresh tea and a proven business model with low investment and high returns. Join a trusted brand growing across India.",
+              },
+              {
+                image:
+                  image3,
                 line1: "Tasty Growth",
                 line2: "Taste",
                 buttonText: "Explore Franchise Options",
