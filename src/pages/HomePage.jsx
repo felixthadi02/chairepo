@@ -15,9 +15,10 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
 import video from "../assets/video.mp4"
-import image1 from '../assets/1.png'
-import image2 from '../assets/2.png'
-import image3 from '../assets/3.png'
+import image1 from '../assets/1.jpg'
+import image2 from '../assets/2.jpg'
+import image3 from '../assets/3.jpg'
+import image4 from '../assets/4.jpg'
 import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);

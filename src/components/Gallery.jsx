@@ -10,16 +10,16 @@ import image2 from '../assets/image 2.jpg';
 import image3 from '../assets/image 3.jpg';
 import image4 from '../assets/image 4.jpg';
 import image5 from '../assets/image 5.jpg';
-import image11 from '../assets/image 11.jpg';
-import image12 from '../assets/image 12.jpg';
-import image13 from '../assets/image 13.jpg';
-import image14 from '../assets/image 14.jpg';
-import image15 from '../assets/image 15.jpg';
-import image16 from '../assets/K image 1.jpg';
-import image17 from '../assets/K image 2.jpg';
-import image18 from '../assets/K image 3.jpg';
-import image19 from '../assets/K image 4.jpg';
-import image20 from '../assets/K image 5.jpg';
+// import image11 from '../assets/image 11.jpg';
+// import image12 from '../assets/image 12.jpg';
+// import image13 from '../assets/image 13.jpg';
+// import image14 from '../assets/image 14.jpg';
+// import image15 from '../assets/image 15.jpg';
+// import image16 from '../assets/K image 1.jpg';
+// import image17 from '../assets/K image 2.jpg';
+// import image18 from '../assets/K image 3.jpg';
+// import image19 from '../assets/K image 4.jpg';
+// import image20 from '../assets/K image 5.jpg';
 
 // Use one of the imported images as the hero icon, or keep the unsplash one
 const icon =  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
@@ -31,16 +31,16 @@ const galleryItems = [
     { id: 3, imgSrc: image3, title: "Tea Moment 3" },
     { id: 4, imgSrc: image4, title: "Tea Moment 4" },
     { id: 5, imgSrc: image5, title: "Tea Moment 5" },
-    { id: 6, imgSrc: image11, title: "Cafe Interior 1" },
-    { id: 7, imgSrc: image12, title: "Cafe Interior 2" },
-    { id: 8, imgSrc: image13, title: "Cafe Interior 3" },
-    { id: 9, imgSrc: image14, title: "Cafe Interior 4" },
-    { id: 10, imgSrc: image15, title: "Cafe Interior 5" },
-    { id: 11, imgSrc: image16, title: "Kitchen View 1" },
-    { id: 12, imgSrc: image17, title: "Kitchen View 2" },
-    { id: 13, imgSrc: image18, title: "Kitchen View 3" },
-    { id: 14, imgSrc: image19, title: "Kitchen View 4" },
-    { id: 15, imgSrc: image20, title: "Kitchen View 5" },
+    // { id: 6, imgSrc: image11, title: "Cafe Interior 1" },
+    // { id: 7, imgSrc: image12, title: "Cafe Interior 2" },
+    // { id: 8, imgSrc: image13, title: "Cafe Interior 3" },
+    // { id: 9, imgSrc: image14, title: "Cafe Interior 4" },
+    // { id: 10, imgSrc: image15, title: "Cafe Interior 5" },
+    // { id: 11, imgSrc: image16, title: "Kitchen View 1" },
+    // { id: 12, imgSrc: image17, title: "Kitchen View 2" },
+    // { id: 13, imgSrc: image18, title: "Kitchen View 3" },
+    // { id: 14, imgSrc: image19, title: "Kitchen View 4" },
+    // { id: 15, imgSrc: image20, title: "Kitchen View 5" },
 ];
 
 const FadeInWhenVisible = ({ children, delay = 0 }) => {
