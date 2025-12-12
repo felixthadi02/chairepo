@@ -203,215 +203,214 @@ const HomePage = () => {
           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
       </Helmet>
-      <section className="relative h-screen" id="home">
-        <section className="relative w-full h-[100vh]">
-          <Swiper
-            modules={[Navigation, Autoplay, EffectFade]}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            autoplay={{ delay: 3000 }}
-            loop
-            effect="fade"
-            speed={1000}
-            className="h-full"
-            onSlideChange={(swiper) => {
-              // This will force animation resets when slides change
-              const activeIndex = swiper.realIndex;
-              // We'll use this to trigger animations via the key prop
-            }}
-          >
-            {[
-              {
-                image:
-                  image1,
-                line1: "Dream Blend",
-                line2: "Flavour",
-                buttonText: "Start Your Franchise Journey",
-                description:
-                  "Tea 5 cafe serves passion in every cup. Enjoy rich blends and rewarding franchise opportunities with a trusted brand loved for quality across India.",
-              },
-              {
-                image:
-                  image2,
-                line1: "Tasty Growth",
-                line2: "Taste",
-                buttonText: "Explore Franchise Options",
-                description:
-                  "Tea 5 cafe offers fresh tea and a proven business model with low investment and high returns. Join a trusted brand growing across India.",
-              },
-              {
-                image:
-                  image3,
-                line1: "Tasty Growth",
-                line2: "Taste",
-                buttonText: "Explore Franchise Options",
-                description:
-                  "Tea 5 cafe offers fresh tea and a proven business model with low investment and high returns. Join a trusted brand growing across India.",
-              },
-            ].map((slide, index) => (
-              <SwiperSlide key={index}>
-                {({ isActive }) => (
-                  <div
-                    className="w-full h-full bg-cover bg-center relative "
-                    style={{ backgroundImage: `url(${slide.image})` }}
+<section className="relative h-screen" id="home">
+  <section className="relative w-full h-[100vh]">
+    <Swiper
+      modules={[Navigation, Autoplay, EffectFade]}
+      navigation={{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }}
+      autoplay={{ delay: 3000 }}
+      loop
+      effect="fade"
+      speed={1000}
+      className="h-full"
+      onSlideChange={(swiper) => {
+        const activeIndex = swiper.realIndex;
+      }}
+    >
+      {[
+        {
+          image: image1,
+          line1: "Dream Blend",
+          line2: "Flavour",
+          buttonText: "Start Your Franchise Journey",
+          description:
+            "Tea 5 cafe serves passion in every cup. Enjoy rich blends and rewarding franchise opportunities with a trusted brand loved for quality across India.",
+        },
+        {
+          image: image2,
+          line1: "Brew Success",
+          line2: "Growth",
+          buttonText: "Explore Franchise Options",
+          description:
+            "Transform your entrepreneurial dreams into reality with Tea 5. Our proven business model offers low investment, high returns, and comprehensive support for success.",
+        },
+        {
+          image: image3,
+          line1: "Pure Aroma",
+          line2: "Delight",
+          buttonText: "Join Our Family",
+          description:
+            "Experience the art of tea crafting at Tea 5 cafe. From classic chai to exotic blends, we bring authentic flavors that keep customers coming back for more.",
+        },
+        {
+          image: image4,
+          line1: "Sip & Thrive",
+          line2: "Passion",
+          buttonText: "Become A Partner",
+          description:
+            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
+        },
+      ].map((slide, index) => (
+        <SwiperSlide key={index}>
+          {({ isActive }) => (
+            <div
+              className="w-full h-full bg-cover bg-center relative"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+              {/* Content wrapper with responsive padding */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center pt-10 md:pt-16 lg:pt-24 overflow-hidden">
+                {/* Text container with responsive margins */}
+                <div className="text-center px-4 sm:px-6 mx-auto max-w-3xl mt-4 md:mt-12 lg:mt-20 w-full">
+                  {/* First line - responsive font size */}
+                  <motion.h1
+                    key={`title-${index}-${isActive}`}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      y: isActive ? 0 : 100,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.2,
+                      type: "spring",
+                      stiffness: 90,
+                      damping: 20,
+                    }}
+                    className="text-[#8dcb3f] text-[40px] sm:text-[50px] md:text-[60px] lg:text-[100px] leading-[1] sm:leading-[1.1] m-0 tracking-wide font-sacramento"
                   >
-                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    {slide.line1}
+                  </motion.h1>
 
-                    {/* Content wrapper with responsive padding */}
-                    <div className="absolute inset-0 flex flex-col justify-center items-center pt-10 md:pt-16 lg:pt-24 overflow-hidden">
-                      {/* Text container with responsive margins */}
-                      <div className="text-center px-4 sm:px-6 mx-auto max-w-3xl mt-4 md:mt-12 lg:mt-20 w-full">
-                        {/* First line - responsive font size */}
-                        <motion.h1
-                          key={`title-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 100 }}
-                          animate={{
-                            opacity: isActive ? 1 : 0,
-                            y: isActive ? 0 : 100,
-                          }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.2,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 20,
-                          }}
-                          className={`
-                      text-[#8dcb3f] text-[40px] sm:text-[50px] md:text-[60px] lg:text-[100px] 
-                      leading-[1] sm:leading-[1.1] m-0 tracking-wide
-                      ${index === 0 ? "font-sacramento" : "font-sacramento"}
-                    `}
-                        >
-                          {slide.line1}
-                        </motion.h1>
+                  {/* Second line - responsive with no absolute positioning */}
+                  <motion.p
+                    key={`subtitle-${index}-${isActive}`}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      y: isActive ? 0 : 100,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.5,
+                      type: "spring",
+                      stiffness: 90,
+                      damping: 20,
+                    }}
+                    className="uppercase font-bold inline-block border-y border-white/50 m-0"
+                    style={{
+                      fontSize: "40px",
+                      lineHeight: "40px",
+                      letterSpacing: "10px",
+                      fontFamily: "serif",
+                      color: "#fff",
+                    }}
+                  >
+                    {slide.line2}
+                  </motion.p>
 
-                        {/* Second line - responsive with no absolute positioning */}
-                        <motion.p
-                          key={`subtitle-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 100 }}
-                          animate={{
-                            opacity: isActive ? 1 : 0,
-                            y: isActive ? 0 : 100,
-                          }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.5,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 20,
-                          }}
-                          className="uppercase font-bold inline-block border-y border-white/50 m-0"
-                          style={{
-                            fontSize: "40px",
-                            lineHeight: "40px",
-                            letterSpacing: "10px",
-                            fontFamily: "serif",
-                            color: "#fff",
-                          }}
-                        >
-                          {slide.line2}
-                        </motion.p>
+                  {/* Description with responsive width and font size */}
+                  <motion.p
+                    key={`desc-${index}-${isActive}`}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      y: isActive ? 0 : 100,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.8,
+                      type: "spring",
+                      stiffness: 90,
+                      damping: 20,
+                    }}
+                    className="text-white mt-4 md:mt-6 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-md md:max-w-lg mx-auto leading-relaxed"
+                  >
+                    {slide.description}
+                  </motion.p>
 
-                        {/* Description with responsive width and font size */}
-                        <motion.p
-                          key={`desc-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 100 }}
-                          animate={{
-                            opacity: isActive ? 1 : 0,
-                            y: isActive ? 0 : 100,
-                          }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.8,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 20,
-                          }}
-                          className="text-white mt-4 md:mt-6 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-md md:max-w-lg mx-auto leading-relaxed"
-                        >
-                          {slide.description}
-                        </motion.p>
+                  {/* CTA Button - responsive sizing */}
+                  <motion.a
+                    key={`button-${index}-${isActive}`}
+                    href="#menu"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      y: isActive ? 0 : 100,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 1.1,
+                      type: "spring",
+                      stiffness: 90,
+                      damping: 20,
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "#7ab832",
+                    }}
+                    className="mt-6 md:mt-8 inline-block px-6 md:px-8 py-2 md:py-3 bg-[#8dcb3f] text-white text-sm md:text-base rounded-full transition-all duration-300"
+                  >
+                    {slide.buttonText}
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          )}
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </section>
 
-                        {/* CTA Button - responsive sizing */}
-                        <motion.a
-                          key={`button-${index}-${isActive}`}
-                          href="#menu"
-                          initial={{ opacity: 0, y: 100 }}
-                          animate={{
-                            opacity: isActive ? 1 : 0,
-                            y: isActive ? 0 : 100,
-                          }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 1.1,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 20,
-                          }}
-                          whileHover={{
-                            scale: 1.05,
-                            backgroundColor: "#8dcb3f",
-                          }}
-                          className="mt-6 md:mt-8 inline-block px-6 md:px-8 py-2 md:py-3 bg-[#8dcb3f] text-white text-sm md:text-base rounded-full hover:bg-[#8dcb3f]  "
-                        >
-                          {slide.buttonText}
-                        </motion.a>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section>
+  {/* Make sure the font is imported */}
+  <style jsx global>{`
+    @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
-        {/* Make sure the font is imported */}
-        <style jsx global>{`
-          @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+    .font-sacramento {
+      font-family: "Sacramento", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-          .font-sacramento {
-            font-family: "Sacramento", cursive;
-            font-weight: 400;
-            font-style: normal;
-          }
+    /* Custom Swiper arrow styles */
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 18px !important;
+    }
 
-          /* Custom Swiper arrow styles */
-          .swiper-button-next:after,
-          .swiper-button-prev:after {
-            font-size: 18px !important;
-          }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
 
-          .swiper-button-next,
-          .swiper-button-prev {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          }
+    /* Media queries for arrow sizes on different screens */
+    @media (max-width: 768px) {
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 14px !important;
+      }
+    }
 
-          /* Media queries for arrow sizes on different screens */
-          @media (max-width: 768px) {
-            .swiper-button-next:after,
-            .swiper-button-prev:after {
-              font-size: 14px !important;
-            }
-          }
+    @media (max-width: 480px) {
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 12px !important;
+      }
+    }
 
-          @media (max-width: 480px) {
-            .swiper-button-next:after,
-            .swiper-button-prev:after {
-              font-size: 12px !important;
-            }
-          }
-
-          /* Hide any overflow to prevent scrollbars during animations */
-          .swiper-slide {
-            overflow: hidden;
-          }
-        `}</style>
-      </section>
+    /* Hide any overflow to prevent scrollbars during animations */
+    .swiper-slide {
+      overflow: hidden;
+    }
+  `}</style>
+</section>
 
       {/*our story*/}
       <section
