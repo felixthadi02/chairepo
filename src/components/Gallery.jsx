@@ -10,37 +10,54 @@ import image2 from '../assets/image 2.jpg';
 import image3 from '../assets/image 3.jpg';
 import image4 from '../assets/image 4.jpg';
 import image5 from '../assets/image 5.jpg';
-// import image11 from '../assets/image 11.jpg';
-// import image12 from '../assets/image 12.jpg';
-// import image13 from '../assets/image 13.jpg';
-// import image14 from '../assets/image 14.jpg';
-// import image15 from '../assets/image 15.jpg';
-// import image16 from '../assets/K image 1.jpg';
-// import image17 from '../assets/K image 2.jpg';
-// import image18 from '../assets/K image 3.jpg';
-// import image19 from '../assets/K image 4.jpg';
-// import image20 from '../assets/K image 5.jpg';
+import image6 from '../assets/image 6.jpg';
+import image7 from '../assets/image 7.jpg';
+import image8 from '../assets/image 8.jpg';
+import image9 from '../assets/image 9.jpg';
+import image10 from '../assets/image 10.jpg';
+import image11 from '../assets/image 11.jpg';
+import image12 from '../assets/image 12.jpg';
+import image13 from '../assets/image 13.jpg';
+import image14 from '../assets/image 14.jpg';
+import image15 from '../assets/image 15.jpg';
+import image16 from '../assets/image 16.jpg';
+import image17 from '../assets/image 17.jpg';
+import image18 from '../assets/image 18.jpg';
+import image19 from '../assets/image 19.jpg';
+import image20 from '../assets/image 20.jpg';
 
 // Use one of the imported images as the hero icon, or keep the unsplash one
-const icon =  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
 
-// Updated gallery items using imported images
+// Updated gallery items using ALL imported images
 const galleryItems = [
-    { id: 1, imgSrc: image1, title: "Tea Moment 1" },
-    { id: 2, imgSrc: image2, title: "Tea Moment 2" },
-    { id: 3, imgSrc: image3, title: "Tea Moment 3" },
-    { id: 4, imgSrc: image4, title: "Tea Moment 4" },
-    { id: 5, imgSrc: image5, title: "Tea Moment 5" },
-    // { id: 6, imgSrc: image11, title: "Cafe Interior 1" },
-    // { id: 7, imgSrc: image12, title: "Cafe Interior 2" },
-    // { id: 8, imgSrc: image13, title: "Cafe Interior 3" },
-    // { id: 9, imgSrc: image14, title: "Cafe Interior 4" },
-    // { id: 10, imgSrc: image15, title: "Cafe Interior 5" },
-    // { id: 11, imgSrc: image16, title: "Kitchen View 1" },
-    // { id: 12, imgSrc: image17, title: "Kitchen View 2" },
-    // { id: 13, imgSrc: image18, title: "Kitchen View 3" },
-    // { id: 14, imgSrc: image19, title: "Kitchen View 4" },
-    // { id: 15, imgSrc: image20, title: "Kitchen View 5" },
+    // Tea Moments (1-5)
+    { id: 1, imgSrc: image1, title: "Tea Moment 1", category: "tea" },
+    { id: 2, imgSrc: image2, title: "Tea Moment 2", category: "tea" },
+    { id: 3, imgSrc: image3, title: "Tea Moment 3", category: "tea" },
+    { id: 4, imgSrc: image4, title: "Tea Moment 4", category: "tea" },
+    { id: 5, imgSrc: image5, title: "Tea Moment 5", category: "tea" },
+    
+    // Cafe Interior (6-10)
+    { id: 6, imgSrc: image6, title: "Cafe Interior 1", category: "cafe" },
+    { id: 7, imgSrc: image7, title: "Cafe Interior 2", category: "cafe" },
+    { id: 8, imgSrc: image8, title: "Cafe Interior 3", category: "cafe" },
+    { id: 9, imgSrc: image9, title: "Cafe Interior 4", category: "cafe" },
+    { id: 10, imgSrc: image10, title: "Cafe Interior 5", category: "cafe" },
+    
+    // Kitchen Views (11-15)
+    { id: 11, imgSrc: image11, title: "Kitchen View 1", category: "kitchen" },
+    { id: 12, imgSrc: image12, title: "Kitchen View 2", category: "kitchen" },
+    { id: 13, imgSrc: image13, title: "Kitchen View 3", category: "kitchen" },
+    { id: 14, imgSrc: image14, title: "Kitchen View 4", category: "kitchen" },
+    { id: 15, imgSrc: image15, title: "Kitchen View 5", category: "kitchen" },
+    
+    // Events/Special (16-20)
+    { id: 16, imgSrc: image16, title: "Special Moment 1", category: "events" },
+    { id: 17, imgSrc: image17, title: "Special Moment 2", category: "events" },
+    { id: 18, imgSrc: image18, title: "Special Moment 3", category: "events" },
+    { id: 19, imgSrc: image19, title: "Special Moment 4", category: "events" },
+    { id: 20, imgSrc: image20, title: "Special Moment 5", category: "events" },
 ];
 
 const FadeInWhenVisible = ({ children, delay = 0 }) => {
@@ -69,23 +86,25 @@ const Gallery = () => {
     const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
     const heroY = useTransform(scrollY, [0, 300], [0, -50]);
 
-    // Categories for filtering
+    // Categories for filtering - Updated with Events category
     const categories = [
         { id: 'all', label: 'All Photos' },
         { id: 'tea', label: 'Tea Moments' },
         { id: 'cafe', label: 'Cafe Interior' },
         { id: 'kitchen', label: 'Kitchen Views' },
+        { id: 'events', label: 'Special Moments' },
     ];
 
-    // Filter gallery items based on category
+    // Filter gallery items based on category - Updated filtering logic
     const filteredItems = activeCategory === 'all' 
         ? galleryItems 
-        : galleryItems.filter(item => {
-            if (activeCategory === 'tea') return item.id >= 1 && item.id <= 5;
-            if (activeCategory === 'cafe') return item.id >= 6 && item.id <= 10;
-            if (activeCategory === 'kitchen') return item.id >= 11 && item.id <= 15;
-            return true;
-        });
+        : galleryItems.filter(item => item.category === activeCategory);
+
+    // Get count for each category
+    const getCategoryCount = (categoryId) => {
+        if (categoryId === 'all') return galleryItems.length;
+        return galleryItems.filter(item => item.category === categoryId).length;
+    };
 
     const openLightbox = (index) => {
         setCurrentIndex(index);
@@ -229,15 +248,7 @@ const Gallery = () => {
                                 >
                                     {category.label}
                                     <span className="ml-2 text-xs opacity-70">
-                                        ({category.id === 'all' 
-                                            ? galleryItems.length 
-                                            : galleryItems.filter(item => {
-                                                if (category.id === 'tea') return item.id >= 1 && item.id <= 5;
-                                                if (category.id === 'cafe') return item.id >= 6 && item.id <= 10;
-                                                if (category.id === 'kitchen') return item.id >= 11 && item.id <= 15;
-                                                return false;
-                                            }).length
-                                        })
+                                        ({getCategoryCount(category.id)})
                                     </span>
                                 </motion.button>
                             ))}
@@ -293,6 +304,11 @@ const Gallery = () => {
                                     {/* Corner Badge */}
                                     <div className="absolute top-4 right-4 bg-[#8dcb3f] text-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         {index + 1}/{filteredItems.length}
+                                    </div>
+
+                                    {/* Category Badge */}
+                                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full capitalize">
+                                        {item.category}
                                     </div>
                                 </motion.div>
                             ))}
@@ -406,6 +422,9 @@ const Gallery = () => {
                                 <h3 className="text-white text-xl font-semibold mb-2">
                                     {selectedImage.title || `Image ${selectedImage.id}`}
                                 </h3>
+                                <span className="text-gray-400 text-sm capitalize mb-2 block">
+                                    {selectedImage.category}
+                                </span>
                                 <div className="flex items-center justify-center gap-4">
                                     <span className="text-[#8dcb3f] text-sm font-medium">
                                         {currentIndex + 1} of {filteredItems.length}

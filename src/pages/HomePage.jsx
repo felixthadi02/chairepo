@@ -1410,6 +1410,8 @@ const HomePage = () => {
     }
   `}</style>
       </section>
+
+
       <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
         <video
           className="w-full h-full object-cover cursor-pointer"
@@ -1515,14 +1517,7 @@ const HomePage = () => {
                 <div className="flex-1 text-left uppercase tracking-wider">
                   espresso
                 </div>
-                <div className="flex-1 text-center uppercase tracking-wider">
-                  Medium
-                  <span className="block text-xs text-gray-400">16 oz</span>
-                </div>
-                <div className="flex-1 text-right uppercase tracking-wider">
-                  Large
-                  <span className="block text-xs text-gray-400">20 oz</span>
-                </div>
+                
               </div>
 
               {/* Menu items */}
@@ -1588,12 +1583,7 @@ const HomePage = () => {
                         {item.description}
                       </span>
                     </div>
-                    <div className="flex-1 text-[#8dcb3f] font-medium text-center">
-                      ${item.medium}
-                    </div>
-                    <div className="flex-1 text-[#8dcb3f] font-medium text-right">
-                      ${item.large}
-                    </div>
+                   
                   </motion.div>
                 ))}
               </div>
@@ -1676,7 +1666,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-center lg:justify-end">
             <motion.div
-              className="w-full max-w-2xl"
+              className="w-full max-w-xl"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -1705,9 +1695,7 @@ const HomePage = () => {
                   <div className="flex-1 text-left uppercase tracking-wider">
                     Electronics & Equipment
                   </div>
-                  <div className="w-24 sm:w-32 text-right uppercase tracking-wider">
-                    Qty
-                  </div>
+                 
                 </div>
 
                 {[
@@ -1718,7 +1706,6 @@ const HomePage = () => {
                   { name: "Sandwich Griller", description: "For quick snacks", qty: "1" },
                   { name: "Deep Fryer", description: "Commercial quality", qty: "1" },
                   { name: "LED TV 32 inch", description: "For customer entertainment", qty: "1" },
-                  { name: "Washing Machine", description: "For maintaining hygiene", qty: "1" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -1748,9 +1735,7 @@ const HomePage = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="w-24 sm:w-32 text-[#8dcb3f] font-medium text-right">
-                      {item.qty} Unit
-                    </div>
+                   
                   </motion.div>
                 ))}
               </motion.div>
@@ -1767,9 +1752,7 @@ const HomePage = () => {
                   <div className="flex-1 text-left uppercase tracking-wider">
                     Kitchen Essentials
                   </div>
-                  <div className="w-24 sm:w-32 text-right uppercase tracking-wider">
-                    Qty
-                  </div>
+                 
                 </div>
 
                 {[
@@ -1810,9 +1793,7 @@ const HomePage = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="w-24 sm:w-32 text-[#8dcb3f] font-medium text-right">
-                      {item.qty}
-                    </div>
+                    
                   </motion.div>
                 ))}
               </motion.div>
@@ -1829,9 +1810,7 @@ const HomePage = () => {
                   <div className="flex-1 text-left uppercase tracking-wider">
                     Raw Materials & Inventory
                   </div>
-                  <div className="w-24 sm:w-32 text-right uppercase tracking-wider">
-                    Package
-                  </div>
+                  
                 </div>
 
                 {[
@@ -1872,9 +1851,7 @@ const HomePage = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="w-24 sm:w-32 text-[#8dcb3f] font-medium text-right">
-                      {item.qty}
-                    </div>
+                   
                   </motion.div>
                 ))}
 
