@@ -1679,276 +1679,381 @@ const HomePage = () => {
       </section>
 
       {/* Foods Menu Section */}
-      <section
-        className="py-16 sm:py-20 md:py-28 bg-cover bg-fixed bg-center relative"
-        style={{
-          backgroundImage:
-            "url('https://i.pinimg.com/1200x/20/6c/16/206c16f3c0026aa8ddd68e980ab6401e.jpg')",
-        }}
+<section
+  className="py-16 sm:py-20 md:py-28 bg-cover bg-fixed bg-center relative"
+  style={{
+    backgroundImage:
+      "url('https://i.pinimg.com/1200x/20/6c/16/206c16f3c0026aa8ddd68e980ab6401e.jpg')",
+  }}
+>
+  {/* Enhanced overlay with gradient */}
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="flex justify-center lg:justify-end">
+      <motion.div
+        className="w-full max-w-xl"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Enhanced overlay with gradient */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Title visible only on mobile/tablet */}
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center lg:hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          Complete <span className="text-[#8dcb3f]">Startup</span> Package
+        </motion.h2>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex justify-center lg:justify-end">
-            <motion.div
-              className="w-full max-w-xl"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              {/* Title visible only on mobile/tablet */}
-              <motion.h2
-                className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center lg:hidden"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Startup <span className="text-[#8dcb3f]">Kit</span> Package
-              </motion.h2>
-
-              {/* Electronics Section */}
-              <motion.div
-                className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
-                  <div className="flex-1 text-left uppercase tracking-wider">
-                    Electronics & Equipment
-                  </div>
-                 
-                </div>
-
-                {[
-                  { name: "Deep Freezer", description: "320 Ltr capacity for storage", qty: "1", highlight: true },
-                  { name: "Refrigerator", description: "190 Ltr for fresh ingredients", qty: "1" },
-                  { name: "Induction Stove", description: "Energy efficient cooking", qty: "1" },
-                  { name: "Mixer Butterfly", description: "Professional grade blending", qty: "1", highlight: true },
-                  { name: "Sandwich Griller", description: "For quick snacks", qty: "1" },
-                  { name: "Deep Fryer", description: "Commercial quality", qty: "1" },
-                  { name: "LED TV 32 inch", description: "For customer entertainment", qty: "1" },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex py-4 border-b border-white/10 items-center relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: index * 0.08,
-                      duration: 0.5,
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      backgroundColor: "rgba(209, 107, 2, 0.15)",
-                      transition: { duration: 0.2 },
-                    }}
-                  >
-                    <div className="flex-1 pr-4">
-                      <div className="flex items-center">
-                        <h4 className="font-medium text-white">{item.name}</h4>
-                        {item.highlight && (
-                          <span className="ml-2 bg-[#8dcb3f] text-white text-xs px-1.5 py-0.5 rounded">
-                            Essential
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-gray-400 mt-1 line-clamp-2">
-                        {item.description}
-                      </p>
-                    </div>
-                   
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Kitchen Equipment Section */}
-              <motion.div
-                className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
-                  <div className="flex-1 text-left uppercase tracking-wider">
-                    Kitchen Essentials
-                  </div>
-                 
-                </div>
-
-                {[
-                  { name: "Gas Stove", description: "Commercial grade burner", qty: "1", highlight: true },
-                  { name: "Milton Tea Flask", description: "For hot beverages", qty: "2" },
-                  { name: "Stainless Vessels", description: "Various sizes for preparation", qty: "12" },
-                  { name: "Steel Cups", description: "Durable serving cups", qty: "50" },
-                  { name: "Glass Cups", description: "Premium serving option", qty: "50" },
-                  { name: "Tea Strainers", description: "Professional grade", qty: "6" },
-                  { name: "Cutting Board & Knives", description: "Food preparation essentials", qty: "Set" },
-                  { name: "Storage Containers", description: "Airtight storage solutions", qty: "12" },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex py-4 border-b border-white/10 items-center relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: index * 0.08,
-                      duration: 0.5,
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      backgroundColor: "rgba(209, 107, 2, 0.15)",
-                      transition: { duration: 0.2 },
-                    }}
-                  >
-                    <div className="flex-1 pr-4">
-                      <div className="flex items-center">
-                        <h4 className="font-medium text-white">{item.name}</h4>
-                        {item.highlight && (
-                          <span className="ml-2 bg-[#8dcb3f] text-white text-xs px-1.5 py-0.5 rounded">
-                            Essential
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-gray-400 mt-1 line-clamp-2">
-                        {item.description}
-                      </p>
-                    </div>
-                    
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Raw Materials Section */}
-              <motion.div
-                className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
-                  <div className="flex-1 text-left uppercase tracking-wider">
-                    Raw Materials & Inventory
-                  </div>
-                  
-                </div>
-
-                {[
-                  { name: "Premium Coffee", description: "Arabica & Robusta blends", qty: "5 Kg", highlight: true },
-                  { name: "Tea Collection", description: "Green, Black, Blue, Rose, White varieties", qty: "10 Kg" },
-                  { name: "Dairy Milk", description: "Fresh dairy products", qty: "Daily" },
-                  { name: "Bournvita & Horlicks", description: "Health drinks", qty: "2 Kg" },
-                  { name: "Syrup Collection", description: "Chocolate, Orange, Strawberry, Mango", qty: "1L Each", highlight: true },
-                  { name: "Honey & Sugar", description: "Natural sweeteners", qty: "5 Kg" },
-                  { name: "Spices & Herbs", description: "Pepper, Cardamom, Lemongrass", qty: "500g Each" },
-                  { name: "Branding Setup", description: "Main board, menu boards, photo frames", qty: "Complete", highlight: true },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex py-4 border-b border-white/10 items-center relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: index * 0.08,
-                      duration: 0.5,
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      backgroundColor: "rgba(209, 107, 2, 0.15)",
-                      transition: { duration: 0.2 },
-                    }}
-                  >
-                    <div className="flex-1 pr-4">
-                      <div className="flex items-center">
-                        <h4 className="font-medium text-white">{item.name}</h4>
-                        {item.highlight && (
-                          <span className="ml-2 bg-[#8dcb3f] text-white text-xs px-1.5 py-0.5 rounded">
-                            Premium
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-gray-400 mt-1 line-clamp-2">
-                        {item.description}
-                      </p>
-                    </div>
-                   
-                  </motion.div>
-                ))}
-
-                <motion.div
-                  className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-sm text-gray-400 text-center sm:text-left">
-                    * Complete turnkey solution for cafe startup
-                  </div>
-
-                  <motion.a
-                    href="#contact-us"
-                    className="px-6 py-3 bg-[#8dcb3f] text-white hover:bg-[#9fdb4f] transition-all duration-300 inline-flex items-center gap-2 group rounded-md font-semibold"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Get Started Today
-                    <svg
-                      className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </motion.a>
-                </motion.div>
-              </motion.div>
-
-              {/* Package Summary */}
-              <motion.div
-                className="mt-6 bg-[#8dcb3f]/20 backdrop-blur-sm p-4 rounded-lg border border-[#8dcb3f]/30"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-center text-white">
-                  <p className="text-sm mb-2">Complete Startup Package Includes:</p>
-                  <div className="flex flex-wrap justify-center gap-3 text-xs">
-                    <span className="bg-white/10 px-3 py-1 rounded">✓ All Equipment</span>
-                    <span className="bg-white/10 px-3 py-1 rounded">✓ Initial Inventory</span>
-                    <span className="bg-white/10 px-3 py-1 rounded">✓ Branding Setup</span>
-                    <span className="bg-white/10 px-3 py-1 rounded">✓ Training Support</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Decorative element */}
-              <motion.div
-                className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-8 h-8 border-t-2 border-l-2 border-[#8dcb3f] transform -rotate-45"></div>
-              </motion.div>
-            </motion.div>
+        {/* Electronics Section */}
+        <motion.div
+          className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
+            <div className="flex-1 text-left uppercase tracking-wider">
+              Electronic Equipment
+            </div>
           </div>
-        </div>
-      </section>
+
+          {[
+            { name: "Deep Freezer", description: "320 Ltr commercial capacity", qty: "1", highlight: true },
+            { name: "Refrigerator", description: "190 Ltr for daily storage", qty: "1" },
+            { name: "Induction Stove", description: "Energy efficient cooking", qty: "1" },
+            { name: "Mixi (Butterfly)", description: "Professional blending", qty: "1", highlight: true },
+            { name: "Sandwich Griller", description: "Quick snack preparation", qty: "1" },
+            { name: "Deep Fryer", description: "Commercial grade", qty: "1" },
+            { name: "LED TV 32 inch", description: "Customer entertainment", qty: "1" },
+            { name: "Milk Boiler Machine", description: "Automatic milk preparation", qty: "1", highlight: true },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex py-4 border-b border-white/10 items-center relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                backgroundColor: "rgba(141, 203, 63, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div className="flex-1 pr-4">
+                <div className="flex items-center">
+                  <h4 className="font-medium text-white">{item.name}</h4>
+                  {item.highlight && (
+                    <span className="ml-2 bg-[#8dcb3f] text-[#18191b] text-xs px-1.5 py-0.5 rounded font-semibold">
+                      Essential
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Kitchen Equipment Section */}
+        <motion.div
+          className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
+            <div className="flex-1 text-left uppercase tracking-wider">
+              Kitchen & Service Items
+            </div>
+          </div>
+
+          {[
+            { name: "Gas Stove", description: "Commercial burner", qty: "1", highlight: true },
+            { name: "Milton Tea Flask", description: "Premium insulated", qty: "1" },
+            { name: "Stainless Vessels Set", description: "Multiple sizes included", qty: "5" },
+            { name: "Measurement Mugs", description: "Precise measurements", qty: "5" },
+            { name: "Ginger Crushing Stone", description: "Traditional preparation", qty: "1" },
+            { name: "Tea Nets & Strainers", description: "Professional grade", qty: "5", highlight: true },
+            { name: "Brass & Steel Cups", description: "Mixed serving set", qty: "27" },
+            { name: "Glass Cups", description: "Premium serving", qty: "6" },
+            { name: "Chopping Board & Knives", description: "Food prep essentials", qty: "Set", highlight: true },
+            { name: "Storage Solutions", description: "Containers, shelves, holders", qty: "24" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex py-4 border-b border-white/10 items-center relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                backgroundColor: "rgba(141, 203, 63, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div className="flex-1 pr-4">
+                <div className="flex items-center">
+                  <h4 className="font-medium text-white">{item.name}</h4>
+                  {item.highlight && (
+                    <span className="ml-2 bg-[#8dcb3f] text-[#18191b] text-xs px-1.5 py-0.5 rounded font-semibold">
+                      Essential
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Tea & Coffee Materials Section */}
+        <motion.div
+          className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
+            <div className="flex-1 text-left uppercase tracking-wider">
+              Premium Tea & Coffee Collection
+            </div>
+          </div>
+
+          {[
+            { name: "Tea Powder Premium", description: "High quality blend", qty: "5 kg", highlight: true },
+            { name: "Specialty Teas", description: "Blue, Chamomile, Rose, Rooibos", qty: "500g each" },
+            { name: "Classic Teas", description: "Black, Green, White varieties", qty: "600g total", highlight: true },
+            { name: "Herbal Collection", description: "Lavender, Lemongrass, Hibiscus", qty: "1.5 kg" },
+            { name: "Coffee Powder", description: "Premium arabica blend", qty: "1 kg", highlight: true },
+            { name: "Badam Powder", description: "Almond powder mix", qty: "1 kg" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex py-4 border-b border-white/10 items-center relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                backgroundColor: "rgba(141, 203, 63, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div className="flex-1 pr-4">
+                <div className="flex items-center">
+                  <h4 className="font-medium text-white">{item.name}</h4>
+                  {item.highlight && (
+                    <span className="ml-2 bg-[#8dcb3f] text-[#18191b] text-xs px-1.5 py-0.5 rounded font-semibold">
+                      Premium
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Syrups & Flavors Section */}
+        <motion.div
+          className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
+            <div className="flex-1 text-left uppercase tracking-wider">
+              Syrups & Beverages
+            </div>
+          </div>
+
+          {[
+            { name: "Chocolate Syrup", description: "Premium double quantity", qty: "2 Ltr", highlight: true },
+            { name: "Fruit Syrups", description: "Mango, Orange, Strawberry, Pineapple", qty: "1L each" },
+            { name: "Special Flavors", description: "Blue Mint, Black Current, Green Apple", qty: "1L each", highlight: true },
+            { name: "Mix Fruit Blend", description: "Special house blend", qty: "1 Ltr" },
+            { name: "Health Drinks", description: "Boost, Horlicks included", qty: "2 units" },
+            { name: "Natural Sweeteners", description: "Honey, Jaggery powder, Sugar", qty: "3 kg total", highlight: true },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex py-4 border-b border-white/10 items-center relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                backgroundColor: "rgba(141, 203, 63, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div className="flex-1 pr-4">
+                <div className="flex items-center">
+                  <h4 className="font-medium text-white">{item.name}</h4>
+                  {item.highlight && (
+                    <span className="ml-2 bg-[#8dcb3f] text-[#18191b] text-xs px-1.5 py-0.5 rounded font-semibold">
+                      Popular
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Packaging & Branding Section */}
+        <motion.div
+          className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
+            <div className="flex-1 text-left uppercase tracking-wider">
+              Packaging & Branding Setup
+            </div>
+          </div>
+
+          {[
+            { name: "Tea Cups Package", description: "90ml disposable cups", qty: "3,000 pcs", highlight: true },
+            { name: "Glasses & Lids", description: "300ml glasses with covers", qty: "300 sets" },
+            { name: "Branding Boards", description: "Main, menu, lollipop boards", qty: "Complete", highlight: true },
+            { name: "Photo Frames", description: "Interior decoration set", qty: "19 pcs" },
+            { name: "Packaging Boxes", description: "Burger, sandwich, maggie boxes", qty: "300 total" },
+            { name: "Furniture Setup", description: "Tables, chairs, counter", qty: "Complete", highlight: true },
+            { name: "Chocolates Stock", description: "KitKat, Dairy Milk, Snickers, Oreo", qty: "100 pcs" },
+            { name: "Service Items", description: "Straws, tissues, spoons, napkins", qty: "Bulk" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex py-4 border-b border-white/10 items-center relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                backgroundColor: "rgba(141, 203, 63, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div className="flex-1 pr-4">
+                <div className="flex items-center">
+                  <h4 className="font-medium text-white">{item.name}</h4>
+                  {item.highlight && (
+                    <span className="ml-2 bg-[#8dcb3f] text-[#18191b] text-xs px-1.5 py-0.5 rounded font-semibold">
+                      Included
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+
+          <motion.div
+            className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-sm text-gray-400 text-center sm:text-left">
+              * 250+ items turnkey solution
+            </div>
+
+            <motion.a
+              href="#contact-us"
+              className="px-6 py-3 bg-[#8dcb3f] text-[#18191b] hover:bg-[#9fdb4f] transition-all duration-300 inline-flex items-center gap-2 group rounded-md font-bold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Get Complete Package
+              <svg
+                className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        {/* Package Summary */}
+        <motion.div
+          className="mt-6 bg-[#8dcb3f]/20 backdrop-blur-sm p-4 rounded-lg border border-[#8dcb3f]/30"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center text-white">
+            <p className="text-sm mb-2">Complete Franchise Package Includes:</p>
+            <div className="flex flex-wrap justify-center gap-3 text-xs">
+              <span className="bg-white/10 px-3 py-1 rounded">✓ 250+ Items</span>
+              <span className="bg-white/10 px-3 py-1 rounded">✓ Full Branding</span>
+              <span className="bg-white/10 px-3 py-1 rounded">✓ Interior Setup</span>
+              <span className="bg-white/10 px-3 py-1 rounded">✓ Training & Support</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Decorative element */}
+        <motion.div
+          className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          viewport={{ once: true }}
+        >
+          <div className="w-8 h-8 border-t-2 border-l-2 border-[#8dcb3f] transform -rotate-45"></div>
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Gallery Section */}
       <section
