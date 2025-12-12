@@ -381,13 +381,7 @@ export default function Footer() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-white/20">
                 <div className="space-y-2">
-                  <motion.div
-                    className="flex items-center gap-2 text-sm justify-center md:justify-start"
-                    whileHover={{ x: 5 }}
-                  >
-                    <MapPin className="w-4 h-4 flex-shrink-0" />
-                    <span className="text-white/90">Collins St West, Victoria 8007</span>
-                  </motion.div>
+                 
                   <motion.a
                     href="tel:+918466066425"
                     className="flex items-center gap-2 text-sm justify-center md:justify-start hover:text-yellow-300 transition-colors"

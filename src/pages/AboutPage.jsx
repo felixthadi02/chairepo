@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+
 const FadeInWhenVisible = ({ children, delay = 0 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -41,22 +42,26 @@ export default function AboutPage() {
 
   const teamMembers = [
     {
-      name: "Fynley Wilkinson",
+      name: "Prakash Martin Rayudu",
+      role: "Co-Founder & CEO",
       image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, discord: true }
     },
     {
-      name: "Myra Welsh",
+      name: "Vimala Martin Rayudu",
+      role: "CTO",
       image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     },
     {
-      name: "Aysha Shepard",
+      name: "Daniel John Komanpalli",
+      role: "Co-Founder & COO",
       image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     },
     {
-      name: "Robyn Peel",
+      name: "Harsha Kakarla",
+      role: "CFO",
       image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     }
@@ -64,17 +69,17 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[#18191b] text-white">
-<Helmet>
+      <Helmet>
         <title>Premium Tea Brand and Franchise Success | Tea 5 cafe</title>
         <meta 
           name="description" 
-          content="Discover how a simple idea grew into one of India’s most trusted tea franchise brands built on quality, trust, and growth with Tea 5 cafe."
+          content="Discover how a simple idea grew into one of India's most trusted tea franchise brands built on quality, trust, and growth with Tea 5 cafe."
         />
         <meta 
           name="keywords" 
           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
         />
-    <link rel="canonical" href="https://www.tea5cafe.com/about" />
+        <link rel="canonical" href="https://www.tea5cafe.com/about" />
       </Helmet>
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
@@ -91,7 +96,7 @@ export default function AboutPage() {
             "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1600&h=600&fit=crop')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',  // <--- here it is
+          backgroundAttachment: 'fixed',
           padding: '170px 0 80px 0'
         }}
       >
@@ -99,7 +104,6 @@ export default function AboutPage() {
           <FadeInWhenVisible>
             <h2
               className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento"
-
             >
               Discover
             </h2>
@@ -138,7 +142,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-
       {/* Story Section */}
       <section
         className="py-20"
@@ -157,26 +160,30 @@ export default function AboutPage() {
 
               <FadeInWhenVisible delay={0.1}>
                 <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-At Tea 5 cafe, we believe great tea has the power to bring people together. Our journey began with a simple idea to serve authentic tea made with love and create a space where everyone feels welcome. From the first pour to the last sip, we focus on quality, comfort, and connection.                </p>
+                  At Tea 5 cafe, we believe great tea has the power to bring people together. Our journey began with a simple idea to serve authentic tea made with love and create a space where everyone feels welcome. From the first pour to the last sip, we focus on quality, comfort, and connection.
+                </p>
               </FadeInWhenVisible>
 
               <FadeInWhenVisible delay={0.2}>
                 <p className="text-gray-400 mb-4 leading-relaxed">
-Started in Hyderabad, Tea 5 cafe soon became a favorite spot for families, friends, and entrepreneurs to relax and share good moments. Every cup is made from premium tea leaves that are carefully selected for freshness and taste.                </p>
+                  Started in Hyderabad, Tea 5 cafe soon became a favorite spot for families, friends, and entrepreneurs to relax and share good moments. Every cup is made from premium tea leaves that are carefully selected for freshness and taste.
+                </p>
               </FadeInWhenVisible>
 
               <FadeInWhenVisible delay={0.3}>
                 <p className="text-gray-400 leading-relaxed mb-4">
-Tea 5 cafe is more than a tea shop. It is a growing business that connects India’s tea tradition with a modern franchise model. Through our tea cafe franchise in Hyderabad and across India, we help individuals start a low investment tea franchise and build a successful future.                </p>
+                  Tea 5 cafe is more than a tea shop. It is a growing business that connects India's tea tradition with a modern franchise model. Through our tea cafe franchise in Hyderabad and across India, we help individuals start a low investment tea franchise and build a successful future.
+                </p>
               </FadeInWhenVisible>
               <FadeInWhenVisible delay={0.3}>
                 <p className="text-gray-400 leading-relaxed mb-4">
-Our goal is not only to serve tea but also to create opportunities. We believe in community growth, sustainability, and supporting every franchise partner to achieve lasting success. </p>
+                  Our goal is not only to serve tea but also to create opportunities. We believe in community growth, sustainability, and supporting every franchise partner to achieve lasting success.
+                </p>
               </FadeInWhenVisible>
               <FadeInWhenVisible delay={0.3}>
                 <p className="text-gray-400 leading-relaxed mb-4">
-At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
-</p>
+                  At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
+                </p>
               </FadeInWhenVisible>
             </div>
 
@@ -196,7 +203,7 @@ At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
                   <motion.div
                     whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
                     transition={{ duration: 0.3 }}
-                    className="bg-[#8dcb3f] rounded-3xl p-6 text-center cursor-pointer  hover:shadow-[0_20px_40px_rgba(0,0,3,0.3)"
+                    className="bg-[#8dcb3f] rounded-3xl p-6 text-center cursor-pointer hover:shadow-[0_20px_40px_rgba(0,0,3,0.3)]"
                   >
                     <motion.h3
                       initial={{ scale: 1 }}
@@ -247,7 +254,7 @@ At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
         </div>
       </section>
 
-      {/* Meet Our Chefs Section */}
+      {/* Meet Our Team Section */}
       <section
         className="relative bg-cover bg-center py-20"
         style={{
@@ -285,12 +292,11 @@ At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
                 color: '#fff'
               }}
             >
-              Chefs
+              Leadership
             </h2>
           </FadeInWhenVisible>
         </div>
       </section>
-
 
       {/* Team Grid */}
       <section
@@ -326,11 +332,10 @@ At Tea 5 cafe, every cup tells a story of trust, ambition, and togetherness.
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
-                  // className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-3/4 bg-amber-600 rounded-3xl"
                   />
                 </div>
                 <h4 className="text-xl font-bold mb-1">{member.name}</h4>
-                <div className="text-gray-400 mb-3">Chef</div>
+                <div className="text-[#8dcb3f] font-semibold mb-3">{member.role}</div>
                 <div className="flex justify-center gap-3">
                   {member.socials.facebook && (
                     <motion.a

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Mail, Phone, Send } from 'lucide-react';
 
 const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600";
 
@@ -32,7 +33,6 @@ export default function ContactSection() {
     const [showError, setShowError] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Scroll-based fade effect
     const { scrollY } = useScroll();
     const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
     const heroY = useTransform(scrollY, [0, 300], [0, -50]);
@@ -48,8 +48,6 @@ export default function ContactSection() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Replace this URL with your Google Apps Script Web App URL
-        // const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwKyMxh0zMLet6Q7c0ZSLphxaxfsUnCN4HqqfLH7Hg0Z_iyCtg3KNy4B8QLNrCX9VU0/exec';
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5M5VasnE2lkdVvkrkNFFDgKMpkVtbIyBIux666sUNsI3WFecQ3OHP2-LUw8iNmcpFNg/exec';
 
         try {
@@ -68,11 +66,9 @@ export default function ContactSection() {
                 })
             });
 
-            // With no-cors, we can't read the response, so we assume success
             setShowSuccess(true);
             setShowError(false);
 
-            // Reset form
             setFormData({
                 name: '',
                 email: '',
@@ -111,7 +107,7 @@ export default function ContactSection() {
                     <title>Contact Us for Franchise and Support | Tea 5 cafe</title>
                     <meta
                         name="description"
-                        content="Have a question or want to start your own franchise? Contact Tea 5 cafe for details, support, and guidance. Let’s brew success together."
+                        content="Have a question or want to start your own franchise? Contact Tea 5 cafe for details, support, and guidance. Let's brew success together."
                     />
                     <meta
                         name="keywords"
@@ -119,6 +115,7 @@ export default function ContactSection() {
                     />
                     <link rel="canonical" href="https://www.tea5cafe.com/contact-us" />
                 </Helmet>
+
                 {/* Hero Section */}
                 <section
                     className="relative text-white overflow-hidden min-h-[500px] flex items-center"
@@ -176,93 +173,125 @@ export default function ContactSection() {
                     </div>
                 </section>
 
-                {/* Contact Form - Full Width */}
+                {/* Contact Form Section */}
                 <section
                     style={{
                         background: '#18191b',
-                        backgroundSize: 'cover',
                         padding: '90px 0'
                     }}
                 >
-                    <div className="w-full px-4 md:px-8 lg:px-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                            {/* Location - Left Side */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="lg:col-span-4 text-white text-center lg:text-left"
-                            >
-                                <h3 className="text-2xl font-semibold mb-4">Our Location</h3>
-                                <p className="leading-relaxed text-gray-300">
-                                    Collins Street West, Victoria 8007 Australia<br />
-                                    T. (208) 333 9296<br />
-                                    E. contact-us@baresto.com
+                    <div className="container mx-auto px-4">
+                        {/* Section Header */}
+                        <div className="text-center mb-12">
+                            <FadeInWhenVisible>
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                                    Send Us a <span className="text-[#8dcb3f]">Message</span>
+                                </h2>
+                            </FadeInWhenVisible>
+                            <FadeInWhenVisible delay={0.2}>
+                                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                                    Have questions about our franchise opportunities or want to learn more? 
+                                    We'd love to hear from you. Fill out the form below and we'll get back to you soon.
                                 </p>
-                            </motion.div>
+                            </FadeInWhenVisible>
+                        </div>
 
-                            {/* Form - Right Side */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="lg:col-span-8"
-                            >
+                        {/* Form Container */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="max-w-3xl mx-auto"
+                        >
+                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
                                 <form onSubmit={handleSubmit} className="relative z-10">
-                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                        {/* Left Column */}
-                                        <div className="space-y-4">
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    value={formData.name}
-                                                    onChange={handleChange}
-                                                    required
-                                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#8dcb3f] transition-colors"
-                                                    placeholder="Your Name *"
-                                                />
-                                            </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {/* Name Field */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: 0.1 }}
+                                        >
+                                            <label className="block text-white text-sm font-medium mb-2">
+                                                Your Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#8dcb3f] focus:ring-1 focus:ring-[#8dcb3f] transition-all"
+                                                placeholder="John Doe"
+                                            />
+                                        </motion.div>
 
-                                            <div>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    required
-                                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#8dcb3f] transition-colors"
-                                                    placeholder="Your Email *"
-                                                />
-                                            </div>
+                                        {/* Email Field */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: 20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: 0.2 }}
+                                        >
+                                            <label className="block text-white text-sm font-medium mb-2">
+                                                Your Email
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#8dcb3f] focus:ring-1 focus:ring-[#8dcb3f] transition-all"
+                                                placeholder="john@example.com"
+                                            />
+                                        </motion.div>
 
-                                            <div>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    value={formData.phone}
-                                                    onChange={handleChange}
-                                                    required
-                                                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#8dcb3f] transition-colors"
-                                                    placeholder="Your Phone *"
-                                                />
-                                            </div>
-                                        </div>
+                                        {/* Phone Field - Full Width */}
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: 0.3 }}
+                                            className="md:col-span-2"
+                                        >
+                                            <label className="block text-white text-sm font-medium mb-2">
+                                                Phone Number
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#8dcb3f] focus:ring-1 focus:ring-[#8dcb3f] transition-all"
+                                                placeholder="+91 98765 43210"
+                                            />
+                                        </motion.div>
 
-                                        {/* Right Column */}
-                                        <div>
+                                        {/* Message Field - Full Width */}
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: 0.4 }}
+                                            className="md:col-span-2"
+                                        >
+                                            <label className="block text-white text-sm font-medium mb-2">
+                                                Your Message
+                                            </label>
                                             <textarea
                                                 name="message"
                                                 value={formData.message}
                                                 onChange={handleChange}
                                                 required
-                                                rows={7}
-                                                className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#8dcb3f] transition-colors resize-none"
-                                                placeholder="Your Message *"
+                                                rows={5}
+                                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#8dcb3f] focus:ring-1 focus:ring-[#8dcb3f] transition-all resize-none"
+                                                placeholder="Tell us about your inquiry..."
                                             ></textarea>
-                                        </div>
+                                        </motion.div>
                                     </div>
 
                                     {/* Submit Button */}
@@ -270,34 +299,30 @@ export default function ContactSection() {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: 0.3 }}
-                                        className="mt-6"
+                                        transition={{ duration: 0.5, delay: 0.5 }}
+                                        className="mt-8"
                                     >
                                         <motion.button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                                            whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-                                            className="px-8 py-3 text-white font-semibold transition-all duration-300 rounded shadow-[0_20px_40px_rgba(141,203,63,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
-                                            style={{
-                                                background: isSubmitting ? '#666' : '#8dcb3f',
-                                                border: 'none',
-                                                cursor: isSubmitting ? 'not-allowed' : 'pointer'
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                if (!isSubmitting) {
-                                                    e.currentTarget.style.background = '#ffffff';
-                                                    e.currentTarget.style.color = '#000';
-                                                }
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                if (!isSubmitting) {
-                                                    e.currentTarget.style.background = '#8dcb3f';
-                                                    e.currentTarget.style.color = '#fff';
-                                                }
-                                            }}
+                                            whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                                            whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                                            className="w-full md:w-auto px-10 py-4 bg-[#8dcb3f] text-white font-semibold rounded-lg transition-all duration-300 shadow-[0_10px_30px_rgba(141,203,63,0.3)] hover:bg-white hover:text-black disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mx-auto"
                                         >
-                                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                                            {isSubmitting ? (
+                                                <>
+                                                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                    </svg>
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send size={20} />
+                                                    Send Message
+                                                </>
+                                            )}
                                         </motion.button>
                                     </motion.div>
 
@@ -307,9 +332,9 @@ export default function ContactSection() {
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0 }}
-                                            className="mt-6 p-4 bg-green-600/20 border border-green-600 text-green-300 rounded"
+                                            className="mt-6 p-4 bg-green-600/20 border border-green-600 text-green-300 rounded-lg text-center"
                                         >
-                                            ✓ Your message has been sent successfully!
+                                            ✓ Your message has been sent successfully! We'll get back to you soon.
                                         </motion.div>
                                     )}
 
@@ -319,13 +344,53 @@ export default function ContactSection() {
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0 }}
-                                            className="mt-6 p-4 bg-red-600/20 border border-red-600 text-red-300 rounded"
+                                            className="mt-6 p-4 bg-red-600/20 border border-red-600 text-red-300 rounded-lg text-center"
                                         >
                                             ✗ Sorry, there was an error sending your message. Please try again.
                                         </motion.div>
                                     )}
                                 </form>
-                            </motion.div>
+                            </div>
+                        </motion.div>
+
+                        {/* Contact Info Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-12">
+                            <motion.a
+                                href="mailto:contact@tea5cafe.com"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                whileHover={{ scale: 1.05, backgroundColor: "#8dcb3f" }}
+                                className="flex items-center gap-4 p-6 bg-white/5 border border-white/10 rounded-xl transition-all cursor-pointer group"
+                            >
+                                <div className="w-12 h-12 bg-[#8dcb3f] rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+                                    <Mail className="text-white group-hover:text-[#8dcb3f]" size={24} />
+                                </div>
+                                <div>
+                                    <p className="text-gray-400 text-sm">Email Us</p>
+                                    <p className="text-white font-medium">tea5franchise04@gmail.com</p>
+                                </div>
+                            </motion.a>
+
+                            <motion.a
+                                href="tel:+919876543210"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                whileHover={{ scale: 1.05, backgroundColor: "#8dcb3f" }}
+                                className="flex items-center gap-4 p-6 bg-white/5 border border-white/10 rounded-xl transition-all cursor-pointer group"
+                            >
+                                <div className="w-12 h-12 bg-[#8dcb3f] rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+                                    <Phone className="text-white group-hover:text-[#8dcb3f]" size={24} />
+                                </div>
+                                <div>
+                                    <p className="text-gray-400 text-sm">Call Us</p>
+                                    <p className="text-white font-medium">+91 8466066425</p>
+                                    <p className="text-white font-medium">+91 9381142553</p>
+                                </div>
+                            </motion.a>
                         </div>
                     </div>
                 </section>

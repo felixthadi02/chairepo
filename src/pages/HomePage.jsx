@@ -19,6 +19,9 @@ import image1 from '../assets/1.jpg'
 import image2 from '../assets/2.jpg'
 import image3 from '../assets/3.jpg'
 import image4 from '../assets/4.jpg'
+import image5 from '../assets/11.png';
+import image6 from '../assets/12.png';
+import image7 from '../assets/13.png';
 import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -247,6 +250,30 @@ const HomePage = () => {
         },
         {
           image: image4,
+          line1: "Sip & Thrive",
+          line2: "Passion",
+          buttonText: "Become A Partner",
+          description:
+            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
+        },
+        {
+          image: image5,
+          line1: "Sip & Thrive",
+          line2: "Passion",
+          buttonText: "Become A Partner",
+          description:
+            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
+        },
+        {
+          image: image6,
+          line1: "Sip & Thrive",
+          line2: "Passion",
+          buttonText: "Become A Partner",
+          description:
+            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
+        },
+        {
+          image: image7,
           line1: "Sip & Thrive",
           line2: "Passion",
           buttonText: "Become A Partner",
