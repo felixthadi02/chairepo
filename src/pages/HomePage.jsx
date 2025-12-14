@@ -15,6 +15,10 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
 import video from "../assets/video1.mp4"
+import image21 from '../assets/1.png';
+import image22 from '../assets/2.png';
+import image23 from '../assets/3.png';
+import image24 from '../assets/4.png';
 import image1 from '../assets/1.jpg'
 import image2 from '../assets/2.jpg'
 import image3 from '../assets/3.jpg'
@@ -22,6 +26,7 @@ import image4 from '../assets/4.jpg'
 import image5 from '../assets/11.png';
 import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
+import ph2 from '../assets/ph2.png';
 import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -123,6 +128,48 @@ const HomePage = () => {
     once: false,
     threshold: 0.2,
   });
+   const teas = [
+    {
+      id: 1,
+      name: 'Rooibos Tea',
+      title: 'Pure Wellness, Naturally',
+      description: 'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
+      image: image21,
+      color: 'from-red-400 to-orange-400'
+    },
+    {
+      id: 2,
+      name: 'Chamomile Tea',
+      title: 'Relax. Restore. Rebalance.',
+      description: 'Chamomile Tea is well known for its calming properties and is ideal for relaxation and stress relief. It helps improve sleep quality, supports blood sugar balance, and eases menstrual discomfort naturally.',
+      image: image22,
+      color: 'from-yellow-300 to-amber-400'
+    },
+    {
+      id: 3,
+      name: 'Hibiscus Tea',
+      title: 'Bold Flavor, Powerful Benefits',
+      description: 'Hibiscus Tea is rich in antioxidants, vitamin C, and natural compounds that support liver health and metabolism. Its refreshing taste helps fight bacteria while offering a naturally energizing and healthy beverage.',
+      image: image23,
+      color: 'from-pink-400 to-rose-500'
+    },
+    {
+      id: 4,
+      name: 'Blue Tea',
+      title: 'Calm in Every Sip',
+      description: 'Blue Tea is naturally rich in antioxidants and is known for supporting healthy skin, improving eyesight, and promoting hair growth. Being caffeine-free, it offers a calming experience while helping the body stay refreshed and balanced.',
+      image: image24,
+      color: 'from-blue-400 to-indigo-500'
+    },
+    {
+      id: 5,
+      name: 'Lavender Tea',
+      title: 'Sip into Serenity',
+      description: 'Lavender Tea is brewed from aromatic purple buds and is loved for its soothing effect on the mind and body. It helps reduce stress, improve sleep quality, enhance mood, and support healthy skin.',
+      image: image21, // Reusing image or add image25
+      color: 'from-purple-400 to-violet-500'
+    }
+  ];
   const coffeeInView = useInView(coffeeRef, { once: false, threshold: 0.2 });
   const foodInView = useInView(foodRef, { once: false, threshold: 0.2 });
   const galleryInView = useInView(galleryRef, { once: false, threshold: 0.2 });
@@ -578,7 +625,7 @@ const HomePage = () => {
                       <motion.div className="aspect-[4/5] w-full overflow-hidden relative">
                         {/* Image */}
                         <motion.img
-                          src={bg1}
+                          src={ph2}
                           alt="Our coffee journey"
                           className="w-full h-full object-cover"
                           initial={{
@@ -866,577 +913,150 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features-section py-10 sm:py-16 lg:py-20 text-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden opacity-10">
-          <div className="floating-dots"></div>
+
+<section className="py-16 bg-[#faf3ec] text-white">
+  <div className="max-w-screen-2xl mx-auto px-4">
+    {/* Section Header */}
+    <div className="mb-20 flex flex-col md:flex-row justify-between items-end">
+      <div>
+        <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none mb-2 text-[#8dcb3f]">
+          RARE<br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 font-normal">BLENDS</span>
+        </h2>
+      </div>
+      <div className="max-w-md">
+        <p className="text-gray-900 text-lg leading-relaxed">
+          Hand-selected from the world's most exclusive tea gardens. Each blend tells a story of terroir and tradition.
+        </p>
+      </div>
+    </div>
+
+    {/* Asymmetric Grid */}
+    <div className="space-y-32">
+      
+      {/* Row 1 - Rooibos Feature */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="lg:col-span-7 relative group">
+          <div className="relative overflow-hidden rounded-xl">
+            <img
+              src={teas[0].image}
+              alt={teas[0].name}
+              className="w-full h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
+          </div>
+          <div className="absolute top-8 left-8">
+            <span className="text-9xl font-thin text-white">01</span>
+          </div>
         </div>
+        <div className="lg:col-span-5 space-y-6 lg:pl-12">
+          <span className="inline-block px-4 py-1 border border-amber-500 text-amber-500 text-xs tracking-widest text-[#8dcb3f]">
+            SOUTH AFRICAN ORIGIN
+          </span>
+          <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
+          <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
+          <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
+          <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
+            <span className="text-sm tracking-widest">EXPLORE</span>
+            <div className="w-12 h-[1px] bg-white group-hover:bg-amber-400 group-hover:w-20 transition-all"></div>
+          </button>
+        </div>
+      </div>
 
-        <div className="absolute -top-40 -right-40 w-60 sm:w-80 h-60 sm:h-80 bg-[#8dcb3f] opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-60 sm:w-80 h-60 sm:h-80 bg-[#8dcb3f] opacity-5 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-10 sm:mb-12 lg:mb-16 max-w-3xl mx-auto animate-fade-in">
-            <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-4 sm:mb-6">
-              <span className="h-[1px] w-6 sm:w-10 bg-[#8dcb3f]"></span>
-              <h2 className="text-[#8dcb3f] uppercase tracking-widest text-xs sm:text-sm font-bold text-center">
-                Exceptional Experience
-              </h2>
-              <span className="h-[1px] w-6 sm:w-10 bg-[#8dcb3f]"></span>
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight px-4 sm:px-0">
-              Why our customers{" "}
-              <span className="text-[#8dcb3f] relative inline-block">
-                keep coming back
-                <span className="absolute bottom-0 sm:bottom-1 left-0 w-full h-0.5 sm:h-1 bg-[#8dcb3f] opacity-20"></span>
-              </span>
-            </h3>
-          </div>
-
-          <div className="features-grid animate-fade-in-up">
-            {/* Mobile Carousel / Desktop Grid */}
-            <div className="block lg:hidden">
-              {/* Mobile horizontal scroll */}
-              <div className="overflow-x-auto pb-6 -mx-4 px-4">
-                <div className="flex space-x-4" style={{ width: 'max-content' }}>
-                  {/* Main Feature Card */}
-                  <div className="feature-card group w-72 sm:w-80 ">
-                    <div className="relative h-96 sm:h-[450px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(209,107,2,0.15)]">
-                      <img
-                        src="https://i.pinimg.com/736x/9e/a7/ee/9ea7eee807b77d4d062ec54be39c6a92.jpg"
-                        alt="Premium Coffee Experience"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-80"></div>
-
-                      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-                        <span className="inline-block bg-[#8dcb3f] text-white px-3 sm:px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 shadow-lg">
-                          Signature
-                        </span>
-                        <h4 className="text-2xl sm:text-3xl font-bold mt-3 sm:mt-4 mb-2 text-white">
-                          Craft Coffee Experience
-                        </h4>
-                        <p className="text-neutral-200 text-sm sm:text-base mb-4 sm:mb-6 line-clamp-3">
-                          Single-origin beans roasted in-house daily, prepared by
-                          our award-winning baristas using precision techniques
-                          that bring out unique flavor profiles.
-                        </p>
-
-                        <div className="flex space-x-4 mt-3 sm:mt-4">
-                          <button className="btn-explore text-sm sm:text-base">
-                            <span>Explore Menu</span>
-                            <svg
-                              className="w-4 sm:w-5 h-4 sm:h-5 ml-2"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                              ></path>
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Small Feature Cards for Mobile */}
-                  {[
-                    {
-                      icon: "🍽️",
-                      title: "Chef-Crafted Cuisine",
-                      description:
-                        "Seasonal ingredients transformed into memorable dishes that perfectly complement our beverages.",
-                      image:
-                        "https://i.pinimg.com/736x/f0/31/1a/f0311a54b9e319e0bf18bdbedb57a0bb.jpg",
-                    },
-                    {
-                      icon: "🎉",
-                      title: "Unforgettable Events",
-                      description:
-                        "Customize our space for celebrations, meetings, or private gatherings with our expert planning team.",
-                      image:
-                        "https://i.pinimg.com/736x/4b/62/29/4b6229e49cba45cbbfc09be7f0159b91.jpg",
-                    },
-                    {
-                      icon: "🌿",
-                      title: "Sustainable Practices",
-                      description:
-                        "Eco-conscious operations from bean sourcing to compostable packaging and energy-efficient facilities.",
-                      image:
-                        "https://i.pinimg.com/736x/9d/f4/a5/9df4a5d5c3c4d7c16afaff80cfe4af6e.jpg",
-                    },
-                    {
-                      icon: "💫",
-                      title: "Digital Loyalty Program",
-                      description:
-                        "Earn rewards with every visit through our app, with exclusive tastings and early access to seasonal offerings.",
-                      image:
-                        "https://i.pinimg.com/736x/51/3b/3a/513b3a2cb93a0e1d4273a57b1a39fc32.jpg",
-                    },
-                  ].map((feature, index) => (
-                    <div
-                      key={index}
-                      className="feature-small group w-72 sm:w-80 flex-shrink-0"
-                    >
-                      <div className="relative h-96 sm:h-[450px] rounded-xl overflow-hidden bg-white hover:bg-gradient-to-br from-white to-[#FDF8F3] shadow-md hover:shadow-[0_15px_35px_rgba(209,107,2,0.15)] transition-all duration-300 border border-transparent hover:border-[#8dcb3f]/10">
-                        <div className="absolute top-0 right-0 p-4 z-10">
-                          <div className="w-10 h-10 rounded-full bg-[#FDF8F3] flex items-center justify-center shadow-inner group-hover:bg-[#f8e3c8] transition-all duration-300">
-                            <span className="text-xl">{feature.icon}</span>
-                          </div>
-                        </div>
-
-                        <div className="p-6 h-full flex flex-col">
-                          <h4 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-[#8dcb3f] transition-colors duration-300 relative inline-block">
-                            {feature.title}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8dcb3f] transition-all duration-300 group-hover:w-full opacity-60"></span>
-                          </h4>
-                          <p className="text-gray-600 text-sm mb-4">
-                            {feature.description}
-                          </p>
-                          <div className="mt-auto">
-                            <button className="text-[#8dcb3f] group-hover:text-[#b25601] text-sm font-medium inline-flex items-center">
-                              <span>Learn more</span>
-                              <svg
-                                className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                ></path>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Scroll Indicators */}
-              <div className="flex justify-center mt-4">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <button
-                    key={i}
-                    className={`w-2 h-2 rounded-full mx-1 transition-all duration-300 ${i === 0 ? "bg-[#8dcb3f] w-6" : "bg-[#8dcb3f]/30"
-                      }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  ></button>
-                ))}
-              </div>
-            </div>
-
-            {/* Desktop Grid Layout */}
-            <div className="hidden lg:grid lg:grid-cols-12 lg:gap-8">
-              {/* Large Feature Card */}
-              <div className="feature-card lg:col-span-5 xl:col-span-6 group">
-                <div className="relative h-[400px] xl:h-[500px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(209,107,2,0.15)]">
-                  <img
-                    src="https://i.pinimg.com/736x/9e/a7/ee/9ea7eee807b77d4d062ec54be39c6a92.jpg"
-                    alt="Premium Coffee Experience"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-80"></div>
-
-                  <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-                    <span className="inline-block bg-[#8dcb3f] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">
-                      Signature
-                    </span>
-                    <h4 className="text-2xl lg:text-3xl font-bold mt-4 mb-2 text-white">
-                      Craft Coffee Experience
-                    </h4>
-                    <p className="text-neutral-200 text-sm lg:text-base mb-6 line-clamp-3">
-                      Single-origin beans roasted in-house daily, prepared by
-                      our award-winning baristas using precision techniques
-                      that bring out unique flavor profiles.
-                    </p>
-
-                    <div className="flex space-x-4 mt-4">
-                      <button className="btn-explore">
-                        <span>Explore Menu</span>
-                        <svg
-                          className="w-5 h-5 ml-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Small Feature Cards Grid */}
-              <div className="lg:col-span-7 xl:col-span-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 h-full">
-                  {[
-                    {
-                      icon: "🍽️",
-                      title: "Chef-Crafted Cuisine",
-                      description:
-                        "Seasonal ingredients transformed into memorable dishes that perfectly complement our beverages.",
-                      image:
-                        "https://i.pinimg.com/736x/f0/31/1a/f0311a54b9e319e0bf18bdbedb57a0bb.jpg",
-                    },
-                    {
-                      icon: "🎉",
-                      title: "Unforgettable Events",
-                      description:
-                        "Customize our space for celebrations, meetings, or private gatherings with our expert planning team.",
-                      image:
-                        "https://i.pinimg.com/736x/4b/62/29/4b6229e49cba45cbbfc09be7f0159b91.jpg",
-                    },
-                    {
-                      icon: "🌿",
-                      title: "Sustainable Practices",
-                      description:
-                        "Eco-conscious operations from bean sourcing to compostable packaging and energy-efficient facilities.",
-                      image:
-                        "https://i.pinimg.com/736x/9d/f4/a5/9df4a5d5c3c4d7c16afaff80cfe4af6e.jpg",
-                    },
-                    {
-                      icon: "💫",
-                      title: "Digital Loyalty Program",
-                      description:
-                        "Earn rewards with every visit through our app, with exclusive tastings and early access to seasonal offerings.",
-                      image:
-                        "https://i.pinimg.com/736x/51/3b/3a/513b3a2cb93a0e1d4273a57b1a39fc32.jpg",
-                    },
-                  ].map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`feature-small group animate-fade-in-up-${index + 1
-                        }`}
-                    >
-                      <div className="relative h-full min-h-[180px] lg:min-h-[190px] xl:min-h-[230px] rounded-xl overflow-hidden bg-white hover:bg-gradient-to-br from-white to-[#FDF8F3] shadow-md hover:shadow-[0_15px_35px_rgba(209,107,2,0.15)] transition-all duration-300 border border-transparent hover:border-[#8dcb3f]/10">
-                        <div className="absolute top-0 right-0 p-3 lg:p-4 z-10">
-                          <div className="w-8 lg:w-10 h-8 lg:h-10 rounded-full bg-[#FDF8F3] flex items-center justify-center shadow-inner group-hover:bg-[#f8e3c8] transition-all duration-300">
-                            <span className="text-lg lg:text-xl">{feature.icon}</span>
-                          </div>
-                        </div>
-
-                        <div className="p-4 lg:p-6 h-full flex flex-col">
-                          <h4 className="text-lg lg:text-xl font-bold mb-2 group-hover:text-[#8dcb3f] transition-colors duration-300 relative inline-block pr-12">
-                            {feature.title}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8dcb3f] transition-all duration-300 group-hover:w-full opacity-60"></span>
-                          </h4>
-                          <p className="text-gray-600 text-xs lg:text-sm mb-4">
-                            {feature.description}
-                          </p>
-                          <div className="mt-auto">
-                            <button className="text-[#8dcb3f] group-hover:text-[#b25601] text-sm font-medium inline-flex items-center">
-                              <span>Learn more</span>
-                              <svg
-                                className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                ></path>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div
-            ref={statsRef}
-            className="stats-section mt-12 sm:mt-16 lg:mt-24 border-t border-[#8dcb3f]/10 pt-8 sm:pt-12 lg:pt-16 animate-fade-in-up-delayed"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-              {counters.map((stat, index) => (
-                <div
-                  key={index}
-                  className={`text-center stat-counter animate-count-up-${index + 1
-                    }`}
-                >
-                  <div className="counter text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8dcb3f] mb-1 sm:mb-2">
-                    {isStatsVisible
-                      ? formatNumber(stat.current, stat.suffix)
-                      : "0"}
-                  </div>
-                  <p className="text-gray-600 text-xs sm:text-sm uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+      {/* Row 2 - Chamomile & Hibiscus Split */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="relative group overflow-hidden">
+          <div className="h-[500px] relative rounded-xl">
+            <img
+              src={teas[1].image}
+              alt={teas[1].name}
+              className="w-full h-full object-cover rounded-xl"
+            />
+            <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <div className="absolute bottom-0 p-12">
+              <span className="text-6xl font-thin text-white/20">02</span>
+              <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[1].name}</h3>
+              <p className="text-yellow-400 text-xl mb-4">{teas[1].title}</p>
+              <p className="text-gray-300 line-clamp-3">{teas[1].description}</p>
             </div>
           </div>
         </div>
+        <div className="relative group overflow-hidden">
+          <div className="h-[500px] relative rounded-xl">
+            <img
+              src={teas[2].image}
+              alt={teas[2].name}
+              className="w-full h-full object-cover rounded-xl"
+            />
+            <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <div className="absolute bottom-0 p-12">
+              <span className="text-6xl font-thin text-white/20">03</span>
+              <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[2].name}</h3>
+              <p className="text-pink-400 text-xl mb-4">{teas[2].title}</p>
+              <p className="text-gray-300 line-clamp-3">{teas[2].description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <style jsx>{`
-    .shadow-glow {
-      box-shadow: 0 0 30px rgba(209, 107, 2, 0.25);
-    }
+      {/* Row 3 - Blue Tea Feature */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
+         
+          <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[3].name}</h3>
+          <p className="text-2xl text-blue-400 font-light">{teas[3].title}</p>
+          <p className="text-gray-900 leading-relaxed text-lg">{teas[3].description}</p>
 
-    .feature-card,
-    .feature-small {
-      transform: translateY(0);
-      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+        </div>
+        <div className="lg:col-span-8 relative group order-1 lg:order-2">
+          <div className="relative overflow-hidden rounded-xl">
+            <img
+              src={teas[3].image}
+              alt={teas[3].name}
+              className="w-full h-[500px] object-cover rounded-xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+          </div>
+          <div className="absolute top-8 right-8">
+            <span className="text-9xl font-thin text-white/10">04</span>
+          </div>
+        </div>
+      </div>
 
-    .feature-card:hover,
-    .feature-small:hover {
-      transform: translateY(-8px);
-    }
+      {/* Row 4 - Lavender Horizontal */}
+      <div className="relative overflow-hidden rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px]">
+          <div className="relative h-[400px] lg:h-full">
+            <img
+              src={teas[4].image}
+              alt={teas[4].name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-purple-900/30 mix-blend-overlay"></div>
+          </div>
+          <div className="p-12 lg:p-20 bg-gradient-to-r from-gray-900 to-black">
+            <span className="text-8xl font-thin text-white/10">05</span>
+            <h3 className="text-5xl font-thin mb-4">{teas[4].name}</h3>
+            <p className="text-2xl text-purple-400 font-light mb-6">{teas[4].title}</p>
+            <p className="text-gray-300 leading-relaxed text-lg mb-8">{teas[4].description}</p>
+            <div className="flex gap-4">
+              <button className="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all">
+                LEARN MORE
+              </button>
+              <button className="px-6 py-3 bg-white text-black hover:bg-gray-200 transition-all">
+                SHOP NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    @media (min-width: 1024px) {
-      .feature-card:hover,
-      .feature-small:hover {
-        transform: translateY(-12px);
-      }
-    }
+    </div>
 
-    .btn-explore {
-      display: inline-flex;
-      align-items: center;
-      background: linear-gradient(to right, #8dcb3f, #e78a34);
-      color: white;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-      border-radius: 9999px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px -3px rgba(209, 107, 2, 0.5);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    @media (min-width: 640px) {
-      .btn-explore {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-      }
-    }
-
-    .btn-explore:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(to right, #e78a34, #f09c4d);
-      transition: all 0.4s;
-      z-index: -1;
-    }
-
-    .btn-explore:hover:before {
-      width: 100%;
-    }
-
-    .btn-explore:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(209, 107, 2, 0.4);
-    }
-
-    .floating-dots {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(
-        rgba(209, 107, 2, 0.2) 1px,
-        transparent 1px
-      );
-      background-size: 20px 20px;
-      animation: floating 25s infinite linear;
-    }
-
-    @media (min-width: 640px) {
-      .floating-dots {
-        background-size: 30px 30px;
-      }
-    }
-
-    @keyframes floating {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      100% {
-        transform: translate(50px, 50px) rotate(10deg);
-      }
-    }
-
-    .counter {
-      display: inline-block;
-      position: relative;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-    }
-
-    .counter::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      width: 30px;
-      height: 2px;
-      background: linear-gradient(
-        to right,
-        rgba(209, 107, 2, 0.2),
-        rgba(209, 107, 2, 0.8),
-        rgba(209, 107, 2, 0.2)
-      );
-      transform: translateX(-50%);
-      border-radius: 3px;
-    }
-
-    @media (min-width: 640px) {
-      .counter::after {
-        bottom: -6px;
-        width: 40px;
-        height: 3px;
-      }
-    }
-
-    /* Animations */
-    .animate-fade-in {
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .animate-fade-in-up {
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .animate-fade-in-up-1 {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.1s;
-    }
-
-    .animate-fade-in-up-2 {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.2s;
-    }
-
-    .animate-fade-in-up-3 {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.3s;
-    }
-
-    .animate-fade-in-up-4 {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.4s;
-    }
-
-    .animate-fade-in-up-delayed {
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.5s;
-    }
-
-    .animate-count-up-1 {
-      animation: countUp 2s ease forwards;
-      animation-delay: 0.6s;
-    }
-
-    .animate-count-up-2 {
-      animation: countUp 2s ease forwards;
-      animation-delay: 0.7s;
-    }
-
-    .animate-count-up-3 {
-      animation: countUp 2s ease forwards;
-      animation-delay: 0.8s;
-    }
-
-    .animate-count-up-4 {
-      animation: countUp 2s ease forwards;
-      animation-delay: 0.9s;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes countUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hide scrollbar but keep functionality */
-    .overflow-x-auto::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .overflow-x-auto::-webkit-scrollbar-track {
-      background: rgba(209, 107, 2, 0.1);
-      border-radius: 3px;
-    }
-
-    .overflow-x-auto::-webkit-scrollbar-thumb {
-      background: rgba(209, 107, 2, 0.3);
-      border-radius: 3px;
-    }
-
-    .overflow-x-auto::-webkit-scrollbar-thumb:hover {
-      background: rgba(209, 107, 2, 0.5);
-    }
-  `}</style>
-      </section>
-
+  </div>
+</section>
 
       <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
         <video
