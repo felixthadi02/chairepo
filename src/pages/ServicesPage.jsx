@@ -350,7 +350,7 @@ const ServicesPage = () => {
           
           <div className="text-center mt-12">
             <p className="text-lg text-gray-700 mb-6">Still have questions about our services?</p>
-            <a href="#" className="bg-amber-600 text-white font-medium py-3 px-8 rounded-md inline-block hover:bg-amber-700 transition-colors duration-300 shadow-md hover:shadow-lg">
+            <a href="/contact-us" className="bg-amber-600 text-white font-medium py-3 px-8 rounded-md inline-block hover:bg-amber-700 transition-colors duration-300 shadow-md hover:shadow-lg">
               Contact Us
             </a>
           </div>

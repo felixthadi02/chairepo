@@ -253,181 +253,148 @@ const HomePage = () => {
           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
       </Helmet>
-<section className="relative h-screen" id="home">
-  <section className="relative w-full h-[100vh]">
+<section id="home" className="relative w-full overflow-hidden">
+  <div className="relative w-full min-h-[100svh] md:min-h-screen">
     <Swiper
       modules={[Navigation, Autoplay, EffectFade]}
       navigation={{
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       }}
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 3500, disableOnInteraction: false }}
       loop
       effect="fade"
       speed={1000}
       className="h-full"
-      onSlideChange={(swiper) => {
-        const activeIndex = swiper.realIndex;
-      }}
     >
       {[
         {
           image: image1,
-          line1: "Dream Blend",
-          line2: "Flavour",
+          line1: "Pure Aroma Delight",
+          line2: "Crafted for True Tea Lovers",
           buttonText: "Start Your Franchise Journey",
           description:
-            "Tea 5 cafe serves passion in every cup. Enjoy rich blends and rewarding franchise opportunities with a trusted brand loved for quality across India.",
+            "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
         },
         {
           image: image2,
-          line1: "Brew Success",
-          line2: "Growth",
+          line1: "Your Tea Café. Your Brand.",
+          line2: "Start a Business That Feels Like Home",
           buttonText: "Explore Franchise Options",
           description:
-            "Transform your entrepreneurial dreams into reality with Tea 5. Our proven business model offers low investment, high returns, and comprehensive support for success.",
+            "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
         },
         {
           image: image3,
-          line1: "Pure Aroma",
-          line2: "Delight",
+          line1: "Simple Setup. Smart Returns.",
+          line2: "Designed for Easy Operations",
           buttonText: "Join Our Family",
           description:
-            "Experience the art of tea crafting at Tea 5 cafe. From classic chai to exotic blends, we bring authentic flavors that keep customers coming back for more.",
+            "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
         },
         {
           image: image4,
-          line1: "Sip & Thrive",
-          line2: "Passion",
+          line1: "Beyond a Café. A Growing Community.",
+          line2: "Build Connections Over Every Cup",
           buttonText: "Become A Partner",
           description:
-            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
-        },
-        {
-          image: image5,
-          line1: "Sip & Thrive",
-          line2: "Passion",
-          buttonText: "Become A Partner",
-          description:
-            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
-        },
-        {
-          image: image6,
-          line1: "Sip & Thrive",
-          line2: "Passion",
-          buttonText: "Become A Partner",
-          description:
-            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
-        },
-        {
-          image: image7,
-          line1: "Sip & Thrive",
-          line2: "Passion",
-          buttonText: "Become A Partner",
-          description:
-            "Join India's fastest-growing tea franchise network. With 50+ successful outlets and counting, Tea 5 cafe is your gateway to a profitable and fulfilling business venture.",
+            "Tea5 Cafe is not just about tea, it’s about creating a warm space where people connect, relax, and return. Be part of a fast-growing café community built on trust, taste, and togetherness.",
         },
       ].map((slide, index) => (
         <SwiperSlide key={index}>
           {({ isActive }) => (
             <div
-              className="w-full h-full bg-cover bg-center relative"
+              className="relative w-full min-h-[100svh] md:min-h-screen bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/45" />
 
-              {/* Content wrapper with responsive padding */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center pt-10 md:pt-16 lg:pt-24 overflow-hidden">
-                {/* Text container with responsive margins */}
-                <div className="text-center px-4 sm:px-6 mx-auto max-w-3xl mt-4 md:mt-12 lg:mt-20 w-full">
-                  {/* First line - responsive font size */}
+              {/* Content */}
+              <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 lg:px-10">
+                <div className="w-full max-w-4xl text-center">
+                  {/* line 1 */}
                   <motion.h1
                     key={`title-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{
-                      opacity: isActive ? 1 : 0,
-                      y: isActive ? 0 : 100,
-                    }}
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
                     transition={{
                       duration: 0.8,
-                      delay: 0.2,
+                      delay: 0.15,
                       type: "spring",
                       stiffness: 90,
-                      damping: 20,
+                      damping: 18,
                     }}
-                    className="text-[#8dcb3f] text-[40px] sm:text-[50px] md:text-[60px] lg:text-[100px] leading-[1] sm:leading-[1.1] m-0 tracking-wide font-sacramento"
+                    className="font-sacramento text-[#8dcb3f] leading-tight tracking-wide"
+                    style={{
+                      fontSize: "clamp(32px, 6vw, 64px)",
+                    }}
                   >
                     {slide.line1}
                   </motion.h1>
 
-                  {/* Second line - responsive with no absolute positioning */}
+                  {/* line 2 */}
                   <motion.p
                     key={`subtitle-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{
-                      opacity: isActive ? 1 : 0,
-                      y: isActive ? 0 : 100,
-                    }}
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
                     transition={{
                       duration: 0.8,
-                      delay: 0.5,
+                      delay: 0.35,
                       type: "spring",
                       stiffness: 90,
-                      damping: 20,
+                      damping: 18,
                     }}
-                    className="uppercase font-bold inline-block border-y border-white/50 m-0"
+                    className="mx-auto mt-3 inline-block border-y border-white/40 px-3 py-2 uppercase font-bold text-white"
                     style={{
-                      fontSize: "40px",
-                      lineHeight: "40px",
-                      letterSpacing: "10px",
+                      fontSize: "clamp(12px, 2.2vw, 20px)",
+                      letterSpacing: "clamp(2px, 1vw, 6px)",
                       fontFamily: "serif",
-                      color: "#fff",
+                      lineHeight: "1.4",
                     }}
                   >
                     {slide.line2}
                   </motion.p>
 
-                  {/* Description with responsive width and font size */}
+                  {/* description */}
                   <motion.p
                     key={`desc-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{
-                      opacity: isActive ? 1 : 0,
-                      y: isActive ? 0 : 100,
-                    }}
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
                     transition={{
                       duration: 0.8,
-                      delay: 0.8,
+                      delay: 0.55,
                       type: "spring",
                       stiffness: 90,
-                      damping: 20,
+                      damping: 18,
                     }}
-                    className="text-white mt-4 md:mt-6 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-md md:max-w-lg mx-auto leading-relaxed"
+                    className="mx-auto mt-4 max-w-[42rem] text-white/90 leading-relaxed"
+                    style={{
+                      fontSize: "clamp(12px, 2.4vw, 18px)",
+                    }}
                   >
                     {slide.description}
                   </motion.p>
 
-                  {/* CTA Button - responsive sizing */}
+                  {/* button */}
                   <motion.a
                     key={`button-${index}-${isActive}`}
                     href="#menu"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{
-                      opacity: isActive ? 1 : 0,
-                      y: isActive ? 0 : 100,
-                    }}
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
                     transition={{
                       duration: 0.8,
-                      delay: 1.1,
+                      delay: 0.75,
                       type: "spring",
                       stiffness: 90,
-                      damping: 20,
+                      damping: 18,
                     }}
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: "#7ab832",
+                    whileHover={{ scale: 1.05 }}
+                    className="mt-6 inline-flex items-center justify-center rounded-full bg-[#8dcb3f] text-white transition-all duration-300 hover:bg-[#7ab832] active:scale-[0.98]"
+                    style={{
+                      padding: "clamp(10px, 1.5vw, 14px) clamp(18px, 3vw, 34px)",
+                      fontSize: "clamp(12px, 2.2vw, 16px)",
                     }}
-                    className="mt-6 md:mt-8 inline-block px-6 md:px-8 py-2 md:py-3 bg-[#8dcb3f] text-white text-sm md:text-base rounded-full transition-all duration-300"
                   >
                     {slide.buttonText}
                   </motion.a>
@@ -438,9 +405,8 @@ const HomePage = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-  </section>
+  </div>
 
-  {/* Make sure the font is imported */}
   <style jsx global>{`
     @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
@@ -450,7 +416,11 @@ const HomePage = () => {
       font-style: normal;
     }
 
-    /* Custom Swiper arrow styles */
+    .swiper-slide {
+      overflow: hidden;
+    }
+
+    /* arrows */
     .swiper-button-next:after,
     .swiper-button-prev:after {
       font-size: 18px !important;
@@ -464,7 +434,6 @@ const HomePage = () => {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Media queries for arrow sizes on different screens */
     @media (max-width: 768px) {
       .swiper-button-next:after,
       .swiper-button-prev:after {
@@ -478,13 +447,9 @@ const HomePage = () => {
         font-size: 12px !important;
       }
     }
-
-    /* Hide any overflow to prevent scrollbars during animations */
-    .swiper-slide {
-      overflow: hidden;
-    }
   `}</style>
 </section>
+
 
       {/*our story*/}
       <section
@@ -1675,299 +1640,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section
-        ref={galleryRef}
-        className="py-16 sm:py-24  relative overflow-hidden"
-        id="gallery"
-      >
-        {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-white to-transparent opacity-70"></div>
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#8dcb3f]/5 rounded-full blur-3xl"></div>
 
-        {/* Subtle pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage:
-              'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h20L0 20z"/%3E%3C/g%3E%3C/svg%3E")',
-            backgroundSize: "20px 20px",
-          }}
-        ></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            animate={galleryControls}
-            variants={fadeInUp}
-          >
-            <motion.span
-              className="uppercase font-bold inline-block border-y border-white/50 m-0"
-              style={{
-                fontSize: "40px",
-                lineHeight: "40px",
-                letterSpacing: "10px",
-                fontFamily: "serif",
-                color: "#8dcb3f",
-              }}
-            >
-              Our Story
-              <motion.span
-                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#8dcb3f]"
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                viewport={{ once: true }}
-              />
-            </motion.span>
-
-            <motion.h3
-              className="text-4xl sm:text-5xl md:text-6xl mt-6 font-bold text-[#8dcb3f] mb-4 font-sacramento text-[clamp(40px,6vw,80px)]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              Our Culinary Gallery
-            </motion.h3>
-
-            <motion.p
-              className="max-w-2xl mx-auto text-gray-600 mb-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Feast your eyes on our exquisite dishes, crafted with passion and
-              artistry. Each creation tells a story of flavor, tradition, and
-              innovation.
-            </motion.p>
-
-            {/* Category filters */}
-            <motion.div
-              className="flex flex-wrap justify-center gap-2 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              {["All", "Coffee", "Pastries", "Main Course", "Desserts"].map(
-                (category, index) => (
-                  <motion.button
-                    key={category}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${index === 0
-                      ? "bg-[#8dcb3f] text-white"
-                      : "bg-white/80 text-gray-700 hover:bg-[#8dcb3f]/10"
-                      }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {category}
-                  </motion.button>
-                )
-              )}
-            </motion.div>
-          </motion.div>
-
-          {/* Masonry grid layout */}
-          <div className="mx-auto max-w-7xl">
-            <motion.div
-              className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4"
-              initial="hidden"
-              animate={galleryControls}
-              variants={staggerChildren}
-            >
-              {[
-                {
-                  id: 1,
-                  img: "https://i.pinimg.com/1200x/ae/69/2f/ae692f00a207ded5b8c9655681c6cf34.jpg",
-                  title: "Signature Coffee",
-                  height: "h-[250px] sm:h-[280px]",
-                },
-                {
-                  id: 2,
-                  img: "https://i.pinimg.com/736x/73/ef/e9/73efe902c531d2326c4f14b8c69b8fe0.jpg",
-                  title: "Artisan Pastries",
-                  height: "h-[350px] sm:h-[400px]",
-                },
-                {
-                  id: 3,
-                  img: "https://i.pinimg.com/736x/a6/21/40/a621408f03f2b1fb254629d81a7a6218.jpg",
-                  title: "Fresh Ingredients",
-                  height: "h-[300px]",
-                },
-                {
-                  id: 4,
-                  img: "https://i.pinimg.com/736x/2c/77/b3/2c77b32e45bf878baed1d1938ebb133a.jpg",
-                  title: "Gourmet Desserts",
-                  height: "h-[280px] sm:h-[320px]",
-                },
-                {
-                  id: 5,
-                  img: "https://i.pinimg.com/736x/46/8d/f7/468df78b2c349aac7e10e83853fdcdfd.jpg",
-                  title: "Premium Blends",
-                  height: "h-[250px]",
-                },
-                {
-                  id: 6,
-                  img: "https://i.pinimg.com/736x/e3/25/31/e325316debe22f5234e1c50d42e3a52f.jpg",
-                  title: "Delicious Treats",
-                  height: "h-[320px] sm:h-[360px]",
-                },
-                {
-                  id: 7,
-                  img: "https://i.pinimg.com/1200x/02/3d/44/023d4477676a81cc33432286a6f26962.jpg",
-                  title: "Morning Favorites",
-                  height: "h-[260px]",
-                },
-                {
-                  id: 8,
-                  img: "https://i.pinimg.com/736x/c9/f3/e5/c9f3e5c62c913c96a4556cafa66268d6.jpg",
-                  title: "Perfect Brew",
-                  height: "h-[290px] sm:h-[330px]",
-                },
-                {
-                  id: 9,
-                  img: "https://i.pinimg.com/1200x/02/3d/44/023d4477676a81cc33432286a6f26962.jpg",
-                  title: "Bakery Selection",
-                  height: "h-[270px]",
-                },
-                {
-                  id: 10,
-                  img: "https://i.pinimg.com/736x/f0/3e/7b/f03e7b7f7d263f51d9c075b9e0d92437.jpg",
-                  title: "Coffee Art",
-                  height: "h-[310px]",
-                },
-                {
-                  id: 11,
-                  img: "https://i.pinimg.com/1200x/4c/05/11/4c051173e1006c99c86265b2b3536a7b.jpg",
-                  title: "Coffee Art",
-                  height: "h-[310px]",
-                },
-                {
-                  id: 12,
-                  img: "https://i.pinimg.com/1200x/3f/cc/b1/3fccb1412bb85b910b75a3d1af42a078.jpg",
-                  title: "Coffee Art",
-                  height: "h-[310px]",
-                },
-              ].map((item) => (
-                <motion.div
-                  key={item.id}
-                  className={`${item.height} mb-4 w-full break-inside-avoid rounded-xl overflow-hidden relative group`}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.7, ease: "easeOut" },
-                    },
-                  }}
-                >
-                  {/* Image with parallax effect on hover */}
-                  <div className="absolute inset-0">
-                    <motion.div
-                      className="w-full h-full"
-                      whileHover={{
-                        scale: 1.08,
-                        transition: { duration: 0.8 },
-                      }}
-                    >
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </motion.div>
-                  </div>
-
-                  {/* Overlay with gradual transition */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4 sm:p-5">
-                    <motion.h4 className="text-white font-bold text-lg sm:text-xl opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                      {item.title}
-                    </motion.h4>
-
-                    <motion.div className="mt-2 flex gap-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                      <button className="bg-white/20 hover:bg-white/30 p-2 rounded-full backdrop-blur-sm transition-all duration-300">
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          />
-                        </svg>
-                      </button>
-
-                      <button className="bg-white/20 hover:bg-white/30 p-2 rounded-full backdrop-blur-sm transition-all duration-300">
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                          />
-                        </svg>
-                      </button>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <motion.a
-              href="#gallery"
-              className="px-8 py-3 bg-gradient-to-r from-[#8dcb3f] to-[#8dcb3f]/90 text-white rounded-full hover:from-[#8dcb3f] hover:to-[#8dcb3f]/90 transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl group"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <span>View Full Gallery</span>
-              <svg
-                className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </motion.a>
-
-            <p className="text-gray-500 text-sm mt-4">
-              Discover more of our delicious creations
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Customer Review Section */}
       <section
@@ -2260,62 +1933,17 @@ const HomePage = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            animate={hoursControls}
-            variants={fadeInUp}
-          >
-            <h2 className="text-[#8dcb3f] text-2xl mb-4 font-bold font-sacramento text-[clamp(60px,10vw,100px)]">
-              We are
-            </h2>
-            <h3
-              className="uppercase font-bold inline-block border-y border-white/50 m-0"
-              style={{
-                fontSize: "40px",
-                lineHeight: "40px",
-                letterSpacing: "10px",
-                fontFamily: "serif",
-                color: "#fff",
-              }}
-            >
-              Open
-            </h3>
+        <motion.p
+  className="max-w-3xl mx-auto mb-14 text-center text-lg md:text-xl text-white/90 leading-relaxed"
+  initial="hidden"
+  animate={hoursControls}
+  variants={fadeInUp}
+>
+  We offer franchise opportunities under <span className="text-[#8dcb3f] font-semibold">your own brand name</span>,
+  giving you complete ownership, identity, and freedom to grow your business independently —
+  backed by our experience, systems, and support.
+</motion.p>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-              initial="hidden"
-              animate={hoursControls}
-              variants={staggerChildren}
-            >
-              {[
-                {
-                  days: "Mon - Thu",
-                  hours: "10:30AM - 9:30PM",
-                },
-                {
-                  days: "Friday",
-                  hours: "10:00AM - 10:30PM",
-                },
-                {
-                  days: "Sat - Sun",
-                  hours: "09:30AM - 11:00PM",
-                },
-              ].map((schedule, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center bg-black bg-opacity-30 backdrop-blur-sm p-8 rounded-lg"
-                  variants={fadeInScale}
-                  whileHover={{ y: -10, scale: 1.05 }}
-                >
-                  <span className="text-[#8dcb3f] font-bold text-xl block mb-3">
-                    {schedule.days}
-                  </span>
-                  <div className="text-2xl">{schedule.hours}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 

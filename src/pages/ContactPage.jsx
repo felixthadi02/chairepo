@@ -158,7 +158,7 @@ export default function ContactSection() {
                                 <nav aria-label="breadcrumb">
                                     <ol className="flex justify-center items-center space-x-2 text-sm mt-4">
                                         <li>
-                                            <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                                            <a href="/" className="text-white hover:text-gray-300 transition-colors">
                                                 Home
                                             </a>
                                         </li>

@@ -110,7 +110,7 @@ const BlogList = ({ blogs, navigateTo }) => {
               <ol className="flex space-x-2">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="text-white hover:text-gray-300 transition-colors"
                   >
                     Home

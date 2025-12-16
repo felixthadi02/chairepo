@@ -61,7 +61,7 @@ export default function AboutPage() {
     },
     {
       name: "Harsha Kakarla",
-      role: "CFO",
+      role: " CFO & coo",
       image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     }
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <nav aria-label="breadcrumb" className="mt-6 flex justify-center items-center space-x-2 text-sm">
               <ol className="flex space-x-2">
                 <li>
-                  <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <a href="/" className="text-white hover:text-gray-300 transition-colors">
                     Home
                   </a>
                 </li>

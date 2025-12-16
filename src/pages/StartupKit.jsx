@@ -2169,7 +2169,7 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
             <nav aria-label="breadcrumb" className="mt-6 flex justify-center items-center space-x-2 text-sm">
               <ol className="flex space-x-2">
                 <li>
-                  <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <a href="/" className="text-white hover:text-gray-300 transition-colors">
                     Home
                   </a>
                 </li>
