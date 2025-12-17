@@ -2250,46 +2250,7 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
             ))}
           </motion.div>
 
-          {/* CTA Section */}
-          <motion.div
-            className="mt-20 relative rounded-2xl overflow-hidden"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=1600')",
-              }}
-            >
-              <div className="absolute inset-0 bg-[#18191b]/90"></div>
-            </div>
-            <div className="relative p-12 text-center">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Ready to Start Your <span className="text-[#8dcb3f]">Journey?</span>
-              </h2>
-              <p className="text-white/80 max-w-2xl mx-auto mb-8">
-                Get this complete startup package with training, support, and everything you need to launch successfully.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <motion.button
-                  className="px-8 py-4 bg-[#8dcb3f] text-[#18191b] font-bold rounded-xl hover:scale-105 transition-transform"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get Complete Package
-                </motion.button>
-                <motion.button
-                  className="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-xl hover:bg-white/20 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Download PDF Catalog
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
