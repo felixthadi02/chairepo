@@ -452,399 +452,6 @@ const HomePage = () => {
 
 
 
-      {/* <section
-        ref={storyRef}
-        className="py-24 md:py-32 lg:py-40 relative overflow-hidden"
-        id="about"
-      >
-        
-        <div className="absolute inset-0  opacity-90"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMjAwdjIwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40 mix-blend-soft-light"></div>
-
-    
-        <motion.div
-          className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#8dcb3f]/50 to-transparent"
-          style={{ top: "15%" }}
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        />
-
-        <div className="container mx-auto px-6 sm:px-8 relative z-10">
-          <div className="max-w-7xl mx-auto">
-          
-            <motion.div
-              className="text-center mb-16 md:mb-24"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <motion.div
-                className="inline-block mb-3"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="text-[#8dcb3f] text-sm tracking-[0.3em] uppercase font-light border-b border-[#8dcb3f]/30 pb-2 px-4">
-                  Since 2010
-                </span>
-              </motion.div>
-
-              <motion.h2
-                className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#3A2A18] mt-4 mb-6 mx-auto max-w-4xl leading-tight font-light"
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2 }}
-              >
-                The{" "}
-                <span className="text-[#8dcb3f] italic font-normal">
-                  Craft
-                </span>{" "}
-                Behind Every Cup
-              </motion.h2>
-
-              <motion.div
-                className="h-[3px] w-20 bg-gradient-to-r from-[#8dcb3f]/20 via-[#8dcb3f] to-[#8dcb3f]/20 mx-auto my-6"
-                initial={{ width: 0, opacity: 0 }}
-                whileInView={{ width: 80, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4 }}
-              />
-
-              <motion.p
-                className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg font-light"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                A journey of passion, dedication, and the love for perfect tea.
-              </motion.p>
-              <motion.p
-                className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg font-light mb-4"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness, and a deep respect for India’s tea culture. Our goal is simple: to serve quality tea that brings people together and creates a lasting impression.              </motion.p>
-            </motion.div>
-
-            
-            <div className="relative">
-             
-              <motion.div
-                className="absolute w-[1px] h-[85%] bg-gradient-to-b from-transparent via-[#8dcb3f]/50 to-transparent -left-2 top-[5%] hidden lg:block"
-                initial={{ scaleY: 0, opacity: 0 }}
-                whileInView={{ scaleY: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
-              />
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
-               
-                <motion.div
-                  className="relative order-1"
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
-                >
-                
-                  <div className="relative mx-auto max-w-md lg:max-w-full aspect-[4/5] overflow-visible">
-                
-                    <motion.div
-                      className="absolute top-4 left-4 right-4 bottom-4 border border-[#8dcb3f]/20 rounded-xl"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                    />
-
-                
-                    <motion.div
-                      className="absolute top-6 left-6 -bottom-6 -right-6 bg-[#8dcb3f]/5 rounded-xl"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.3 }}
-                    />
-
-                    <motion.div
-                      className="relative z-10 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(209,107,2,0.3)]"
-                      initial={{ y: 30, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2 }}
-                      whileHover={{
-                        y: -5,
-                        boxShadow: "0 30px 70px -15px rgba(209, 107, 2, 0.35)",
-                        transition: { duration: 0.5 },
-                      }}
-                    >
-                      <motion.div className="aspect-[4/5] w-full overflow-hidden relative">
-                  
-                        <motion.img
-                          src={ph2}
-                          alt="Our coffee journey"
-                          className="w-full h-full object-cover"
-                          initial={{
-                            scale: 1.2,
-                            filter: "saturate(0.8) brightness(0.9)",
-                          }}
-                          whileInView={{
-                            scale: 1,
-                            filter: "saturate(1.1) brightness(1.05)",
-                          }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 2, ease: "easeOut" }}
-                          whileHover={{
-                            scale: 1.05,
-                            filter: "saturate(1.2) brightness(1.1)",
-                            transition: { duration: 1.2 },
-                          }}
-                        />
-
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1 }}
-                        />
-                      </motion.div>
-
-                     
-                      <motion.div
-                        className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-1 shadow-lg"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 1 }}
-                      >
-                        <p className="text-[#8dcb3f] text-xs font-medium">
-                          Premium Quality
-                        </p>
-                      </motion.div>
-
-                    
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                      >
-                        <p className="text-xl font-serif mb-1">Our Heritage</p>
-                        <p className="text-sm font-light opacity-90">
-                          Handcrafted with passion since 2010
-                        </p>
-                      </motion.div>
-                    </motion.div>
-
-                 
-
-                    <motion.div
-                      className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-white shadow-[0_15px_35px_rgba(209,107,2,0.25)] flex items-center justify-center z-20"
-                      initial={{ scale: 0, rotate: -45 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.7,
-                        delay: 1.1,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 15,
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(24,25,27,0.3)",
-                        rotate: 5,
-                        transition: { duration: 0.3 },
-                      }}
-                    >
-                      <img
-                        src="https://www.mrchai.in/images/background/franchise.webp" // replace with your actual cup image path
-                        alt="Cup Icon"
-                        className="w-35 h-35 object-contain"
-                      />
-                    </motion.div>
-
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="order-2"
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
-                >
-       
-                  <div className="relative">
-               
-                    <motion.div
-                      className="absolute -top-20 -left-4 text-[#8dcb3f] opacity-10 text-9xl font-serif transform -rotate-6"
-                      initial={{ opacity: 0, scale: 0.5, x: -30 }}
-                      whileInView={{ opacity: 0.1, scale: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.2 }}
-                    >
-                      ❝
-                    </motion.div>
-
-              
-                    <div className="relative z-10">
-                     
-                      <motion.div
-                        className="mb-8 relative"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                      >
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#3A2A18] font-light leading-tight mb-3">
-                          A Sensory{" "}
-                          <span className="text-[#8dcb3f] italic">Journey</span>{" "}
-                          Through Every Cup
-                        </h3>
-                        <motion.div
-                          className="h-[2px] w-20 bg-gradient-to-r from-[#8dcb3f] to-[#8dcb3f]/10"
-                          initial={{ width: 0, opacity: 0 }}
-                          whileInView={{ width: 80, opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.6 }}
-                        />
-                      </motion.div>
-
-                      <div className="space-y-6 text-gray-700">
-                        <motion.p
-                          className="text-base sm:text-lg leading-relaxed font-light"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                          In the heart of Hyderabad, Tea 5 cafe brings people together with the warmth of authentic tea and meaningful conversations. Every cup is brewed with care, using handpicked tea leaves to deliver freshness, purity, and a taste that lasts
-                        </motion.p>
-
-                        <motion.p
-                          className="text-base sm:text-lg leading-relaxed font-light"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.5 }}
-                        >
-                          Tea 5 cafe is one of the most trusted <b className="text-[#93ce49]">tea cafe franchise in Hyderabad</b>  and a growing name across India. With a <b className="text-[#93ce49]">low investment tea franchise</b> , entrepreneurs can start a profitable business backed by a brand known for quality and consistency.
-                        </motion.p>
-                      </div>
-
-                      <motion.div
-                        className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                      >
-                        {[
-                          {
-                            icon: "M14,10H2V12H14V10M14,6H2V8H14V6M2,16H10V14H2V16M21.5,11.5L23,13L16,20L11.5,15.5L13,14L16,17L21.5,11.5Z",
-                            title: "Ethically Sourced",
-                            description: "All ingredients are selected with responsibility to maintain freshness and quality."
-                          },
-                          {
-                            icon: "M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.81,2 12.5,2H11.5Z",
-                            title: "Master Roasters",
-                            description: "Every recipe is created to bring out the best tea flavors in India."
-                          },
-                          {
-                            icon: "M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3Z",
-                            title: "Flavor Artistry",
-                            description: " We help every partner establish and grow a successful Tea 5 cafe franchise in India."
-                          },
-                          {
-                            icon: "M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z",
-                            title: "Quality Selection",
-                            description: " Every outlet follows the same standard to ensure the perfect cup each time."
-                          },
-                        ].map((feature, i) => (
-                          <motion.div
-                            key={i}
-                            className="flex items-start gap-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.7 + i * 0.1 }}
-                          >
-                            <div className="w-10 h-10 rounded-full bg-[#8dcb3f]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                              <svg
-                                className="w-5 h-5 text-[#8dcb3f]"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                              >
-                                <path d={feature.icon} />
-                              </svg>
-                            </div>
-                            <div>
-                              <h4 className="text-[#3A2A18] font-medium mb-1">
-                                {feature.title}
-                              </h4>
-                              <p className="text-sm text-gray-600 font-light">
-                                {feature.description}
-                              </p>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-
-                 
-                      <motion.div
-                        className="mt-10 flex flex-wrap gap-4"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                      >
-                        <motion.a
-                          href="#menu"
-                          className="px-8 py-3 bg-[#8dcb3f] text-white rounded-full shadow-lg shadow-[#8dcb3f]/20 hover:shadow-[#8dcb3f]/30 hover:bg-[#c05e00] transition-all duration-300"
-                          whileHover={{
-                            scale: 1.03,
-                            boxShadow:
-                              "0 10px 25px -5px rgba(209, 107, 2, 0.4)",
-                            transition: { duration: 0.3 },
-                          }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          View Our Menu
-                        </motion.a>
-
-                        <motion.a
-                          href="#about"
-                          className="px-8 py-3 border-2 border-[#8dcb3f] text-[#8dcb3f] rounded-full hover:bg-[#8dcb3f]/5 transition-all duration-300"
-                          whileHover={{
-                            scale: 1.03,
-                            backgroundColor: "rgba(209, 107, 2, 0.05)",
-                            transition: { duration: 0.3 },
-                          }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          Learn More
-                        </motion.a>
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
 
       <section className="py-16 bg-[#faf3ec] text-white">
         <div className="max-w-screen-2xl mx-auto px-4">
@@ -1069,7 +676,8 @@ const HomePage = () => {
         </div>
       </section> */}
 
-      {/* <section
+      {/* Coffee Menu Section */}
+      <section
         className="py-20 bg-cover bg-fixed bg-center relative"
         style={{
           backgroundImage:
@@ -1077,7 +685,7 @@ const HomePage = () => {
         }}
         data-jarallax
       >
-        
+        {/* Background overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1089,15 +697,15 @@ const HomePage = () => {
             viewport={{ once: true }}
           >
             <div className="p-6 sm:p-8 rounded-lg shadow-lg bg-black/40 backdrop-blur-sm border border-white/10">
-            
+              {/* Header */}
               <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
                 <div className="flex-1 text-left uppercase tracking-wider">
                   espresso
                 </div>
-                
+
               </div>
 
-       
+              {/* Menu items */}
               <div className="space-y-1">
                 {[
                   {
@@ -1160,7 +768,7 @@ const HomePage = () => {
                         {item.description}
                       </span>
                     </div>
-                   
+
                   </motion.div>
                 ))}
               </div>
@@ -1191,10 +799,10 @@ const HomePage = () => {
             </div>
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* Favorite Foods Section */}
-      {/* <section
+      <section
         ref={foodRef}
         className="py-28 bg-cover bg-center text-white relative"
         style={{
@@ -1227,17 +835,17 @@ const HomePage = () => {
             </motion.h2>
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* Foods Menu Section */}
-      {/* <section
+      <section
         className="py-16 sm:py-20 md:py-28 bg-cover bg-fixed bg-center relative"
         style={{
           backgroundImage:
             "url('https://i.pinimg.com/1200x/20/6c/16/206c16f3c0026aa8ddd68e980ab6401e.jpg')",
         }}
       >
-       
+        {/* Enhanced overlay with gradient */}
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1249,7 +857,7 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
-            
+              {/* Title visible only on mobile/tablet */}
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center lg:hidden"
                 initial={{ opacity: 0 }}
@@ -1260,7 +868,7 @@ const HomePage = () => {
                 Complete <span className="text-[#8dcb3f]">Startup</span> Package
               </motion.h2>
 
-             
+              {/* Electronics Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1316,7 +924,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-          
+              {/* Kitchen Equipment Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1374,6 +982,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
+              {/* Tea & Coffee Materials Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1427,7 +1036,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-          
+              {/* Syrups & Flavors Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1481,7 +1090,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-           
+              {/* Packaging & Branding Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
@@ -1571,7 +1180,7 @@ const HomePage = () => {
                 </motion.div>
               </motion.div>
 
-              
+              {/* Package Summary */}
               <motion.div
                 className="mt-6 bg-[#8dcb3f]/20 backdrop-blur-sm p-4 rounded-lg border border-[#8dcb3f]/30"
                 initial={{ opacity: 0 }}
@@ -1590,7 +1199,7 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-           
+              {/* Decorative element */}
               <motion.div
                 className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2"
                 initial={{ opacity: 0, x: -20 }}
@@ -1603,7 +1212,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
 
 
