@@ -128,7 +128,7 @@ const HomePage = () => {
     once: false,
     threshold: 0.2,
   });
-   const teas = [
+  const teas = [
     {
       id: 1,
       name: 'Rooibos Tea',
@@ -241,7 +241,7 @@ const HomePage = () => {
   return (
     <div className="w-full hello overflow-x-hidden bg-gradient-to-br from-[#FDF8F3] via-[#F8F1E9] to-[#F0E6DA]  ">
       {/* Hero Section */}
-      <FloatingWhatsapp/>
+      <FloatingWhatsapp />
       <Helmet>
         <title>Best Low Investment Tea Franchise in India | Tea 5 Cafe</title>
         <meta
@@ -253,161 +253,161 @@ const HomePage = () => {
           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
       </Helmet>
-<section id="home" className="relative w-full overflow-hidden">
-  <div className="relative w-full min-h-[100svh] md:min-h-screen">
-    <Swiper
-      modules={[Navigation, Autoplay, EffectFade]}
-      navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      }}
-      autoplay={{ delay: 3500, disableOnInteraction: false }}
-      loop
-      effect="fade"
-      speed={1000}
-      className="h-full"
-    >
-      {[
-        {
-          image: image1,
-          line1: "Pure Aroma Delight",
-          line2: "Crafted for True Tea Lovers",
-          buttonText: "Start Your Franchise Journey",
-          description:
-            "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
-        },
-        {
-          image: image2,
-          line1: "Your Tea Café. Your Brand.",
-          line2: "Start a Business That Feels Like Home",
-          buttonText: "Explore Franchise Options",
-          description:
-            "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
-        },
-        {
-          image: image3,
-          line1: "Simple Setup. Smart Returns.",
-          line2: "Designed for Easy Operations",
-          buttonText: "Join Our Family",
-          description:
-            "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
-        },
-        {
-          image: image4,
-          line1: "Beyond a Café. A Growing Community.",
-          line2: "Build Connections Over Every Cup",
-          buttonText: "Become A Partner",
-          description:
-            "Tea5 Cafe is not just about tea, it’s about creating a warm space where people connect, relax, and return. Be part of a fast-growing café community built on trust, taste, and togetherness.",
-        },
-      ].map((slide, index) => (
-        <SwiperSlide key={index}>
-          {({ isActive }) => (
-            <div
-              className="relative w-full min-h-[100svh] md:min-h-screen bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/45" />
-
-              {/* Content */}
-              <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 lg:px-10">
-                <div className="w-full max-w-4xl text-center">
-                  {/* line 1 */}
-                  <motion.h1
-                    key={`title-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.15,
-                      type: "spring",
-                      stiffness: 90,
-                      damping: 18,
-                    }}
-                    className="font-sacramento text-[#8dcb3f] leading-tight tracking-wide"
-                    style={{
-                      fontSize: "clamp(32px, 6vw, 64px)",
-                    }}
+      <section id="home" className="relative w-full overflow-hidden">
+        <div className="relative w-full min-h-[100svh] md:min-h-screen">
+          <Swiper
+            modules={[Navigation, Autoplay, EffectFade]}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            loop
+            effect="fade"
+            speed={1000}
+            className="h-full"
+          >
+            {[
+              {
+                image: image1,
+                line1: "Pure Aroma Delight",
+                line2: "Crafted for True Tea Lovers",
+                buttonText: "Start Your Franchise Journey",
+                description:
+                  "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
+              },
+              {
+                image: image2,
+                line1: "Your Tea Café. Your Brand.",
+                line2: "Start a Business That Feels Like Home",
+                buttonText: "Explore Franchise Options",
+                description:
+                  "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
+              },
+              {
+                image: image3,
+                line1: "Simple Setup. Smart Returns.",
+                line2: "Designed for Easy Operations",
+                buttonText: "Join Our Family",
+                description:
+                  "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
+              },
+              {
+                image: image4,
+                line1: "Beyond a Café. A Growing Community.",
+                line2: "Build Connections Over Every Cup",
+                buttonText: "Become A Partner",
+                description:
+                  "Tea5 Cafe is not just about tea, it’s about creating a warm space where people connect, relax, and return. Be part of a fast-growing café community built on trust, taste, and togetherness.",
+              },
+            ].map((slide, index) => (
+              <SwiperSlide key={index}>
+                {({ isActive }) => (
+                  <div
+                    className="relative w-full min-h-[100svh] md:min-h-screen bg-cover bg-center"
+                    style={{ backgroundImage: `url(${slide.image})` }}
                   >
-                    {slide.line1}
-                  </motion.h1>
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/45" />
 
-                  {/* line 2 */}
-                  <motion.p
-                    key={`subtitle-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.35,
-                      type: "spring",
-                      stiffness: 90,
-                      damping: 18,
-                    }}
-                    className="mx-auto mt-3 inline-block border-y border-white/40 px-3 py-2 uppercase font-bold text-white"
-                    style={{
-                      fontSize: "clamp(12px, 2.2vw, 20px)",
-                      letterSpacing: "clamp(2px, 1vw, 6px)",
-                      fontFamily: "serif",
-                      lineHeight: "1.4",
-                    }}
-                  >
-                    {slide.line2}
-                  </motion.p>
+                    {/* Content */}
+                    <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 lg:px-10">
+                      <div className="w-full max-w-4xl text-center">
+                        {/* line 1 */}
+                        <motion.h1
+                          key={`title-${index}-${isActive}`}
+                          initial={{ opacity: 0, y: 80 }}
+                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.15,
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 18,
+                          }}
+                          className="font-sacramento text-[#8dcb3f] leading-tight tracking-wide"
+                          style={{
+                            fontSize: "clamp(32px, 6vw, 64px)",
+                          }}
+                        >
+                          {slide.line1}
+                        </motion.h1>
 
-                  {/* description */}
-                  <motion.p
-                    key={`desc-${index}-${isActive}`}
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.55,
-                      type: "spring",
-                      stiffness: 90,
-                      damping: 18,
-                    }}
-                    className="mx-auto mt-4 max-w-[42rem] text-white/90 leading-relaxed"
-                    style={{
-                      fontSize: "clamp(12px, 2.4vw, 18px)",
-                    }}
-                  >
-                    {slide.description}
-                  </motion.p>
+                        {/* line 2 */}
+                        <motion.p
+                          key={`subtitle-${index}-${isActive}`}
+                          initial={{ opacity: 0, y: 80 }}
+                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.35,
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 18,
+                          }}
+                          className="mx-auto mt-3 inline-block border-y border-white/40 px-3 py-2 uppercase font-bold text-white"
+                          style={{
+                            fontSize: "clamp(12px, 2.2vw, 20px)",
+                            letterSpacing: "clamp(2px, 1vw, 6px)",
+                            fontFamily: "serif",
+                            lineHeight: "1.4",
+                          }}
+                        >
+                          {slide.line2}
+                        </motion.p>
 
-                  {/* button */}
-                  <motion.a
-                    key={`button-${index}-${isActive}`}
-                    href="#menu"
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.75,
-                      type: "spring",
-                      stiffness: 90,
-                      damping: 18,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    className="mt-6 inline-flex items-center justify-center rounded-full bg-[#8dcb3f] text-white transition-all duration-300 hover:bg-[#7ab832] active:scale-[0.98]"
-                    style={{
-                      padding: "clamp(10px, 1.5vw, 14px) clamp(18px, 3vw, 34px)",
-                      fontSize: "clamp(12px, 2.2vw, 16px)",
-                    }}
-                  >
-                    {slide.buttonText}
-                  </motion.a>
-                </div>
-              </div>
-            </div>
-          )}
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
+                        {/* description */}
+                        <motion.p
+                          key={`desc-${index}-${isActive}`}
+                          initial={{ opacity: 0, y: 80 }}
+                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.55,
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 18,
+                          }}
+                          className="mx-auto mt-4 max-w-[42rem] text-white/90 leading-relaxed"
+                          style={{
+                            fontSize: "clamp(12px, 2.4vw, 18px)",
+                          }}
+                        >
+                          {slide.description}
+                        </motion.p>
 
-  <style jsx global>{`
+                        {/* button */}
+                        <motion.a
+                          key={`button-${index}-${isActive}`}
+                          href="#menu"
+                          initial={{ opacity: 0, y: 80 }}
+                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.75,
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 18,
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          className="mt-6 inline-flex items-center justify-center rounded-full bg-[#8dcb3f] text-white transition-all duration-300 hover:bg-[#7ab832] active:scale-[0.98]"
+                          style={{
+                            padding: "clamp(10px, 1.5vw, 14px) clamp(18px, 3vw, 34px)",
+                            fontSize: "clamp(12px, 2.2vw, 16px)",
+                          }}
+                        >
+                          {slide.buttonText}
+                        </motion.a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <style jsx global>{`
     @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
     .font-sacramento {
@@ -448,20 +448,20 @@ const HomePage = () => {
       }
     }
   `}</style>
-</section>
+      </section>
 
 
-      {/*our story*/}
-      <section
+
+      {/* <section
         ref={storyRef}
         className="py-24 md:py-32 lg:py-40 relative overflow-hidden"
         id="about"
       >
-        {/* Premium background with grain texture and gradient */}
+        
         <div className="absolute inset-0  opacity-90"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMjAwdjIwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40 mix-blend-soft-light"></div>
 
-        {/* Golden accent line */}
+    
         <motion.div
           className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#8dcb3f]/50 to-transparent"
           style={{ top: "15%" }}
@@ -473,7 +473,7 @@ const HomePage = () => {
 
         <div className="container mx-auto px-6 sm:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
-            {/* Section header with premium typography */}
+          
             <motion.div
               className="text-center mb-16 md:mb-24"
               initial={{ opacity: 0 }}
@@ -534,9 +534,9 @@ const HomePage = () => {
                 Every cup at Tea 5 cafe is made with care, blending authentic flavor, freshness, and a deep respect for India’s tea culture. Our goal is simple: to serve quality tea that brings people together and creates a lasting impression.              </motion.p>
             </motion.div>
 
-            {/* Content container with golden accent */}
+            
             <div className="relative">
-              {/* Diagonal golden accent line */}
+             
               <motion.div
                 className="absolute w-[1px] h-[85%] bg-gradient-to-b from-transparent via-[#8dcb3f]/50 to-transparent -left-2 top-[5%] hidden lg:block"
                 initial={{ scaleY: 0, opacity: 0 }}
@@ -546,7 +546,7 @@ const HomePage = () => {
               />
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
-                {/* Image column with premium presentation */}
+               
                 <motion.div
                   className="relative order-1"
                   initial={{ opacity: 0, x: -40 }}
@@ -554,9 +554,9 @@ const HomePage = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                  {/* Main image with floating frame effect */}
+                
                   <div className="relative mx-auto max-w-md lg:max-w-full aspect-[4/5] overflow-visible">
-                    {/* Decorative pattern behind image */}
+                
                     <motion.div
                       className="absolute top-4 left-4 right-4 bottom-4 border border-[#8dcb3f]/20 rounded-xl"
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -565,7 +565,7 @@ const HomePage = () => {
                       transition={{ duration: 1, delay: 0.5 }}
                     />
 
-                    {/* Shadow layer */}
+                
                     <motion.div
                       className="absolute top-6 left-6 -bottom-6 -right-6 bg-[#8dcb3f]/5 rounded-xl"
                       initial={{ opacity: 0, y: 20 }}
@@ -574,7 +574,6 @@ const HomePage = () => {
                       transition={{ duration: 1, delay: 0.3 }}
                     />
 
-                    {/* Main image container */}
                     <motion.div
                       className="relative z-10 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(209,107,2,0.3)]"
                       initial={{ y: 30, opacity: 0 }}
@@ -588,7 +587,7 @@ const HomePage = () => {
                       }}
                     >
                       <motion.div className="aspect-[4/5] w-full overflow-hidden relative">
-                        {/* Image */}
+                  
                         <motion.img
                           src={ph2}
                           alt="Our coffee journey"
@@ -610,7 +609,6 @@ const HomePage = () => {
                           }}
                         />
 
-                        {/* Elegant gradient overlay */}
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
                           initial={{ opacity: 0 }}
@@ -620,7 +618,7 @@ const HomePage = () => {
                         />
                       </motion.div>
 
-                      {/* Premium badge overlay */}
+                     
                       <motion.div
                         className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-1 shadow-lg"
                         initial={{ opacity: 0, x: 20 }}
@@ -633,7 +631,7 @@ const HomePage = () => {
                         </p>
                       </motion.div>
 
-                      {/* Caption */}
+                    
                       <motion.div
                         className="absolute bottom-0 left-0 right-0 p-6 text-white"
                         initial={{ opacity: 0, y: 20 }}
@@ -648,36 +646,8 @@ const HomePage = () => {
                       </motion.div>
                     </motion.div>
 
-                    {/* Floating coffee icon */}
-                    {/* <motion.div
-                      className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-white shadow-[0_15px_35px_rgba(209,107,2,0.25)] flex items-center justify-center z-20"
-                      initial={{ scale: 0, rotate: -45 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.7,
-                        delay: 1.1,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 15,
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(209,107,2,0.3)",
-                        rotate: 5,
-                        transition: { duration: 0.3 },
-                      }}
-                    >
-                      <div className="w-12 h-12 text-[#8dcb3f]">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-                        </svg>
-                      </div>
-                    </motion.div> */}
+                 
+
                     <motion.div
                       className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-white shadow-[0_15px_35px_rgba(209,107,2,0.25)] flex items-center justify-center z-20"
                       initial={{ scale: 0, rotate: -45 }}
@@ -707,7 +677,6 @@ const HomePage = () => {
                   </div>
                 </motion.div>
 
-                {/* Text column with premium content presentation */}
                 <motion.div
                   className="order-2"
                   initial={{ opacity: 0, x: 40 }}
@@ -715,9 +684,9 @@ const HomePage = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                  {/* Content container */}
+       
                   <div className="relative">
-                    {/* Stylized quote mark */}
+               
                     <motion.div
                       className="absolute -top-20 -left-4 text-[#8dcb3f] opacity-10 text-9xl font-serif transform -rotate-6"
                       initial={{ opacity: 0, scale: 0.5, x: -30 }}
@@ -728,9 +697,9 @@ const HomePage = () => {
                       ❝
                     </motion.div>
 
-                    {/* Main story content */}
+              
                     <div className="relative z-10">
-                      {/* Story title with animated line */}
+                     
                       <motion.div
                         className="mb-8 relative"
                         initial={{ opacity: 0 }}
@@ -752,7 +721,6 @@ const HomePage = () => {
                         />
                       </motion.div>
 
-                      {/* Story paragraphs */}
                       <div className="space-y-6 text-gray-700">
                         <motion.p
                           className="text-base sm:text-lg leading-relaxed font-light"
@@ -775,7 +743,6 @@ const HomePage = () => {
                         </motion.p>
                       </div>
 
-                      {/* Features/highlights list */}
                       <motion.div
                         className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
                         initial={{ opacity: 0, y: 20 }}
@@ -834,7 +801,7 @@ const HomePage = () => {
                         ))}
                       </motion.div>
 
-                      {/* CTA buttons */}
+                 
                       <motion.div
                         className="mt-10 flex flex-wrap gap-4"
                         initial={{ opacity: 0, y: 20 }}
@@ -876,154 +843,154 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </section> */}
+
+
+      <section className="py-16 bg-[#faf3ec] text-white">
+        <div className="max-w-screen-2xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="mb-20 flex flex-col md:flex-row justify-between items-end">
+            <div>
+              <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none mb-2 text-[#8dcb3f]">
+                RARE<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 font-normal">BLENDS</span>
+              </h2>
+            </div>
+            <div className="max-w-md">
+              <p className="text-gray-900 text-lg leading-relaxed">
+                Hand-selected from the world's most exclusive tea gardens. Each blend tells a story of terroir and tradition.
+              </p>
+            </div>
+          </div>
+
+          {/* Asymmetric Grid */}
+          <div className="space-y-32">
+
+            {/* Row 1 - Rooibos Feature */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 relative group">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src={teas[0].image}
+                    alt={teas[0].name}
+                    className="w-full h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
+                </div>
+                <div className="absolute top-8 left-8">
+                  <span className="text-9xl font-thin text-white">01</span>
+                </div>
+              </div>
+              <div className="lg:col-span-5 space-y-6 lg:pl-12">
+                <span className="inline-block px-4 py-1 border border-amber-500 text-amber-500 text-xs tracking-widest text-[#8dcb3f]">
+                  SOUTH AFRICAN ORIGIN
+                </span>
+                <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
+                <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
+                <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
+                <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
+                  <span className="text-sm tracking-widest">EXPLORE</span>
+                  <div className="w-12 h-[1px] bg-white group-hover:bg-amber-400 group-hover:w-20 transition-all"></div>
+                </button>
+              </div>
+            </div>
+
+            {/* Row 2 - Chamomile & Hibiscus Split */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative group overflow-hidden">
+                <div className="h-[500px] relative rounded-xl">
+                  <img
+                    src={teas[1].image}
+                    alt={teas[1].name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 p-12">
+                    <span className="text-6xl font-thin text-white/20">02</span>
+                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[1].name}</h3>
+                    <p className="text-yellow-400 text-xl mb-4">{teas[1].title}</p>
+                    <p className="text-gray-300 line-clamp-3">{teas[1].description}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group overflow-hidden">
+                <div className="h-[500px] relative rounded-xl">
+                  <img
+                    src={teas[2].image}
+                    alt={teas[2].name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 p-12">
+                    <span className="text-6xl font-thin text-white/20">03</span>
+                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[2].name}</h3>
+                    <p className="text-pink-400 text-xl mb-4">{teas[2].title}</p>
+                    <p className="text-gray-300 line-clamp-3">{teas[2].description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3 - Blue Tea Feature */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
+
+                <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[3].name}</h3>
+                <p className="text-2xl text-blue-400 font-light">{teas[3].title}</p>
+                <p className="text-gray-900 leading-relaxed text-lg">{teas[3].description}</p>
+
+              </div>
+              <div className="lg:col-span-8 relative group order-1 lg:order-2">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src={teas[3].image}
+                    alt={teas[3].name}
+                    className="w-full h-[500px] object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                </div>
+                <div className="absolute top-8 right-8">
+                  <span className="text-9xl font-thin text-white/10">04</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 4 - Lavender Horizontal */}
+            <div className="relative overflow-hidden rounded-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px]">
+                <div className="relative h-[400px] lg:h-full">
+                  <img
+                    src={teas[4].image}
+                    alt={teas[4].name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-purple-900/30 mix-blend-overlay"></div>
+                </div>
+                <div className="p-12 lg:p-20 bg-gradient-to-r from-gray-900 to-black">
+                  <span className="text-8xl font-thin text-white/10">05</span>
+                  <h3 className="text-5xl font-thin mb-4">{teas[4].name}</h3>
+                  <p className="text-2xl text-purple-400 font-light mb-6">{teas[4].title}</p>
+                  <p className="text-gray-300 leading-relaxed text-lg mb-8">{teas[4].description}</p>
+                  <div className="flex gap-4">
+                    <button className="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all">
+                      LEARN MORE
+                    </button>
+                    <button className="px-6 py-3 bg-white text-black hover:bg-gray-200 transition-all">
+                      SHOP NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </section>
 
-
-<section className="py-16 bg-[#faf3ec] text-white">
-  <div className="max-w-screen-2xl mx-auto px-4">
-    {/* Section Header */}
-    <div className="mb-20 flex flex-col md:flex-row justify-between items-end">
-      <div>
-        <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none mb-2 text-[#8dcb3f]">
-          RARE<br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 font-normal">BLENDS</span>
-        </h2>
-      </div>
-      <div className="max-w-md">
-        <p className="text-gray-900 text-lg leading-relaxed">
-          Hand-selected from the world's most exclusive tea gardens. Each blend tells a story of terroir and tradition.
-        </p>
-      </div>
-    </div>
-
-    {/* Asymmetric Grid */}
-    <div className="space-y-32">
-      
-      {/* Row 1 - Rooibos Feature */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-7 relative group">
-          <div className="relative overflow-hidden rounded-xl">
-            <img
-              src={teas[0].image}
-              alt={teas[0].name}
-              className="w-full h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
-          </div>
-          <div className="absolute top-8 left-8">
-            <span className="text-9xl font-thin text-white">01</span>
-          </div>
-        </div>
-        <div className="lg:col-span-5 space-y-6 lg:pl-12">
-          <span className="inline-block px-4 py-1 border border-amber-500 text-amber-500 text-xs tracking-widest text-[#8dcb3f]">
-            SOUTH AFRICAN ORIGIN
-          </span>
-          <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
-          <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
-          <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
-          <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
-            <span className="text-sm tracking-widest">EXPLORE</span>
-            <div className="w-12 h-[1px] bg-white group-hover:bg-amber-400 group-hover:w-20 transition-all"></div>
-          </button>
-        </div>
-      </div>
-
-      {/* Row 2 - Chamomile & Hibiscus Split */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="relative group overflow-hidden">
-          <div className="h-[500px] relative rounded-xl">
-            <img
-              src={teas[1].image}
-              alt={teas[1].name}
-              className="w-full h-full object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-            <div className="absolute bottom-0 p-12">
-              <span className="text-6xl font-thin text-white/20">02</span>
-              <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[1].name}</h3>
-              <p className="text-yellow-400 text-xl mb-4">{teas[1].title}</p>
-              <p className="text-gray-300 line-clamp-3">{teas[1].description}</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative group overflow-hidden">
-          <div className="h-[500px] relative rounded-xl">
-            <img
-              src={teas[2].image}
-              alt={teas[2].name}
-              className="w-full h-full object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-            <div className="absolute bottom-0 p-12">
-              <span className="text-6xl font-thin text-white/20">03</span>
-              <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[2].name}</h3>
-              <p className="text-pink-400 text-xl mb-4">{teas[2].title}</p>
-              <p className="text-gray-300 line-clamp-3">{teas[2].description}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Row 3 - Blue Tea Feature */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
-         
-          <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[3].name}</h3>
-          <p className="text-2xl text-blue-400 font-light">{teas[3].title}</p>
-          <p className="text-gray-900 leading-relaxed text-lg">{teas[3].description}</p>
-
-        </div>
-        <div className="lg:col-span-8 relative group order-1 lg:order-2">
-          <div className="relative overflow-hidden rounded-xl">
-            <img
-              src={teas[3].image}
-              alt={teas[3].name}
-              className="w-full h-[500px] object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
-          </div>
-          <div className="absolute top-8 right-8">
-            <span className="text-9xl font-thin text-white/10">04</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Row 4 - Lavender Horizontal */}
-      <div className="relative overflow-hidden rounded-lg">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px]">
-          <div className="relative h-[400px] lg:h-full">
-            <img
-              src={teas[4].image}
-              alt={teas[4].name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-purple-900/30 mix-blend-overlay"></div>
-          </div>
-          <div className="p-12 lg:p-20 bg-gradient-to-r from-gray-900 to-black">
-            <span className="text-8xl font-thin text-white/10">05</span>
-            <h3 className="text-5xl font-thin mb-4">{teas[4].name}</h3>
-            <p className="text-2xl text-purple-400 font-light mb-6">{teas[4].title}</p>
-            <p className="text-gray-300 leading-relaxed text-lg mb-8">{teas[4].description}</p>
-            <div className="flex gap-4">
-              <button className="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all">
-                LEARN MORE
-              </button>
-              <button className="px-6 py-3 bg-white text-black hover:bg-gray-200 transition-all">
-                SHOP NOW
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-      <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
+      {/* <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
         <video
           className="w-full h-full object-cover cursor-pointer"
           src={video}
@@ -1032,10 +999,10 @@ const HomePage = () => {
           muted
           playsInline
         />
-      </div>
+      </div> */}
 
       {/* Favorite Coffee Section */}
-      <section
+      {/* <section
         ref={coffeeRef}
         className="py-16 sm:py-24 md:py-32 bg-cover bg-center text-white relative"
         id="menu"
@@ -1046,7 +1013,7 @@ const HomePage = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Enhanced gradient overlay */}
+     
         <div className="absolute inset-0 "></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1057,7 +1024,7 @@ const HomePage = () => {
             variants={fadeInUp}
           >
             <div className="text-center">
-              {/* First Line - Elegant Script Style */}
+             
               <motion.h2
                 className="font-sacramento text-[#8dcb3f] text-[clamp(40px,10vw,90px)] leading-none"
                 initial={{ opacity: 0, y: 100 }} // start far below
@@ -1067,7 +1034,7 @@ const HomePage = () => {
                 Favorite
               </motion.h2>
 
-              {/* Second Line - Bold Title */}
+              
               <motion.h2
                 className="uppercase font-bold inline-block border-y border-white/50 m-0"
                 style={{
@@ -1100,10 +1067,9 @@ const HomePage = () => {
             </motion.p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Coffee Menu Section */}
-      <section
+      {/* <section
         className="py-20 bg-cover bg-fixed bg-center relative"
         style={{
           backgroundImage:
@@ -1111,7 +1077,7 @@ const HomePage = () => {
         }}
         data-jarallax
       >
-        {/* Background overlay */}
+        
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1123,7 +1089,7 @@ const HomePage = () => {
             viewport={{ once: true }}
           >
             <div className="p-6 sm:p-8 rounded-lg shadow-lg bg-black/40 backdrop-blur-sm border border-white/10">
-              {/* Header */}
+            
               <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
                 <div className="flex-1 text-left uppercase tracking-wider">
                   espresso
@@ -1131,7 +1097,7 @@ const HomePage = () => {
                 
               </div>
 
-              {/* Menu items */}
+       
               <div className="space-y-1">
                 {[
                   {
@@ -1225,10 +1191,10 @@ const HomePage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Favorite Foods Section */}
-      <section
+      {/* <section
         ref={foodRef}
         className="py-28 bg-cover bg-center text-white relative"
         style={{
@@ -1261,17 +1227,17 @@ const HomePage = () => {
             </motion.h2>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Foods Menu Section */}
-      <section
+      {/* <section
         className="py-16 sm:py-20 md:py-28 bg-cover bg-fixed bg-center relative"
         style={{
           backgroundImage:
             "url('https://i.pinimg.com/1200x/20/6c/16/206c16f3c0026aa8ddd68e980ab6401e.jpg')",
         }}
       >
-        {/* Enhanced overlay with gradient */}
+       
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1283,7 +1249,7 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              {/* Title visible only on mobile/tablet */}
+            
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center lg:hidden"
                 initial={{ opacity: 0 }}
@@ -1294,7 +1260,7 @@ const HomePage = () => {
                 Complete <span className="text-[#8dcb3f]">Startup</span> Package
               </motion.h2>
 
-              {/* Electronics Section */}
+             
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1350,7 +1316,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Kitchen Equipment Section */}
+          
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1408,7 +1374,6 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Tea & Coffee Materials Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1462,7 +1427,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Syrups & Flavors Section */}
+          
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1516,7 +1481,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Packaging & Branding Section */}
+           
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
@@ -1606,7 +1571,7 @@ const HomePage = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Package Summary */}
+              
               <motion.div
                 className="mt-6 bg-[#8dcb3f]/20 backdrop-blur-sm p-4 rounded-lg border border-[#8dcb3f]/30"
                 initial={{ opacity: 0 }}
@@ -1625,7 +1590,7 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-              {/* Decorative element */}
+           
               <motion.div
                 className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2"
                 initial={{ opacity: 0, x: -20 }}
@@ -1638,19 +1603,19 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
       {/* Customer Review Section */}
-      <section
+      {/* <section
         ref={reviewRef}
         className="py-20 md:py-28 relative overflow-hidden"
       >
-        {/* Background with gradient overlay */}
+  
         <div className="absolute inset-0 bg-gradient-to-br from-[#8dcb3f] to-[#18191b] z-0"></div>
 
-        {/* Decorative patterns and elements */}
+   
         <div
           className="absolute inset-0 opacity-10 z-0"
           style={{
@@ -1659,7 +1624,7 @@ const HomePage = () => {
           }}
         ></div>
 
-        {/* Large quotation mark decorative element */}
+
         <div className="absolute -left-20 top-10 text-[200px] leading-none font-serif text-white opacity-10 z-0">
           "
         </div>
@@ -1677,7 +1642,7 @@ const HomePage = () => {
               visible: { opacity: 1, transition: { duration: 0.8 } },
             }}
           >
-            {/* Left side - Image collage */}
+         
             <motion.div
               className="w-full lg:w-2/5"
               initial={{ opacity: 0, x: -50 }}
@@ -1688,7 +1653,7 @@ const HomePage = () => {
               }}
             >
               <div className="relative h-[400px] md:h-[500px]">
-                {/* Main image */}
+              
                 <motion.div
                   className="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden shadow-xl"
                   initial={{ opacity: 0, y: 30 }}
@@ -1710,7 +1675,7 @@ const HomePage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </motion.div>
 
-                {/* Secondary image */}
+                
                 <motion.div
                   className="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-xl border-4 border-white/10"
                   initial={{ opacity: 0, y: 30 }}
@@ -1731,7 +1696,7 @@ const HomePage = () => {
                   />
                 </motion.div>
 
-                {/* Floating badge */}
+               
                 <motion.div
                   className="absolute top-1/2 right-0 transform translate-x-1/4 -translate-y-1/2 bg-[#8dcb3f] text-white px-4 py-3 rounded-xl shadow-lg z-10 font-bold"
                   initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
@@ -1752,7 +1717,7 @@ const HomePage = () => {
               </div>
             </motion.div>
 
-            {/* Right side - Reviews */}
+        
             <motion.div
               className="w-full lg:w-3/5"
               initial="hidden"
@@ -1827,7 +1792,7 @@ const HomePage = () => {
                       viewport={{ once: true }}
                       whileHover={{ y: -5, transition: { duration: 0.3 } }}
                     >
-                      {/* Rating stars */}
+                   
                       <div className="flex mb-5">
                         {[...Array(5)].map((_, i) => (
                           <svg
@@ -1844,7 +1809,7 @@ const HomePage = () => {
                         ))}
                       </div>
 
-                      {/* Quote icon */}
+                  
                       <svg
                         className="w-10 h-10 text-[#8dcb3f]/30 mb-4"
                         fill="currentColor"
@@ -1853,7 +1818,7 @@ const HomePage = () => {
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                       </svg>
 
-                      {/* Review text */}
+                  
                       <motion.blockquote
                         className="text-lg text-white/90 font-medium leading-relaxed"
                         initial={{ opacity: 0 }}
@@ -1863,7 +1828,6 @@ const HomePage = () => {
                         {review.text}
                       </motion.blockquote>
 
-                      {/* Reviewer info */}
                       <div className="mt-8 flex items-center">
                         <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-[#8dcb3f]/30">
                           <img
@@ -1886,7 +1850,7 @@ const HomePage = () => {
                 ))}
               </Swiper>
 
-              {/* Call to action */}
+       
               <motion.div
                 className="mt-10 text-center lg:text-left"
                 initial={{ opacity: 0, y: 20 }}
@@ -1919,7 +1883,7 @@ const HomePage = () => {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Opening Hours Section */}
       <section
@@ -1933,16 +1897,16 @@ const HomePage = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <div className="container mx-auto px-4 relative z-10">
-        <motion.p
-  className="max-w-3xl mx-auto mb-14 text-center text-lg md:text-xl text-white/90 leading-relaxed"
-  initial="hidden"
-  animate={hoursControls}
-  variants={fadeInUp}
->
-  We offer franchise opportunities under <span className="text-[#8dcb3f] font-semibold">your own brand name</span>,
-  giving you complete ownership, identity, and freedom to grow your business independently —
-  backed by our experience, systems, and support.
-</motion.p>
+          <motion.p
+            className="max-w-3xl mx-auto mb-14 text-center text-lg md:text-xl text-white/90 leading-relaxed"
+            initial="hidden"
+            animate={hoursControls}
+            variants={fadeInUp}
+          >
+            We offer franchise opportunities under <span className="text-[#8dcb3f] font-semibold">your own brand name</span>,
+            giving you complete ownership, identity, and freedom to grow your business independently —
+            backed by our experience, systems, and support.
+          </motion.p>
 
         </div>
       </section>

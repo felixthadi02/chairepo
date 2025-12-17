@@ -34,13 +34,13 @@
 // //     const checkMobile = () => {
 // //       setIsMobile(window.innerWidth < 768);
 // //     };
-    
+
 // //     // Initial check
 // //     checkMobile();
-    
+
 // //     // Add event listener for window resize
 // //     window.addEventListener('resize', checkMobile);
-    
+
 // //     // Clean up
 // //     return () => window.removeEventListener('resize', checkMobile);
 // //   }, []);
@@ -603,19 +603,19 @@
 // //         ::-webkit-scrollbar-thumb:hover {
 // //           background: linear-gradient(180deg, #7bc42e, #6ab31d);
 // //         }
-        
+
 // //         /* Hide scrollbar for mobile */
 // //         @media (max-width: 768px) {
 // //           .scrollbar-hidden {
 // //             -ms-overflow-style: none;
 // //             scrollbar-width: none;
 // //           }
-          
+
 // //           .scrollbar-hidden::-webkit-scrollbar {
 // //             display: none;
 // //           }
 // //         }
-        
+
 // //         /* Improve touch targets */
 // //         @media (max-width: 768px) {
 // //           button, a {
@@ -630,7 +630,7 @@
 // //             max-width: 1200px;
 // //           }
 // //         }
-        
+
 // //         @media (min-width: 1536px) {
 // //           .container {
 // //             max-width: 1400px;
@@ -649,7 +649,7 @@
 // //             }}
 // //           ></div>
 // //           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-[#8dcb3f]/50"></div>
-          
+
 // //           {/* Animated circles - Enhanced for desktop */}
 // //           <motion.div
 // //             animate={{
@@ -677,7 +677,7 @@
 // //             className="absolute bottom-1/4 left-1/4 w-48 sm:w-64 md:w-96 lg:w-[30rem] h-48 sm:h-64 md:h-96 lg:h-[30rem] rounded-full bg-[#8dcb3f]/20 blur-3xl"
 // //           ></motion.div>
 // //         </div>
-        
+
 // //         {/* Hero content - Enhanced for desktop */}
 // //         <div className="relative z-10 container mx-auto px-4 py-12 md:py-24 text-center">
 // //           <motion.div
@@ -695,7 +695,7 @@
 // //             <p className="text-white/90 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed mb-8 lg:mb-12">
 // //               Begin your journey with Tea 5 Cafe - low investment, high returns, and complete business support
 // //             </p>
-            
+
 // //             <motion.button
 // //               whileHover={{ scale: 1.05 }}
 // //               whileTap={{ scale: 0.95 }}
@@ -1062,7 +1062,7 @@
 //     const checkMobile = () => {
 //       setIsMobile(window.innerWidth < 768);
 //     };
-    
+
 //     checkMobile();
 //     window.addEventListener('resize', checkMobile);
 //     return () => window.removeEventListener('resize', checkMobile);
@@ -1315,7 +1315,7 @@
 //       <div ref={cardRef} className="relative mb-16 md:mb-32 last:mb-0">
 //         {/* Timeline dot and connector - Desktop only */}
 //         <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
-          
+
 
 //           {/* Connecting line with gradient */}
 //           {index < timelineSteps.length - 1 && (
@@ -1360,7 +1360,7 @@
 //                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
 //                     loading="lazy"
 //                   />
-                  
+
 //                   {/* Elegant gradient overlay */}
 //                   <div
 //                     className="absolute inset-0 opacity-70 group-hover:opacity-50 transition-opacity duration-500"
@@ -1370,7 +1370,7 @@
 //                   ></div>
 
 //                   {/* Floating badge - More elegant styling */}
-                 
+
 
 //                   {/* Item count badge - Enhanced styling */}
 //                   <motion.div
@@ -1422,7 +1422,7 @@
 //                   }}
 //                 >
 //                   {/* Subtle pattern overlay */}
-                 
+
 //                 </div>
 
 //                 {/* Table Header - Desktop */}
@@ -1602,14 +1602,14 @@
 //         ::-webkit-scrollbar-thumb:hover {
 //           background: ${darkColor};
 //         }
-        
+
 //         /* Hide scrollbar for mobile */
 //         @media (max-width: 768px) {
 //           .scrollbar-hidden {
 //             -ms-overflow-style: none;
 //             scrollbar-width: none;
 //           }
-          
+
 //           .scrollbar-hidden::-webkit-scrollbar {
 //             display: none;
 //           }
@@ -1621,7 +1621,7 @@
 //             max-width: 1200px;
 //           }
 //         }
-        
+
 //         @media (min-width: 1536px) {
 //           .container {
 //             max-width: 1400px;
@@ -1640,10 +1640,10 @@
 //               backgroundAttachment: "fixed",
 //             }}
 //           ></div>
-          
+
 //           {/* Sophisticated overlay gradient */}
 //           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-[#1a372a]/70"></div>
-          
+
 //           {/* Elegant animated elements */}
 //           <motion.div
 //             animate={{
@@ -1671,7 +1671,7 @@
 //             className="absolute bottom-1/4 left-1/4 w-[30rem] h-[30rem] rounded-full bg-[#3a8c3f]/10 blur-3xl"
 //           ></motion.div>
 //         </div>
-        
+
 //         {/* Hero content - Sophisticated typography */}
 //         <div className="relative z-10 container mx-auto px-4 py-24 text-center">
 //           <motion.div
@@ -1955,10 +1955,14 @@
 
 
 
-import React,{useRef} from 'react';
-import { motion ,useInView} from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 const EquipmentPackagePage = () => {
+  const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroY = useTransform(scrollY, [0, 300], [0, -50]);
   const equipmentCategories = [
     {
       title: "Electronic Items",
@@ -2112,74 +2116,80 @@ const EquipmentPackagePage = () => {
       ]
     }
   ];
-const FadeInWhenVisible = ({ children, delay = 0 }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const FadeInWhenVisible = ({ children, delay = 0 }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-};
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.6, delay }}
+      >
+        {children}
+      </motion.div>
+    );
+  };
   return (
     <div className="min-h-screen bg-[#18191b]">
-      {/* Hero Section */}
-   <section
+      <style>{`
+                @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+                .font-sacramento {
+                    font-family: "Sacramento", cursive;
+                }
+            `}</style>
+
+      <section
         className="relative text-white overflow-hidden min-h-[500px] flex items-center"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1600&h=600&fit=crop')",
+          backgroundImage: `url(${icon})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
           padding: '170px 0 80px 0'
         }}
       >
-        <div className="container mx-auto px-4 relative z-10 w-full text-center">
-          <FadeInWhenVisible>
-            <h2
-              className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento"
-            >
-              Discover
-            </h2>
-          </FadeInWhenVisible>
-
-          <FadeInWhenVisible delay={0.2}>
-            <h2
-              className="uppercase font-bold inline-block border-y border-white/50 m-0"
-              style={{
-                fontSize: '40px',
-                lineHeight: '40px',
-                letterSpacing: '10px',
-                fontFamily: 'serif',
-                color: '#fff'
-              }}
-            >
-              Our Kit
-            </h2>
-          </FadeInWhenVisible>
-
-          <FadeInWhenVisible delay={0.4}>
-            <nav aria-label="breadcrumb" className="mt-6 flex justify-center items-center space-x-2 text-sm">
-              <ol className="flex space-x-2">
-                <li>
-                  <a href="/" className="text-white hover:text-gray-300 transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li className="text-gray-400">/</li>
-                <li className="text-gray-400" aria-current="page">
-                  start-up
-                </li>
-              </ol>
-            </nav>
-          </FadeInWhenVisible>
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        <div className="container mx-auto px-4 relative z-10 w-full">
+          <motion.div
+            className="text-center"
+            style={{ opacity: heroOpacity, y: heroY }}
+          >
+            <FadeInWhenVisible>
+              <h2 className="text-6xl text-[#8dcb3f] font-sacramento md:text-7xl lg:text-8xl font-bold mb-4">
+                Discover
+              </h2>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible delay={0.2}>
+              <h2
+                className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
+                style={{
+                  fontSize: '40px',
+                  lineHeight: '40px',
+                  letterSpacing: '10px',
+                  fontFamily: 'serif',
+                  color: '#fff'
+                }}
+              >
+                Our Kit
+              </h2>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible delay={0.4}>
+              <nav className="mt-6">
+                <ol className="flex justify-center items-center space-x-3 text-sm">
+                  <li>
+                    <a href="/" className="hover:text-[#8dcb3f] transition-colors">
+                      Home
+                    </a>
+                  </li>
+                  <li className="text-gray-400">/</li>
+                  <li className="text-[#8dcb3f]">Start-up</li>
+                </ol>
+              </nav>
+            </FadeInWhenVisible>
+          </motion.div>
         </div>
       </section>
 
