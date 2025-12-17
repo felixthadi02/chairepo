@@ -26,6 +26,7 @@ import image4 from '../assets/4.jpg'
 import image5 from '../assets/11.png';
 import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
+import image25 from '../assets/image 25.png';
 import ph2 from '../assets/ph2.png';
 import FloatingWhatsapp from "./floatingWhatsup";
 const HomePage = () => {
@@ -166,7 +167,7 @@ const HomePage = () => {
       name: 'Lavender Tea',
       title: 'Sip into Serenity',
       description: 'Lavender Tea is brewed from aromatic purple buds and is loved for its soothing effect on the mind and body. It helps reduce stress, improve sleep quality, enhance mood, and support healthy skin.',
-      image: image21, // Reusing image or add image25
+      image: image25, // Reusing image or add image25
       color: 'from-purple-400 to-violet-500'
     }
   ];
@@ -495,10 +496,10 @@ const HomePage = () => {
                 <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
                 <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
                 <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
-                <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
+                {/* <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
                   <span className="text-sm tracking-widest">EXPLORE</span>
                   <div className="w-12 h-[1px] bg-white group-hover:bg-amber-400 group-hover:w-20 transition-all"></div>
-                </button>
+                </button> */}
               </div>
             </div>
 
@@ -580,14 +581,14 @@ const HomePage = () => {
                   <h3 className="text-5xl font-thin mb-4">{teas[4].name}</h3>
                   <p className="text-2xl text-purple-400 font-light mb-6">{teas[4].title}</p>
                   <p className="text-gray-300 leading-relaxed text-lg mb-8">{teas[4].description}</p>
-                  <div className="flex gap-4">
+                  {/* <div className="flex gap-4">
                     <button className="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all">
                       LEARN MORE
                     </button>
                     <button className="px-6 py-3 bg-white text-black hover:bg-gray-200 transition-all">
                       SHOP NOW
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

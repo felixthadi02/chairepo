@@ -248,7 +248,7 @@ const Header = () => {
     { title: "About", link: "/about" },
     { title: "Gallery", link: "/gallery" },
     { title: "FAQs", link: "/faqs" },
-    { title: "Blog", link: "/blog" },
+    // { title: "Blog", link: "/blog" },
     { title: "Contact Us", link: "/contact-us" }
   ];
 
