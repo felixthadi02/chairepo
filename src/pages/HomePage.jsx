@@ -268,30 +268,30 @@ const HomePage = () => {
             className="h-full"
           >
             {[
-              {
-                image: image1,
-                line1: "Pure Aroma Delight",
-                line2: "Crafted for True Tea Lovers",
-                buttonText: "Start Your Franchise Journey",
-                description:
-                  "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
-              },
-              {
-                image: image2,
-                line1: "Your Tea Café. Your Brand.",
-                line2: "Start a Business That Feels Like Home",
-                buttonText: "Explore Franchise Options",
-                description:
-                  "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
-              },
-              {
-                image: image3,
-                line1: "Simple Setup. Smart Returns.",
-                line2: "Designed for Easy Operations",
-                buttonText: "Join Our Family",
-                description:
-                  "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
-              },
+              // {
+              //   image: image24,
+              //   line1: "Pure Aroma Delight",
+              //   line2: "Crafted for True Tea Lovers",
+              //   buttonText: "Start Your Franchise Journey",
+              //   description:
+              //     "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
+              // },
+              // {
+              //   image: image2,
+              //   line1: "Your Tea Café. Your Brand.",
+              //   line2: "Start a Business That Feels Like Home",
+              //   buttonText: "Explore Franchise Options",
+              //   description:
+              //     "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
+              // },
+              // {
+              //   image: image3,
+              //   line1: "Simple Setup. Smart Returns.",
+              //   line2: "Designed for Easy Operations",
+              //   buttonText: "Join Our Family",
+              //   description:
+              //     "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
+              // },
               {
                 image: image4,
                 line1: "Beyond a Café. A Growing Community.",
@@ -379,7 +379,7 @@ const HomePage = () => {
                         {/* button */}
                         <motion.a
                           key={`button-${index}-${isActive}`}
-                          href="#menu"
+                          href="/contact-us"
                           initial={{ opacity: 0, y: 80 }}
                           animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
                           transition={{
@@ -677,7 +677,7 @@ const HomePage = () => {
       </section> */}
 
       {/* Coffee Menu Section */}
-      <section
+      {/* <section
         className="py-20 bg-cover bg-fixed bg-center relative"
         style={{
           backgroundImage:
@@ -685,7 +685,7 @@ const HomePage = () => {
         }}
         data-jarallax
       >
-        {/* Background overlay */}
+       
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -697,7 +697,7 @@ const HomePage = () => {
             viewport={{ once: true }}
           >
             <div className="p-6 sm:p-8 rounded-lg shadow-lg bg-black/40 backdrop-blur-sm border border-white/10">
-              {/* Header */}
+          
               <div className="flex mb-6 font-bold text-[#8dcb3f] border-b border-white/20 pb-4">
                 <div className="flex-1 text-left uppercase tracking-wider">
                   espresso
@@ -705,7 +705,7 @@ const HomePage = () => {
 
               </div>
 
-              {/* Menu items */}
+        
               <div className="space-y-1">
                 {[
                   {
@@ -799,10 +799,10 @@ const HomePage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Favorite Foods Section */}
-      <section
+      {/* <section
         ref={foodRef}
         className="py-28 bg-cover bg-center text-white relative"
         style={{
@@ -835,9 +835,8 @@ const HomePage = () => {
             </motion.h2>
           </motion.div>
         </div>
-      </section>
-
-      {/* Foods Menu Section */}
+      </section> */}
+      {/* 
       <section
         className="py-16 sm:py-20 md:py-28 bg-cover bg-fixed bg-center relative"
         style={{
@@ -845,7 +844,7 @@ const HomePage = () => {
             "url('https://i.pinimg.com/1200x/20/6c/16/206c16f3c0026aa8ddd68e980ab6401e.jpg')",
         }}
       >
-        {/* Enhanced overlay with gradient */}
+    
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -857,7 +856,7 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              {/* Title visible only on mobile/tablet */}
+              
               <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center lg:hidden"
                 initial={{ opacity: 0 }}
@@ -868,7 +867,6 @@ const HomePage = () => {
                 Complete <span className="text-[#8dcb3f]">Startup</span> Package
               </motion.h2>
 
-              {/* Electronics Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -924,7 +922,6 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Kitchen Equipment Section */}
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -982,7 +979,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Tea & Coffee Materials Section */}
+             
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1036,7 +1033,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Syrups & Flavors Section */}
+        
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10 mb-6"
                 initial={{ opacity: 0, y: 50 }}
@@ -1090,7 +1087,7 @@ const HomePage = () => {
                 ))}
               </motion.div>
 
-              {/* Packaging & Branding Section */}
+             
               <motion.div
                 className="bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg shadow-2xl border border-white/10"
                 initial={{ opacity: 0, y: 50 }}
@@ -1180,7 +1177,7 @@ const HomePage = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Package Summary */}
+             
               <motion.div
                 className="mt-6 bg-[#8dcb3f]/20 backdrop-blur-sm p-4 rounded-lg border border-[#8dcb3f]/30"
                 initial={{ opacity: 0 }}
@@ -1199,7 +1196,6 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-              {/* Decorative element */}
               <motion.div
                 className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2"
                 initial={{ opacity: 0, x: -20 }}
@@ -1212,7 +1208,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 

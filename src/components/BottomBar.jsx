@@ -69,7 +69,7 @@ const BottomBar = () => {
                      bg-[length:400%_400%] text-transparent bg-clip-text 
                      animate-shine [background-position:0%_50%]"
                 >
-                    Crafted by the <span className="font-bold">Dev Team</span>
+                    Crafted by the <span className="font-bold">Digitally Vibe</span>
                 </p>
                 {/* Social Links */}
                 <div className="flex items-center gap-4 mt-2 sm:mt-0 text-gray-400">
