@@ -379,29 +379,6 @@ const HomePage = () => {
                         >
                           {slide.description}
                         </motion.p>
-
-                        {/* button */}
-                        <motion.a
-                          key={`button-${index}-${isActive}`}
-                          href="/contact-us"
-                          initial={{ opacity: 0, y: 80 }}
-                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.75,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 18,
-                          }}
-                          whileHover={{ scale: 1.05 }}
-                          className="mt-6 inline-flex items-center justify-center rounded-full bg-[#8dcb3f] text-white transition-all duration-300 hover:bg-[#7ab832] active:scale-[0.98]"
-                          style={{
-                            padding: "clamp(10px, 1.5vw, 14px) clamp(18px, 3vw, 34px)",
-                            fontSize: "clamp(12px, 2.2vw, 16px)",
-                          }}
-                        >
-                          {slide.buttonText}
-                        </motion.a>
                       </div>
                     </div>
                   </div>
