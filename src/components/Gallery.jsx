@@ -37,21 +37,21 @@ const galleryItems = [
     { id: 3, imgSrc: image3, title: "Tea Moment 3", category: "tea" },
     { id: 4, imgSrc: image4, title: "Tea Moment 4", category: "tea" },
     { id: 5, imgSrc: image5, title: "Tea Moment 5", category: "tea" },
-    
+
     // Cafe Interior (6-10)
     { id: 6, imgSrc: image6, title: "Cafe Interior 1", category: "cafe" },
     { id: 7, imgSrc: image7, title: "Cafe Interior 2", category: "cafe" },
     { id: 8, imgSrc: image8, title: "Cafe Interior 3", category: "cafe" },
     { id: 9, imgSrc: image9, title: "Cafe Interior 4", category: "cafe" },
     { id: 10, imgSrc: image10, title: "Cafe Interior 5", category: "cafe" },
-    
+
     // Kitchen Views (11-15)
     { id: 11, imgSrc: image11, title: "Kitchen View 1", category: "kitchen" },
     { id: 12, imgSrc: image12, title: "Kitchen View 2", category: "kitchen" },
     { id: 13, imgSrc: image13, title: "Kitchen View 3", category: "kitchen" },
     { id: 14, imgSrc: image14, title: "Kitchen View 4", category: "kitchen" },
     { id: 15, imgSrc: image15, title: "Kitchen View 5", category: "kitchen" },
-    
+
     // Events/Special (16-20)
     { id: 16, imgSrc: image16, title: "Special Moment 1", category: "events" },
     { id: 17, imgSrc: image17, title: "Special Moment 2", category: "events" },
@@ -96,8 +96,8 @@ const Gallery = () => {
     ];
 
     // Filter gallery items based on category - Updated filtering logic
-    const filteredItems = activeCategory === 'all' 
-        ? galleryItems 
+    const filteredItems = activeCategory === 'all'
+        ? galleryItems
         : galleryItems.filter(item => item.category === activeCategory);
 
     // Get count for each category
@@ -156,13 +156,13 @@ const Gallery = () => {
         <div className="min-h-screen bg-[#18191b]">
             <Helmet>
                 <title>Tea Moments and Franchise Highlights | Tea 5 cafe</title>
-                <meta 
-                    name="description" 
+                <meta
+                    name="description"
                     content="Explore our gallery filled with tea moments, cafe interiors, and franchise stories from across India. See the taste and passion behind Tea 5 cafe."
                 />
-                <meta 
-                    name="keywords" 
-                    content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
+                <meta
+                    name="keywords"
+                    content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
                 />
                 <link rel="canonical" href="https://www.tea5cafe.com/gallery" />
             </Helmet>
@@ -194,24 +194,27 @@ const Gallery = () => {
                         style={{ opacity: heroOpacity, y: heroY }}
                     >
                         <FadeInWhenVisible>
-                            <h2 className="text-6xl text-[#8dcb3f] font-sacramento md:text-7xl lg:text-8xl font-bold mb-4">
-                                Discover
+                            <h2 className="text-3xl text-[#8dcb3f] md:text-4xl lg:text-5xl font-bold mb-4" style={{
+                                fontFamily: 'serif',
+                            }}>
+                                From Vision to Reality
                             </h2>
                         </FadeInWhenVisible>
                         <FadeInWhenVisible delay={0.2}>
                             <h2
                                 className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
                                 style={{
-                                    fontSize: '40px',
-                                    lineHeight: '40px',
-                                    letterSpacing: '10px',
+                                    fontSize: '20px',
+                                    lineHeight: '20px',
+                                    letterSpacing: '5px',
                                     fontFamily: 'serif',
                                     color: '#fff'
                                 }}
                             >
-                                Gallery
+                                From Garden to Cup
                             </h2>
                         </FadeInWhenVisible>
+
                         <FadeInWhenVisible delay={0.4}>
                             <nav className="mt-6">
                                 <ol className="flex justify-center items-center space-x-3 text-sm">
@@ -221,7 +224,11 @@ const Gallery = () => {
                                         </a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="text-[#8dcb3f]">Gallery</li>
+                                    <li className="text-[#8dcb3f]">
+                                        <a href="/contact-us" className="hover:text-[#8dcb3f] transition-colors">
+                                            Our-journey
+                                        </a>
+                                    </li>
                                 </ol>
                             </nav>
                         </FadeInWhenVisible>
@@ -240,11 +247,10 @@ const Gallery = () => {
                                     onClick={() => setActiveCategory(category.id)}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                                        activeCategory === category.id
-                                            ? 'bg-[#8dcb3f] text-white shadow-lg shadow-[#8dcb3f]/30'
-                                            : 'bg-[#2a2b2e] text-gray-300 hover:bg-[#3a3b3e]'
-                                    }`}
+                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category.id
+                                        ? 'bg-[#8dcb3f] text-white shadow-lg shadow-[#8dcb3f]/30'
+                                        : 'bg-[#2a2b2e] text-gray-300 hover:bg-[#3a3b3e]'
+                                        }`}
                                 >
                                     {category.label}
                                     <span className="ml-2 text-xs opacity-70">
@@ -260,7 +266,7 @@ const Gallery = () => {
             {/* Gallery Grid */}
             <section className="py-16 px-4">
                 <div className="container mx-auto">
-                    <motion.div 
+                    <motion.div
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                         layout
                     >
@@ -413,7 +419,7 @@ const Gallery = () => {
                             />
 
                             {/* Image Info */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2 }}
@@ -442,7 +448,7 @@ const Gallery = () => {
                             </motion.div>
 
                             {/* Thumbnail Navigation */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
@@ -458,11 +464,10 @@ const Gallery = () => {
                                         }}
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                                            currentIndex === index 
-                                                ? 'border-[#8dcb3f] ring-2 ring-[#8dcb3f]/50' 
-                                                : 'border-white/20 hover:border-white/50'
-                                        }`}
+                                        className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${currentIndex === index
+                                            ? 'border-[#8dcb3f] ring-2 ring-[#8dcb3f]/50'
+                                            : 'border-white/20 hover:border-white/50'
+                                            }`}
                                     >
                                         <img
                                             src={item.imgSrc}

@@ -269,30 +269,30 @@ const HomePage = () => {
             className="h-full"
           >
             {[
-              // {
-              //   image: image24,
-              //   line1: "Pure Aroma Delight",
-              //   line2: "Crafted for True Tea Lovers",
-              //   buttonText: "Start Your Franchise Journey",
-              //   description:
-              //     "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
-              // },
-              // {
-              //   image: image2,
-              //   line1: "Your Tea Café. Your Brand.",
-              //   line2: "Start a Business That Feels Like Home",
-              //   buttonText: "Explore Franchise Options",
-              //   description:
-              //     "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
-              // },
-              // {
-              //   image: image3,
-              //   line1: "Simple Setup. Smart Returns.",
-              //   line2: "Designed for Easy Operations",
-              //   buttonText: "Join Our Family",
-              //   description:
-              //     "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
-              // },
+              {
+                image: image24,
+                line1: "Pure Aroma Delight",
+                line2: "Crafted for True Tea Lovers",
+                buttonText: "Start Your Franchise Journey",
+                description:
+                  "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
+              },
+              {
+                image: image2,
+                line1: "Your Tea Café. Your Brand.",
+                line2: "Start a Business That Feels Like Home",
+                buttonText: "Explore Franchise Options",
+                description:
+                  "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
+              },
+              {
+                image: image3,
+                line1: "Simple Setup. Smart Returns.",
+                line2: "Designed for Easy Operations",
+                buttonText: "Join Our Family",
+                description:
+                  "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
+              },
               {
                 image: image4,
                 line1: "Beyond a Café. A Growing Community.",
@@ -326,9 +326,12 @@ const HomePage = () => {
                             stiffness: 90,
                             damping: 18,
                           }}
-                          className="font-sacramento text-[#8dcb3f] leading-tight tracking-wide"
+                          className="  text-[#8dcb3f] leading-tight tracking-wide"
                           style={{
                             fontSize: "clamp(32px, 6vw, 64px)",
+                            //  fontSize: "clamp(12px, 2.2vw, 20px)",
+                            letterSpacing: "clamp(2px, 1vw, 6px)",
+                            fontFamily: "serif",
                           }}
                         >
                           {slide.line1}
@@ -475,13 +478,13 @@ const HomePage = () => {
           <div className="space-y-32">
 
             {/* Row 1 - Rooibos Feature */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 relative group">
                 <div className="relative overflow-hidden rounded-xl">
                   <img
                     src={teas[0].image}
                     alt={teas[0].name}
-                    className="w-full h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-[600px] h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
                 </div>
@@ -490,16 +493,47 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="lg:col-span-5 space-y-6 lg:pl-12">
-                <span className="inline-block px-4 py-1 border border-amber-500 text-amber-500 text-xs tracking-widest text-[#8dcb3f]">
-                  SOUTH AFRICAN ORIGIN
-                </span>
+              
                 <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
                 <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
                 <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
-                {/* <button className="group flex items-center gap-4 text-white hover:text-amber-400 transition-colors">
-                  <span className="text-sm tracking-widest">EXPLORE</span>
-                  <div className="w-12 h-[1px] bg-white group-hover:bg-amber-400 group-hover:w-20 transition-all"></div>
-                </button> */}
+            
+              </div>
+            </div> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative group overflow-hidden">
+                <div className="h-[500px] relative rounded-xl">
+                  <img
+                    src={teas[0].image}
+                    alt={teas[0].name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 p-12">
+                    <span className="text-6xl font-thin text-white/20">01</span>
+                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[0].name}</h3>
+                    <p className="text-yellow-400 text-xl mb-4">{teas[0].title}</p>
+                    <p className="text-gray-300 line-clamp-3">{teas[0].description}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group overflow-hidden">
+                <div className="h-[500px] relative rounded-xl">
+                  <img
+                    src={teas[3].image}
+                    alt={teas[3].name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 p-12">
+                    <span className="text-6xl font-thin text-white/20">02</span>
+                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[3].name}</h3>
+                    <p className="text-pink-400 text-xl mb-4">{teas[3].title}</p>
+                    <p className="text-gray-300 line-clamp-3">{teas[3].description}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -515,7 +549,7 @@ const HomePage = () => {
                   <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                   <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">02</span>
+                    <span className="text-6xl font-thin text-white/20">03</span>
                     <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[1].name}</h3>
                     <p className="text-yellow-400 text-xl mb-4">{teas[1].title}</p>
                     <p className="text-gray-300 line-clamp-3">{teas[1].description}</p>
@@ -532,7 +566,7 @@ const HomePage = () => {
                   <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                   <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">03</span>
+                    <span className="text-6xl font-thin text-white/20">04</span>
                     <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[2].name}</h3>
                     <p className="text-pink-400 text-xl mb-4">{teas[2].title}</p>
                     <p className="text-gray-300 line-clamp-3">{teas[2].description}</p>
@@ -542,7 +576,7 @@ const HomePage = () => {
             </div>
 
             {/* Row 3 - Blue Tea Feature */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
 
                 <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[3].name}</h3>
@@ -563,7 +597,7 @@ const HomePage = () => {
                   <span className="text-9xl font-thin text-white/10">04</span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Row 4 - Lavender Horizontal */}
             <div className="relative overflow-hidden rounded-lg">
@@ -820,7 +854,7 @@ const HomePage = () => {
             variants={fadeInUp}
           >
             <h2 className="text-[#8dcb3f]  mb-4 font-bold font-sacramento text-[clamp(40px,6vw,80px)]">
-              StartUp Kit
+              Start a Franchise
             </h2>
             <motion.h2
               className="uppercase font-bold inline-block border-y border-white/50 m-0"

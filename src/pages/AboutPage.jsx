@@ -44,25 +44,25 @@ export default function AboutPage() {
     {
       name: "Prakash Martin Rayudu",
       role: "Co-Founder & CEO",
-      image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop",
-      socials: { facebook: true, twitter: true, discord: true }
+      // image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop",
+      socials: { facebook: true, twitter: true, instagram: true }
     },
     {
       name: "Vimala Martin Rayudu",
-      role: "CTO",
-      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
+      role: "Co-Founder & CTO",
+      // image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     },
     {
       name: "Daniel John Komanpalli",
-      role: "Co-Founder & COO",
-      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop",
+      role: "Co-Founder & CEO",
+      // image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     },
     {
-      name: "Harsha Kakarla",
-      role: " CFO & coo",
-      image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop",
+      name: "Sai Harsha Kakarla",
+      role: "CFO & COO",
+      // image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop",
       socials: { facebook: true, twitter: true, instagram: true }
     }
   ];
@@ -71,15 +71,15 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#18191b] text-white">
       <Helmet>
         <title>Premium Tea Brand and Franchise Success | Tea 5 cafe</title>
-        <meta 
-          name="description" 
+        <meta
+          name="description"
           content="Discover how a simple idea grew into one of India's most trusted tea franchise brands built on quality, trust, and growth with Tea 5 cafe."
         />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
+        <meta
+          name="keywords"
+          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
-        <link rel="canonical" href="https://www.tea5cafe.com/about" />
+        <link rel="canonical" href="https://www.tea5cafe.com/about-us" />
       </Helmet>
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
@@ -101,26 +101,27 @@ export default function AboutPage() {
         }}
       >
         <div className="container mx-auto px-4 relative z-10 w-full text-center">
+
+
           <FadeInWhenVisible>
-            <h2
-              className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento"
-            >
-              Discover
+            <h2 className="text-3xl text-[#8dcb3f] md:text-4xl lg:text-5xl font-bold mb-4" style={{
+              fontFamily: 'serif',
+            }}>
+              Our Story
             </h2>
           </FadeInWhenVisible>
-
           <FadeInWhenVisible delay={0.2}>
             <h2
-              className="uppercase font-bold inline-block border-y border-white/50 m-0"
+              className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
               style={{
-                fontSize: '40px',
-                lineHeight: '40px',
-                letterSpacing: '10px',
+                fontSize: '20px',
+                lineHeight: '20px',
+                letterSpacing: '5px',
                 fontFamily: 'serif',
                 color: '#fff'
               }}
             >
-              Our Story
+              Tea That Brings Together
             </h2>
           </FadeInWhenVisible>
 
@@ -134,7 +135,9 @@ export default function AboutPage() {
                 </li>
                 <li className="text-gray-400">/</li>
                 <li className="text-gray-400" aria-current="page">
-                  About
+                  <a href="/contact-us" className="text-white hover:text-gray-300 transition-colors">
+                    Contact-us
+                  </a>
                 </li>
               </ol>
             </nav>
@@ -166,7 +169,7 @@ export default function AboutPage() {
 
               <FadeInWhenVisible delay={0.2}>
                 <p className="text-gray-400 mb-4 leading-relaxed">
-                  Started in Hyderabad, Tea 5 cafe soon became a favorite spot for families, friends, and entrepreneurs to relax and share good moments. Every cup is made from premium tea leaves that are carefully selected for freshness and taste.
+                  Started in Narsapuram, West Godavari, Ap, Tea 5 cafe soon became a favorite spot for families, friends, and entrepreneurs to relax and share good moments. Every cup is made from premium tea leaves that are carefully selected for freshness and taste.
                 </p>
               </FadeInWhenVisible>
 
@@ -212,9 +215,9 @@ export default function AboutPage() {
                       viewport={{ once: true }}
                       className="text-4xl font-bold mb-2"
                     >
-                      750+
+                      Our Outlets
                     </motion.h3>
-                    <h4 className="text-lg">Positive feedbacks</h4>
+                    <h4 className="text-lg">Across India</h4>
                   </motion.div>
                 </FadeInWhenVisible>
               </div>
@@ -233,9 +236,9 @@ export default function AboutPage() {
                       viewport={{ once: true }}
                       className="text-4xl font-bold mb-2"
                     >
-                      50%
+                      No Royalty
                     </motion.h3>
-                    <h4 className="text-lg">Turnover increased</h4>
+                    {/* <h4 className="text-lg">Turnover increased</h4> */}
                   </motion.div>
                 </FadeInWhenVisible>
 
@@ -270,7 +273,8 @@ export default function AboutPage() {
               style={{
                 fontFamily: "'Sacramento', cursive",
                 fontWeight: 400,
-                fontStyle: "normal",
+                // fontStyle: "normal",
+                fontFamily: 'serif',
                 fontSize: "clamp(36px, 8vw, 55px)",
                 color: "#8dcb3f",
                 margin: 0,
@@ -320,13 +324,14 @@ export default function AboutPage() {
                 className="text-center"
               >
                 <div className="relative mb-6 inline-block">
-                  <motion.img
+                  {/* <motion.img
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                     src={member.image}
+
                     alt={member.name}
                     className="relative z-10 rounded-3xl w-full max-w-xs mx-auto"
-                  />
+                  /> */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -339,7 +344,7 @@ export default function AboutPage() {
                 <div className="flex justify-center gap-3">
                   {member.socials.facebook && (
                     <motion.a
-                      href="#"
+                      href="https://www.facebook.com/Tea5cafe"
                       whileHover={{ scale: 1.2, backgroundColor: "#8dcb3f" }}
                       whileTap={{ scale: 0.9 }}
                       transition={{ duration: 0.2 }}
@@ -350,7 +355,7 @@ export default function AboutPage() {
                   )}
                   {member.socials.twitter && (
                     <motion.a
-                      href="#"
+                      href="https://x.com/Tea5cafe"
                       whileHover={{ scale: 1.2, backgroundColor: "#8dcb3f" }}
                       whileTap={{ scale: 0.9 }}
                       transition={{ duration: 0.2 }}
@@ -361,7 +366,7 @@ export default function AboutPage() {
                   )}
                   {member.socials.instagram && (
                     <motion.a
-                      href="#"
+                      href="https://www.instagram.com/tea5.cafe"
                       whileHover={{ scale: 1.2, backgroundColor: "#8dcb3f" }}
                       whileTap={{ scale: 0.9 }}
                       transition={{ duration: 0.2 }}

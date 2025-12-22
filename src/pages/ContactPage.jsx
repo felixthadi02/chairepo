@@ -3,6 +3,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600";
 
@@ -135,7 +136,7 @@ export default function ContactSection() {
                             className="text-center"
                             style={{ opacity: heroOpacity, y: heroY }}
                         >
-                            <FadeInWhenVisible>
+                            {/* <FadeInWhenVisible>
                                 <h2 className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento text-[clamp(40px,6vw,80px)]">
                                     Get In
                                 </h2>
@@ -153,14 +154,35 @@ export default function ContactSection() {
                                 >
                                     Touch
                                 </h2>
+                            </FadeInWhenVisible> */}
+                            <FadeInWhenVisible>
+                                <h2 className="text-3xl text-[#8dcb3f] md:text-4xl lg:text-5xl font-bold mb-4" style={{
+                                    fontFamily: 'serif',
+                                }}>
+                                    Our Support
+                                </h2>
+                            </FadeInWhenVisible>
+                            <FadeInWhenVisible delay={0.2}>
+                                <h2
+                                    className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
+                                    style={{
+                                        fontSize: '20px',
+                                        lineHeight: '20px',
+                                        letterSpacing: '5px',
+                                        fontFamily: 'serif',
+                                        color: '#fff'
+                                    }}
+                                >
+                                    Help When You Need
+                                </h2>
                             </FadeInWhenVisible>
                             <FadeInWhenVisible delay={0.4}>
                                 <nav aria-label="breadcrumb">
                                     <ol className="flex justify-center items-center space-x-2 text-sm mt-4">
                                         <li>
-                                            <a href="/" className="text-white hover:text-gray-300 transition-colors">
+                                            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
                                                 Home
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="text-gray-400">/</li>
                                         <li className="text-gray-400" aria-current="page">
@@ -190,7 +212,7 @@ export default function ContactSection() {
                             </FadeInWhenVisible>
                             <FadeInWhenVisible delay={0.2}>
                                 <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                                    Have questions about our franchise opportunities or want to learn more? 
+                                    Have questions about our franchise opportunities or want to learn more?
                                     We'd love to hear from you. Fill out the form below and we'll get back to you soon.
                                 </p>
                             </FadeInWhenVisible>

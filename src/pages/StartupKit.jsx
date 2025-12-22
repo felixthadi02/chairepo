@@ -2158,22 +2158,24 @@ const EquipmentPackagePage = () => {
             style={{ opacity: heroOpacity, y: heroY }}
           >
             <FadeInWhenVisible>
-              <h2 className="text-6xl text-[#8dcb3f] font-sacramento md:text-7xl lg:text-8xl font-bold mb-4">
-                Discover
+              <h2 className="text-3xl text-[#8dcb3f] md:text-4xl lg:text-5xl font-bold mb-4" style={{
+                fontFamily: 'serif',
+              }}>
+                Get A Franchise On Your Own Name
               </h2>
             </FadeInWhenVisible>
             <FadeInWhenVisible delay={0.2}>
               <h2
                 className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
                 style={{
-                  fontSize: '40px',
-                  lineHeight: '40px',
-                  letterSpacing: '10px',
+                  fontSize: '20px',
+                  lineHeight: '20px',
+                  letterSpacing: '5px',
                   fontFamily: 'serif',
                   color: '#fff'
                 }}
               >
-                Our Kit
+                TURN YOUR NAME INTO A BRAND
               </h2>
             </FadeInWhenVisible>
             <FadeInWhenVisible delay={0.4}>
@@ -2185,7 +2187,11 @@ const EquipmentPackagePage = () => {
                     </a>
                   </li>
                   <li className="text-gray-400">/</li>
-                  <li className="text-[#8dcb3f]">Start-up</li>
+                  <li className="text-[#8dcb3f]">
+                    <a href="/contact-us" className="hover:text-[#8dcb3f] transition-colors">
+                      Start-up
+                    </a>
+                  </li>
                 </ol>
               </nav>
             </FadeInWhenVisible>
@@ -2251,11 +2257,11 @@ const EquipmentPackagePage = () => {
                 </div>
 
                 {/* View Details Button */}
-                <div className="p-6 pt-0">
+                {/* <div className="p-6 pt-0">
                   <button className="w-full py-3 bg-[#8dcb3f]/10 text-[#8dcb3f] rounded-lg font-semibold hover:bg-[#8dcb3f] hover:text-[#18191b] transition-all duration-300">
                     View Details
                   </button>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </motion.div>

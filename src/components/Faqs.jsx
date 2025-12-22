@@ -1,10 +1,11 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useInView } from 'framer-motion';
 const faqList = [
     {
         question: "What are your cafe timings?",
@@ -40,6 +41,23 @@ const faqList = [
 
 const Faqs = () => {
     const navigate = useNavigate();
+
+    const FadeInWhenVisible = ({ children, delay = 0 }) => {
+        const ref = useRef(null);
+        const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+        return (
+            <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ duration: 0.6, delay }}
+            >
+                {children}
+            </motion.div>
+        );
+    };
+
 
     // Container animation variants
     const containerVariants = {
@@ -135,29 +153,27 @@ const Faqs = () => {
                     <link rel="canonical" href="https://www.tea5cafe.com/faqs" />
                 </Helmet>
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <motion.h2
-                        className="text-6xl text-[#8dcb3f] md:text-7xl lg:text-8xl font-bold mb-4 font-sacramento"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                    >
-                        Welcome to
-                    </motion.h2>
-
-                    <motion.h2
-                        className="uppercase font-bold inline-block border-y border-white/50 text-white"
-                        style={{
-                            fontSize: "40px",
-                            lineHeight: "40px",
-                            letterSpacing: "10px",
-                            fontFamily: "serif",
-                        }}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                    >
-                        Tea5Cafe FAQs
-                    </motion.h2>
+                    <FadeInWhenVisible>
+                        <h2 className="text-3xl text-[#8dcb3f] md:text-4xl lg:text-5xl font-bold mb-4" style={{
+                            fontFamily: 'serif',
+                        }}>
+                            Welcome to
+                        </h2>
+                    </FadeInWhenVisible>
+                    <FadeInWhenVisible delay={0.2}>
+                        <h2
+                            className="uppercase font-bold inline-block border-y border-white/50 border-opacity-50 m-0"
+                            style={{
+                                fontSize: '20px',
+                                lineHeight: '20px',
+                                letterSpacing: '5px',
+                                fontFamily: 'serif',
+                                color: '#fff'
+                            }}
+                        >
+                            Tea5Cafe Faqs
+                        </h2>
+                    </FadeInWhenVisible>
 
                     <motion.nav
                         aria-label="breadcrumb"
@@ -177,7 +193,9 @@ const Faqs = () => {
                             </li>
                             <li className="text-gray-400">/</li>
                             <li className="text-gray-400" aria-current="page">
-                                FAQ
+                                <a href="/contact-us" className="hover:text-[#8dcb3f] transition-colors">
+                                    FAQ
+                                </a>
                             </li>
                         </ol>
                     </motion.nav>

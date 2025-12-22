@@ -27,7 +27,7 @@
 //   // Navigation items
 //   const navItems = [
 //     { title: "Home", link: "home" },
-//     { title: "StartUp Kit", link: "startupkit" },
+//     { title: "Start a Franchise", link: "startupkit" },
 //     { title: "About", link: "about" },
 //     { title: "Gallery", link: "gallery" },
 //     { title: "FAQs", link: "faqs" },
@@ -244,9 +244,9 @@ const Header = () => {
   // Navigation items with proper routes
   const navItems = [
     { title: "Home", link: "/" },
-    { title: "StartUp Kit", link: "/startup-kit" },
-    { title: "About", link: "/about" },
-    { title: "Gallery", link: "/gallery" },
+    { title: "Start a Franchise", link: "/startup-kit" },
+    { title: "About Us", link: "/about-us" },
+    { title: "Our Journey", link: "/gallery" },
     { title: "FAQs", link: "/faqs" },
     // { title: "Blog", link: "/blog" },
     { title: "Contact Us", link: "/contact-us" }

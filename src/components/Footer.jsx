@@ -313,14 +313,14 @@ export default function Footer() {
     },
     {
       icon: Rss,
-      href: "#",
-      label: "RSS",
+      href: "https://www.tea5cafe.com/",
+      label: "Website",
       bgGradient: "from-orange-400 to-orange-500"
     },
     {
       icon: Dribbble,
-      href: "#",
-      label: "Dribbble",
+      href: "https://www.instagram.com/tea5.cafe",
+      label: "Instagram",
       bgGradient: "from-pink-400 to-pink-500"
     },
   ];
@@ -328,7 +328,7 @@ export default function Footer() {
   // Quick links for navigation
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'About', path: '/about-us' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact-us' },
@@ -381,7 +381,7 @@ export default function Footer() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-white/20">
                 <div className="space-y-2">
-                 
+
                   <motion.a
                     href="tel:+918466066425"
                     className="flex items-center gap-2 text-sm justify-center md:justify-start hover:text-yellow-300 transition-colors"

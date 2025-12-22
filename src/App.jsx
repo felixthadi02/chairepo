@@ -104,7 +104,7 @@
 //           <Routes>
 //             <Route path="/" element={<HomePage />} />
 //             <Route path="/startup-kit" element={<StartupKit />} />
-//             <Route path="/about" element={<AboutPage />} />
+//             <Route path="/about-us" element={<AboutPage />} />
 //             <Route path="/gallery" element={<Gallery />} />
 //             <Route path="/blog" element={<BlogList />} />
 //             <Route path="/testimonials" element={<TestimonialsPage />} />
@@ -153,7 +153,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/startup-kit" element={<StartupKit />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about-us" element={<AboutPage />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
