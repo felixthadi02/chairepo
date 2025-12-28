@@ -28,7 +28,7 @@ import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
 import image25 from '../assets/image 25.png';
 import ph2 from '../assets/ph2.png';
-import chaipic from '../assets/chaipic.png'
+import chaipic from '../assets/chaipic.PNG'
 import mogito from '../assets/mogito.png'
 import burger from '../assets/burger.png'
 import shacks from '../assets/shacks.png'
