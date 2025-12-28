@@ -27,8 +27,8 @@ import image3 from '../assets/3.jpg'
 import image25 from '../assets/Lavender.png';
 
 import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/Mojito.PNG'
-import burger from '../assets/Burger.PNG'
+import mogito from '../assets/Mojito.png'
+import burger from '../assets/Burger.png'
 import shacks from '../assets/shacks.png'
 import Rooibos from '../assets/Rooibos.png'
 import chai2 from '../assets/chai2.png'
