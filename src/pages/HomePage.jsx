@@ -22,7 +22,7 @@ import image24 from '../assets/4.png';
 
 
 import image3 from '../assets/3.jpg'
-import coffee from '../assets/coffee.png'
+// import coffee from '../assets/coffee.png'
 
 import image25 from '../assets/Lavender.png';
 
@@ -594,7 +594,7 @@ const HomePage = () => {
                   "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
               },
               {
-                image: coffee,
+                image: "/coffee.png",
                 mobileImage: coffee2, // Add your mobile image here
                 line1: "Simple Setup. Smart Returns.",
                 line2: "Designed for Easy Operations",
