@@ -30,10 +30,12 @@ import image7 from '../assets/13.png';
 import image25 from '../assets/Lavender.png';
 import ph2 from '../assets/ph2.png';
 import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/mogito.png'
-import burger from '../assets/burger.png'
-import shacks from '../assets/shacks.png'
+import mogito from '../assets/mojito.PNG'
+import burger from '../assets/burger.PNG'
+import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.png'
+import chai2 from '../assets/chai2.PNG'
+import coffee2 from '../assets/coffee2.PNG'
 
 import FloatingWhatsapp from "./floatingWhatsup";
 import { TeaCard } from "../components/TeaCard";
@@ -587,7 +589,7 @@ const HomePage = () => {
               },
               {
                 image: chaipic,
-                mobileImage: image25, // Add your mobile image here
+                mobileImage: chai2, // Add your mobile image here
                 line1: "Your Tea Café. Your Brand.",
                 line2: "Start a Business That Feels Like Home",
                 buttonText: "Explore Franchise Options",
@@ -596,7 +598,7 @@ const HomePage = () => {
               },
               {
                 image: image4,
-                mobileImage: image4, // Add your mobile image here
+                mobileImage: coffee2, // Add your mobile image here
                 line1: "Simple Setup. Smart Returns.",
                 line2: "Designed for Easy Operations",
                 buttonText: "Join Our Family",
