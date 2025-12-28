@@ -32,7 +32,7 @@ import chaipic from '../assets/chaipic.PNG'
 // import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.png'
 import chai2 from '../assets/chai2.PNG'
-import coffee2 from '../assets/coffee2.png'
+// import coffee2 from '../assets/coffee2.png'
 
 import FloatingWhatsapp from "./floatingWhatsup";
 import { TeaCard } from "../components/TeaCard";
@@ -595,7 +595,7 @@ const HomePage = () => {
               },
               {
                 image: "/coffee.png",
-                mobileImage: coffee2, // Add your mobile image here
+                mobileImage: coffee2.PNG, // Add your mobile image here
                 line1: "Simple Setup. Smart Returns.",
                 line2: "Designed for Easy Operations",
                 buttonText: "Join Our Family",

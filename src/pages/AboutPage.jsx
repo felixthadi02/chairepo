@@ -93,7 +93,7 @@ export default function AboutPage() {
         className="relative text-white overflow-hidden min-h-[500px] flex items-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/coffee.png')",
+            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/coffee.PNG')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -262,7 +262,7 @@ export default function AboutPage() {
         className="relative bg-cover bg-center py-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/coffee.png')",
+            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/coffee.PNG')",
           backgroundAttachment: 'fixed'
         }}
       >
