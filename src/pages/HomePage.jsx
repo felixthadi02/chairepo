@@ -27,9 +27,9 @@ import image3 from '../assets/3.jpg'
 import image25 from '../assets/Lavender.png';
 
 import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/mogito.PNG'
-import burger from '../assets/burger.PNG'
-import shacks from '../assets/shacks.PNG'
+// import mogito from '../assets/mogito.PNG'
+// import burger from '../assets/burger.PNG'
+// import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.png'
 import chai2 from '../assets/chai2.PNG'
 import coffee2 from '../assets/coffee2.png'
@@ -194,7 +194,7 @@ const HomePage = () => {
       title: 'Wholesome & Flavorful',
       description:
         'A hearty plant-based burger infused with herbs and spices. Rich in fiber and nutrients, it supports digestion and provides a satisfying, guilt-free meal option.',
-      image: burger,
+      image: "/burger.PNG",
       color: 'from-red-400 to-orange-400',
       displayOrder: 6,
     },
@@ -204,7 +204,7 @@ const HomePage = () => {
       title: 'Creamy Wellness Boost',
       description:
         'A smooth and refreshing herbal shake made with natural ingredients. Packed with antioxidants and essential nutrients, it helps energize the body and supports overall wellness.',
-      image: shacks,
+      image: "/shacks.PNG",
       color: 'from-red-400 to-orange-400',
       displayOrder: 7,
     },
@@ -214,7 +214,7 @@ const HomePage = () => {
       title: 'Fresh. Cool. Revitalizing.',
       description:
         'A refreshing mint-based mojito infusion that cools the body and aids digestion. Perfect for hydration and detox, offering a crisp taste with natural goodness.',
-      image: mogito,
+      image: "/mogito.PNG",
       color: 'from-red-400 to-orange-400',
       displayOrder: 8,
     },
