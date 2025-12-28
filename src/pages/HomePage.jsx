@@ -19,7 +19,7 @@ import image21 from '../assets/1.png';
 import image22 from '../assets/2.png';
 import image23 from '../assets/3.png';
 import image24 from '../assets/4.png';
-import image1 from '../assets/1.jpg'
+// import image1 from '../assets/1.jpg'
 import image2 from '../assets/2.jpg'
 import image3 from '../assets/3.jpg'
 import image4 from '../assets/4.jpg'
@@ -28,7 +28,14 @@ import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
 import image25 from '../assets/image 25.png';
 import ph2 from '../assets/ph2.png';
+import chaipic from '../assets/chaipic.png'
+import mogito from '../assets/mogito.png'
+import burger from '../assets/burger.png'
+import shacks from '../assets/shacks.png'
+import Rooibos from '../assets/Rooibos.png'
+
 import FloatingWhatsapp from "./floatingWhatsup";
+import { TeaCard } from "../components/TeaCard";
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -134,43 +141,96 @@ const HomePage = () => {
       id: 1,
       name: 'Rooibos Tea',
       title: 'Pure Wellness, Naturally',
-      description: 'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
-      image: image21,
-      color: 'from-red-400 to-orange-400'
+      description:
+        'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
+      image: Rooibos,
+      color: 'from-red-400 to-orange-400',
+      displayOrder: 1,
     },
     {
       id: 2,
       name: 'Chamomile Tea',
       title: 'Relax. Restore. Rebalance.',
-      description: 'Chamomile Tea is well known for its calming properties and is ideal for relaxation and stress relief. It helps improve sleep quality, supports blood sugar balance, and eases menstrual discomfort naturally.',
+      description:
+        'Chamomile Tea is well known for its calming properties and is ideal for relaxation and stress relief. It helps improve sleep quality, supports blood sugar balance, and eases menstrual discomfort naturally.',
       image: image22,
-      color: 'from-yellow-300 to-amber-400'
+      color: 'from-yellow-300 to-amber-400',
+      displayOrder: 3,
     },
     {
       id: 3,
       name: 'Hibiscus Tea',
       title: 'Bold Flavor, Powerful Benefits',
-      description: 'Hibiscus Tea is rich in antioxidants, vitamin C, and natural compounds that support liver health and metabolism. Its refreshing taste helps fight bacteria while offering a naturally energizing and healthy beverage.',
-      image: image23,
-      color: 'from-pink-400 to-rose-500'
+      description:
+        'Hibiscus Tea is rich in antioxidants, vitamin C, and natural compounds that support liver health and metabolism. Its refreshing taste helps fight bacteria while offering a naturally energizing and healthy beverage.',
+      // image: image23,
+      image: image21,
+      color: 'from-pink-400 to-rose-500',
+      displayOrder: 2,
     },
     {
       id: 4,
       name: 'Blue Tea',
       title: 'Calm in Every Sip',
-      description: 'Blue Tea is naturally rich in antioxidants and is known for supporting healthy skin, improving eyesight, and promoting hair growth. Being caffeine-free, it offers a calming experience while helping the body stay refreshed and balanced.',
+      description:
+        'Blue Tea is naturally rich in antioxidants and is known for supporting healthy skin, improving eyesight, and promoting hair growth. Being caffeine-free, it offers a calming experience while helping the body stay refreshed and balanced.',
       image: image24,
-      color: 'from-blue-400 to-indigo-500'
+      color: 'from-blue-400 to-indigo-500',
+      displayOrder: 4,
     },
     {
       id: 5,
       name: 'Lavender Tea',
       title: 'Sip into Serenity',
-      description: 'Lavender Tea is brewed from aromatic purple buds and is loved for its soothing effect on the mind and body. It helps reduce stress, improve sleep quality, enhance mood, and support healthy skin.',
-      image: image25, // Reusing image or add image25
-      color: 'from-purple-400 to-violet-500'
-    }
+      description:
+        'Lavender Tea is brewed from aromatic purple buds and is loved for its soothing effect on the mind and body. It helps reduce stress, improve sleep quality, enhance mood, and support healthy skin.',
+      image: image25,
+      color: 'from-purple-400 to-violet-500',
+      displayOrder: 5,
+    },
+    {
+      id: 6,
+      name: 'Herbal Burger Delight',
+      title: 'Wholesome & Flavorful',
+      description:
+        'A hearty plant-based burger infused with herbs and spices. Rich in fiber and nutrients, it supports digestion and provides a satisfying, guilt-free meal option.',
+      image: burger,
+      color: 'from-red-400 to-orange-400',
+      displayOrder: 6,
+    },
+    {
+      id: 7,
+      name: 'Classic Herbal Shake',
+      title: 'Creamy Wellness Boost',
+      description:
+        'A smooth and refreshing herbal shake made with natural ingredients. Packed with antioxidants and essential nutrients, it helps energize the body and supports overall wellness.',
+      image: shacks,
+      color: 'from-red-400 to-orange-400',
+      displayOrder: 7,
+    },
+    {
+      id: 8,
+      name: 'Mint Mojito Infusion',
+      title: 'Fresh. Cool. Revitalizing.',
+      description:
+        'A refreshing mint-based mojito infusion that cools the body and aids digestion. Perfect for hydration and detox, offering a crisp taste with natural goodness.',
+      image: mogito,
+      color: 'from-red-400 to-orange-400',
+      displayOrder: 8,
+    },
+
+    {
+      id: 8,
+      name: 'Rooibos Tea',
+      title: 'Pure Wellness, Naturally',
+      description:
+        'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
+      image: burger,
+      color: 'from-red-400 to-orange-400',
+      displayOrder: 8,
+    },
   ];
+
   const coffeeInView = useInView(coffeeRef, { once: false, threshold: 0.2 });
   const foodInView = useInView(foodRef, { once: false, threshold: 0.2 });
   const galleryInView = useInView(galleryRef, { once: false, threshold: 0.2 });
@@ -239,6 +299,13 @@ const HomePage = () => {
     },
   };
 
+  const displayTeas = [...teas].sort(
+    (a, b) => a.displayOrder - b.displayOrder
+  );
+
+  const featuredTea = displayTeas.at(-1);
+  const gridTeas = displayTeas.slice(0, -1);
+
   return (
     <div className="w-full hello overflow-x-hidden bg-gradient-to-br from-[#FDF8F3] via-[#F8F1E9] to-[#F0E6DA]  ">
       {/* Hero Section */}
@@ -270,7 +337,8 @@ const HomePage = () => {
           >
             {[
               {
-                image: image24,
+                // image: image24,
+                image: chaipic,
                 line1: "Pure Aroma Delight",
                 line2: "Crafted for True Tea Lovers",
                 buttonText: "Start Your Franchise Journey",
@@ -278,7 +346,8 @@ const HomePage = () => {
                   "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
               },
               {
-                image: image2,
+                // image: image2,
+                image: image24,
                 line1: "Your Tea Café. Your Brand.",
                 line2: "Start a Business That Feels Like Home",
                 buttonText: "Explore Franchise Options",
@@ -295,319 +364,208 @@ const HomePage = () => {
               },
               {
                 image: image4,
+                // image: image24,
                 line1: "Beyond a Café. A Growing Community.",
                 line2: "Build Connections Over Every Cup",
                 buttonText: "Become A Partner",
                 description:
                   "Tea5 Cafe is not just about tea, it’s about creating a warm space where people connect, relax, and return. Be part of a fast-growing café community built on trust, taste, and togetherness.",
               },
+
             ].map((slide, index) => (
               <SwiperSlide key={index}>
                 {({ isActive }) => (
-                  <div
-                    className="relative w-full min-h-[100svh] md:min-h-screen bg-cover bg-center"
-                    style={{ backgroundImage: `url(${slide.image})` }}
-                  >
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/45" />
-
-                    {/* Content */}
-                    <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 lg:px-10">
-                      <div className="w-full max-w-4xl text-center">
-                        {/* line 1 */}
-                        <motion.h1
-                          key={`title-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 80 }}
-                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.15,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 18,
-                          }}
-                          className="  text-[#8dcb3f] leading-tight tracking-wide"
-                          style={{
-                            fontSize: "clamp(32px, 6vw, 64px)",
-                            //  fontSize: "clamp(12px, 2.2vw, 20px)",
-                            letterSpacing: "clamp(2px, 1vw, 6px)",
-                            fontFamily: "serif",
-                          }}
-                        >
-                          {slide.line1}
-                        </motion.h1>
-
-                        {/* line 2 */}
-                        <motion.p
-                          key={`subtitle-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 80 }}
-                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.35,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 18,
-                          }}
-                          className="mx-auto mt-3 inline-block border-y border-white/40 px-3 py-2 uppercase font-bold text-white"
-                          style={{
-                            fontSize: "clamp(12px, 2.2vw, 20px)",
-                            letterSpacing: "clamp(2px, 1vw, 6px)",
-                            fontFamily: "serif",
-                            lineHeight: "1.4",
-                          }}
-                        >
-                          {slide.line2}
-                        </motion.p>
-
-                        {/* description */}
-                        <motion.p
-                          key={`desc-${index}-${isActive}`}
-                          initial={{ opacity: 0, y: 80 }}
-                          animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 80 }}
-                          transition={{
-                            duration: 0.8,
-                            delay: 0.55,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 18,
-                          }}
-                          className="mx-auto mt-4 max-w-[42rem] text-white/90 leading-relaxed"
-                          style={{
-                            fontSize: "clamp(12px, 2.4vw, 18px)",
-                          }}
-                        >
-                          {slide.description}
-                        </motion.p>
-                      </div>
+                  <div className="relative w-full min-h-[100svh] md:min-h-screen">
+                    {/* Background Image */}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${slide.image})`,
+                        backgroundPosition: 'center center',
+                      }}
+                    >
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/45" />
                     </div>
+
+                    {/* Content Container */}
+                    {(slide.line1 || slide.description) && (
+                      <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12">
+                        <div className="w-full max-w-4xl text-center">
+                          {/* Line 1 - Main Heading */}
+                          {slide.line1 && (
+                            <motion.h1
+                              key={`title-${index}-${isActive}`}
+                              initial={{ opacity: 0, y: 80 }}
+                              animate={{
+                                opacity: isActive ? 1 : 0,
+                                y: isActive ? 0 : 80
+                              }}
+                              transition={{
+                                duration: 0.8,
+                                delay: 0.15,
+                                type: "spring",
+                                stiffness: 90,
+                                damping: 18,
+                              }}
+                              className="font-serif text-[#FFD700] leading-tight tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] lg:tracking-[0.15em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-2 font-bold"
+                            >
+                              {slide.line1.split('.').map((part, i, arr) => (
+                                <span key={i}>
+                                  {part}
+                                  {i < arr.length - 1 && '.'}
+                                  {i < arr.length - 1 && <><br className="hidden sm:block" /> </>}
+                                </span>
+                              ))}
+                            </motion.h1>
+                          )}
+
+                          {/* Line 2 - Subtitle */}
+                          {slide.line2 && (
+                            <motion.p
+                              key={`subtitle-${index}-${isActive}`}
+                              initial={{ opacity: 0, y: 80 }}
+                              animate={{
+                                opacity: isActive ? 1 : 0,
+                                y: isActive ? 0 : 80
+                              }}
+                              transition={{
+                                duration: 0.8,
+                                delay: 0.35,
+                                type: "spring",
+                                stiffness: 90,
+                                damping: 18,
+                              }}
+                              className="mx-auto mt-3 sm:mt-4 inline-block border-y border-white/40 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 uppercase font-bold text-white font-serif text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.15em] leading-tight sm:leading-snug"
+                            >
+                              {slide.line2}
+                            </motion.p>
+                          )}
+
+                          {/* Description */}
+                          {slide.description && (
+                            <motion.p
+                              key={`desc-${index}-${isActive}`}
+                              initial={{ opacity: 0, y: 80 }}
+                              animate={{
+                                opacity: isActive ? 1 : 0,
+                                y: isActive ? 0 : 80
+                              }}
+                              transition={{
+                                duration: 0.8,
+                                delay: 0.55,
+                                type: "spring",
+                                stiffness: 90,
+                                damping: 18,
+                              }}
+                              className="mx-auto mt-4 sm:mt-5 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-white/90 leading-relaxed sm:leading-loose text-sm sm:text-base md:text-lg px-2 sm:px-4"
+                            >
+                              {slide.description}
+                            </motion.p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Custom Navigation Buttons */}
+          {/* <div className="swiper-button-next !w-8 !h-8 sm:!w-10 sm:!h-10 md:!w-12 md:!h-12 !bg-white/20 backdrop-blur-sm hover:!bg-white/30 !rounded-full transition-all duration-300 after:!text-xs sm:after:!text-sm md:after:!text-base !text-white !right-2 sm:!right-4 md:!right-6" /> */}
+
+          {/* <div className="swiper-button-prev !w-8 !h-8 sm:!w-10 sm:!h-10 md:!w-12 md:!h-12 !bg-white/20 backdrop-blur-sm hover:!bg-white/30 !rounded-full transition-all duration-300 after:!text-xs sm:after:!text-sm md:after:!text-base !text-white !left-2 sm:!left-4 md:!left-6" /> */}
         </div>
 
         <style jsx global>{`
-    @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
-    .font-sacramento {
-      font-family: "Sacramento", cursive;
-      font-weight: 400;
-      font-style: normal;
-    }
+        .font-sacramento {
+          font-family: "Sacramento", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
 
-    .swiper-slide {
-      overflow: hidden;
-    }
+        .swiper-slide {
+          overflow: hidden;
+        }
 
-    /* arrows */
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-      font-size: 18px !important;
-    }
+        /* Navigation buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 14px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 12px !important;
-      }
-    }
-  `}</style>
+        /* Prevent layout shift on mobile */
+        @media (max-width: 640px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            margin-top: 0 !important;
+          }
+        }
+      `}</style>
       </section>
-
 
 
 
       <section className="py-16 bg-[#faf3ec] text-white">
         <div className="max-w-screen-2xl mx-auto px-4">
-          {/* Section Header */}
+
+          {/* Header */}
           <div className="mb-20 flex flex-col md:flex-row justify-between items-end">
-            <div>
-              <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none mb-2 text-[#8dcb3f]">
-                RARE<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 font-normal">BLENDS</span>
-              </h2>
-            </div>
-            <div className="max-w-md">
-              <p className="text-gray-900 text-lg leading-relaxed">
-                Hand-selected from the world's most exclusive tea gardens. Each blend tells a story of terroir and tradition.
-              </p>
-            </div>
+            <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none text-[#8dcb3f]">
+              RARE<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 font-normal">
+                BLENDS
+              </span>
+            </h2>
+            <p className="max-w-md text-gray-900 text-lg leading-relaxed">
+              Hand-selected from the world's most exclusive tea gardens.
+            </p>
           </div>
 
-          {/* Asymmetric Grid */}
           <div className="space-y-32">
 
-            {/* Row 1 - Rooibos Feature */}
-            {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 relative group">
-                <div className="relative overflow-hidden rounded-xl">
-                  <img
-                    src={teas[0].image}
-                    alt={teas[0].name}
-                    className="w-[600px] h-[600px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
-                </div>
-                <div className="absolute top-8 left-8">
-                  <span className="text-9xl font-thin text-white">01</span>
-                </div>
-              </div>
-              <div className="lg:col-span-5 space-y-6 lg:pl-12">
-              
-                <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[0].name}</h3>
-                <p className="text-2xl text-amber-400 font-light">{teas[0].title}</p>
-                <p className="text-gray-900 leading-relaxed text-lg">{teas[0].description}</p>
-            
-              </div>
-            </div> */}
+            {/* Grid teas */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="relative group overflow-hidden">
-                <div className="h-[500px] relative rounded-xl">
-                  <img
-                    src={teas[0].image}
-                    alt={teas[0].name}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">01</span>
-                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[0].name}</h3>
-                    <p className="text-yellow-400 text-xl mb-4">{teas[0].title}</p>
-                    <p className="text-gray-300 line-clamp-3">{teas[0].description}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative group overflow-hidden">
-                <div className="h-[500px] relative rounded-xl">
-                  <img
-                    src={teas[3].image}
-                    alt={teas[3].name}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">02</span>
-                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[3].name}</h3>
-                    <p className="text-pink-400 text-xl mb-4">{teas[3].title}</p>
-                    <p className="text-gray-300 line-clamp-3">{teas[3].description}</p>
-                  </div>
-                </div>
-              </div>
+              {gridTeas.map((tea, index) => (
+                <TeaCard key={tea.id} tea={tea} index={index} />
+              ))}
             </div>
 
-            {/* Row 2 - Chamomile & Hibiscus Split */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="relative group overflow-hidden">
-                <div className="h-[500px] relative rounded-xl">
-                  <img
-                    src={teas[1].image}
-                    alt={teas[1].name}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-yellow-900/20 mix-blend-overlay"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">03</span>
-                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[1].name}</h3>
-                    <p className="text-yellow-400 text-xl mb-4">{teas[1].title}</p>
-                    <p className="text-gray-300 line-clamp-3">{teas[1].description}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative group overflow-hidden">
-                <div className="h-[500px] relative rounded-xl">
-                  <img
-                    src={teas[2].image}
-                    alt={teas[2].name}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-pink-900/30 mix-blend-overlay"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 p-12">
-                    <span className="text-6xl font-thin text-white/20">04</span>
-                    <h3 className="text-4xl font-thin mb-2 text-[#8dcb3f]">{teas[2].name}</h3>
-                    <p className="text-pink-400 text-xl mb-4">{teas[2].title}</p>
-                    <p className="text-gray-300 line-clamp-3">{teas[2].description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Row 3 - Blue Tea Feature */}
-            {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
-
-                <h3 className="text-5xl font-thin text-[#8dcb3f]">{teas[3].name}</h3>
-                <p className="text-2xl text-blue-400 font-light">{teas[3].title}</p>
-                <p className="text-gray-900 leading-relaxed text-lg">{teas[3].description}</p>
-
-              </div>
-              <div className="lg:col-span-8 relative group order-1 lg:order-2">
-                <div className="relative overflow-hidden rounded-xl">
-                  <img
-                    src={teas[3].image}
-                    alt={teas[3].name}
-                    className="w-full h-[500px] object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
-                </div>
-                <div className="absolute top-8 right-8">
-                  <span className="text-9xl font-thin text-white/10">04</span>
-                </div>
-              </div>
-            </div> */}
-
-            {/* Row 4 - Lavender Horizontal */}
-            <div className="relative overflow-hidden rounded-lg">
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px]">
-                <div className="relative h-[400px] lg:h-full">
-                  <img
-                    src={teas[4].image}
-                    alt={teas[4].name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-purple-900/30 mix-blend-overlay"></div>
-                </div>
+            {/* Featured tea (last item automatically) */}
+            {/* <div className="relative overflow-hidden rounded-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
+                <img
+                  src={featuredTea.image}
+                  alt={featuredTea.name}
+                  className="w-full h-full object-cover"
+                />
                 <div className="p-12 lg:p-20 bg-gradient-to-r from-gray-900 to-black">
-                  <span className="text-8xl font-thin text-white/10">05</span>
-                  <h3 className="text-5xl font-thin mb-4">{teas[4].name}</h3>
-                  <p className="text-2xl text-purple-400 font-light mb-6">{teas[4].title}</p>
-                  <p className="text-gray-300 leading-relaxed text-lg mb-8">{teas[4].description}</p>
-                  {/* <div className="flex gap-4">
-                    <button className="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all">
-                      LEARN MORE
-                    </button>
-                    <button className="px-6 py-3 bg-white text-black hover:bg-gray-200 transition-all">
-                      SHOP NOW
-                    </button>
-                  </div> */}
+                  <span className="text-8xl font-thin text-white/10">
+                    {String(featuredTea.displayOrder).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-5xl font-thin mb-4">
+                    {featuredTea.name}
+                  </h3>
+                  <p className="text-2xl text-purple-400 mb-6">
+                    {featuredTea.title}
+                  </p>
+                  <p className="text-gray-300 text-lg">
+                    {featuredTea.description}
+                  </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
-
         </div>
       </section>
+
 
       {/* <div className="rounded-xl overflow-hidden shadow-lg bg-black w-full max-w-7xl mx-auto mb-10">
         <video
