@@ -22,20 +22,20 @@ import image24 from '../assets/4.png';
 // import image1 from '../assets/1.jpg'
 import image2 from '../assets/2.jpg'
 import image3 from '../assets/3.jpg'
-import image4 from '../assets/coffee.PNG'
+import image4 from '../assets/coffee.png'
 import image5 from '../assets/11.png';
 import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
 // import image25 from '../assets/image 25.png';
 import image25 from '../assets/Lavender.png';
 import ph2 from '../assets/ph2.png';
-import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/Mojito.PNG'
-import burger from '../assets/Burger.PNG'
+import chaipic from '../assets/chaipic.png'
+import mogito from '../assets/Mojito.png'
+import burger from '../assets/Burger.png'
 import shacks from '../assets/shacks.png'
 import Rooibos from '../assets/Rooibos.png'
-import chai2 from '../assets/chai2.PNG'
-import coffee2 from '../assets/coffee2.PNG'
+import chai2 from '../assets/chai2.png'
+import coffee2 from '../assets/coffee2.png'
 
 import FloatingWhatsapp from "./floatingWhatsup";
 import { TeaCard } from "../components/TeaCard";
