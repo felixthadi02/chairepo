@@ -566,7 +566,7 @@
 // //         />
 // //         <meta
 // //           name="keywords"
-// //           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+// //           content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
 // //         />
 // //         <link rel="canonical" href="https://www.tea5cafe.com/startup-kit" />
 // //         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -1559,7 +1559,7 @@
 //         />
 //         <meta
 //           name="keywords"
-//           content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+//           content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
 //         />
 //         <link rel="canonical" href="https://www.tea5cafe.com/startup-kit" />
 //         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />

@@ -22,11 +22,12 @@ import image24 from '../assets/4.png';
 // import image1 from '../assets/1.jpg'
 import image2 from '../assets/2.jpg'
 import image3 from '../assets/3.jpg'
-import image4 from '../assets/4.jpg'
+import image4 from '../assets/coffee.PNG'
 import image5 from '../assets/11.png';
 import image6 from '../assets/12.png';
 import image7 from '../assets/13.png';
-import image25 from '../assets/image 25.png';
+// import image25 from '../assets/image 25.png';
+import image25 from '../assets/Lavender.png';
 import ph2 from '../assets/ph2.png';
 import chaipic from '../assets/chaipic.PNG'
 import mogito from '../assets/mogito.png'
@@ -190,7 +191,7 @@ const HomePage = () => {
     },
     {
       id: 6,
-      name: 'Herbal Burger Delight',
+      name: 'Burger Delight',
       title: 'Wholesome & Flavorful',
       description:
         'A hearty plant-based burger infused with herbs and spices. Rich in fiber and nutrients, it supports digestion and provides a satisfying, guilt-free meal option.',
@@ -200,7 +201,7 @@ const HomePage = () => {
     },
     {
       id: 7,
-      name: 'Classic Herbal Shake',
+      name: 'Classic Shake',
       title: 'Creamy Wellness Boost',
       description:
         'A smooth and refreshing herbal shake made with natural ingredients. Packed with antioxidants and essential nutrients, it helps energize the body and supports overall wellness.',
@@ -318,9 +319,10 @@ const HomePage = () => {
         />
         <meta
           name="keywords"
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+          content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
       </Helmet>
+      {/* 
       <section id="home" className="relative w-full overflow-hidden">
         <div className="relative w-full min-h-[100svh] md:min-h-screen">
           <Swiper
@@ -337,8 +339,8 @@ const HomePage = () => {
           >
             {[
               {
-                // image: image24,
-                image: chaipic,
+                image: image24,
+
                 line1: "Pure Aroma Delight",
                 line2: "Crafted for True Tea Lovers",
                 buttonText: "Start Your Franchise Journey",
@@ -346,8 +348,8 @@ const HomePage = () => {
                   "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
               },
               {
-                // image: image2,
-                image: image24,
+
+                image: chaipic,
                 line1: "Your Tea Café. Your Brand.",
                 line2: "Start a Business That Feels Like Home",
                 buttonText: "Explore Franchise Options",
@@ -355,16 +357,16 @@ const HomePage = () => {
                   "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
               },
               {
-                image: image3,
+                image: image4,
                 line1: "Simple Setup. Smart Returns.",
                 line2: "Designed for Easy Operations",
                 buttonText: "Join Our Family",
                 description:
                   "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
+                textColor: 'black'
               },
               {
-                image: image4,
-                // image: image24,
+                image: image3,
                 line1: "Beyond a Café. A Growing Community.",
                 line2: "Build Connections Over Every Cup",
                 buttonText: "Become A Partner",
@@ -376,7 +378,7 @@ const HomePage = () => {
               <SwiperSlide key={index}>
                 {({ isActive }) => (
                   <div className="relative w-full min-h-[100svh] md:min-h-screen">
-                    {/* Background Image */}
+
                     <div
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
@@ -384,15 +386,15 @@ const HomePage = () => {
                         backgroundPosition: 'center center',
                       }}
                     >
-                      {/* Overlay */}
+
                       <div className="absolute inset-0 bg-black/45" />
                     </div>
 
-                    {/* Content Container */}
+
                     {(slide.line1 || slide.description) && (
                       <div className="relative z-10 flex min-h-[100svh] md:min-h-screen items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12">
                         <div className="w-full max-w-4xl text-center">
-                          {/* Line 1 - Main Heading */}
+
                           {slide.line1 && (
                             <motion.h1
                               key={`title-${index}-${isActive}`}
@@ -420,7 +422,7 @@ const HomePage = () => {
                             </motion.h1>
                           )}
 
-                          {/* Line 2 - Subtitle */}
+
                           {slide.line2 && (
                             <motion.p
                               key={`subtitle-${index}-${isActive}`}
@@ -436,13 +438,18 @@ const HomePage = () => {
                                 stiffness: 90,
                                 damping: 18,
                               }}
+                              style={{
+                                color: slide.textColor || '#ffffff',
+                                borderTop: `1px solid ${slide.textColor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)'}`,
+                                borderBottom: `1px solid ${slide.textColor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)'}`,
+                              }}
                               className="mx-auto mt-3 sm:mt-4 inline-block border-y border-white/40 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 uppercase font-bold text-white font-serif text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.15em] leading-tight sm:leading-snug"
                             >
                               {slide.line2}
                             </motion.p>
                           )}
 
-                          {/* Description */}
+
                           {slide.description && (
                             <motion.p
                               key={`desc-${index}-${isActive}`}
@@ -458,6 +465,7 @@ const HomePage = () => {
                                 stiffness: 90,
                                 damping: 18,
                               }}
+                              style={{ color: slide.textColor }}
                               className="mx-auto mt-4 sm:mt-5 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-white/90 leading-relaxed sm:leading-loose text-sm sm:text-base md:text-lg px-2 sm:px-4"
                             >
                               {slide.description}
@@ -471,11 +479,6 @@ const HomePage = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Custom Navigation Buttons */}
-          {/* <div className="swiper-button-next !w-8 !h-8 sm:!w-10 sm:!h-10 md:!w-12 md:!h-12 !bg-white/20 backdrop-blur-sm hover:!bg-white/30 !rounded-full transition-all duration-300 after:!text-xs sm:after:!text-sm md:after:!text-base !text-white !right-2 sm:!right-4 md:!right-6" /> */}
-
-          {/* <div className="swiper-button-prev !w-8 !h-8 sm:!w-10 sm:!h-10 md:!w-12 md:!h-12 !bg-white/20 backdrop-blur-sm hover:!bg-white/30 !rounded-full transition-all duration-300 after:!text-xs sm:after:!text-sm md:after:!text-base !text-white !left-2 sm:!left-4 md:!left-6" /> */}
         </div>
 
         <style jsx global>{`
@@ -487,11 +490,59 @@ const HomePage = () => {
           font-style: normal;
         }
 
+        
+        .swiper,
+        .swiper-wrapper,
         .swiper-slide {
+          height: 100vh !important;
           overflow: hidden;
         }
 
-        /* Navigation buttons */
+     
+        .swiper-slide > div {
+          height: 100vh !important;
+          width: 100vw !important;
+        }
+
+        .swiper-slide > div > div[style*="backgroundImage"] {
+          background-size: cover !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+          width: 100% !important;
+          height: 100% !important;
+          min-height: 100vh !important;
+        }
+
+
+        @media (max-width: 640px) {
+          .swiper,
+          .swiper-wrapper,
+          .swiper-slide {
+            height: 100vh !important;
+            height: -webkit-fill-available !important;
+          }
+
+          .swiper-slide > div {
+            height: 100vh !important;
+            height: -webkit-fill-available !important;
+          }
+
+          .swiper-slide > div > div[style*="backgroundImage"] {
+            background-size: cover !important;
+            background-position: center center !important;
+            min-height: 100vh !important;
+            min-height: -webkit-fill-available !important;
+          }
+        }
+
+     
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .swiper-slide > div > div[style*="backgroundImage"] {
+            background-size: cover !important;
+            background-position: center center !important;
+          }
+        }
+
         .swiper-button-next,
         .swiper-button-prev {
           display: flex !important;
@@ -500,7 +551,6 @@ const HomePage = () => {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Prevent layout shift on mobile */
         @media (max-width: 640px) {
           .swiper-button-next,
           .swiper-button-prev {
@@ -508,14 +558,263 @@ const HomePage = () => {
           }
         }
       `}</style>
+      </section> */}
+
+
+      <section id="home" className="relative w-full overflow-hidden">
+        <div className="relative w-full h-screen">
+          <Swiper
+            modules={[Navigation, Autoplay, EffectFade]}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            loop
+            effect="fade"
+            speed={1000}
+            className="h-full w-full"
+          >
+            {[
+              {
+                image: image24,
+                mobileImage: image24, // Add your mobile image here
+                line1: "Pure Aroma Delight",
+                line2: "Crafted for True Tea Lovers",
+                buttonText: "Start Your Franchise Journey",
+                description:
+                  "Experience the art of tea crafting at Tea5 Cafe. From classic Indian chai to exotic herbal blends, every cup is brewed with care, quality, and authentic flavor that keeps customers coming back for more.",
+              },
+              {
+                image: chaipic,
+                mobileImage: image25, // Add your mobile image here
+                line1: "Your Tea Café. Your Brand.",
+                line2: "Start a Business That Feels Like Home",
+                buttonText: "Explore Franchise Options",
+                description:
+                  "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
+              },
+              {
+                image: image4,
+                mobileImage: image4, // Add your mobile image here
+                line1: "Simple Setup. Smart Returns.",
+                line2: "Designed for Easy Operations",
+                buttonText: "Join Our Family",
+                description:
+                  "Our franchise model is built for simplicity and scalability. With easy operations, curated menus, and continuous brand support, Tea5 Cafe helps you focus on serving great tea while we support your success.",
+                textColor: 'black'
+              },
+              {
+                image: image3,
+                mobileImage: image3, // Add your mobile image here
+                line1: "Beyond a Café. A Growing Community.",
+                line2: "Build Connections Over Every Cup",
+                buttonText: "Become A Partner",
+                description:
+                  "Tea5 Cafe is not just about tea, it's about creating a warm space where people connect, relax, and return. Be part of a fast-growing café community built on trust, taste, and togetherness.",
+              },
+            ].map((slide, index) => {
+              const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+              const backgroundImage = isMobile ? (slide.mobileImage || slide.image) : slide.image;
+
+              return (
+                <SwiperSlide key={index}>
+                  {({ isActive }) => (
+                    <div className="relative w-full h-screen overflow-hidden">
+                      {/* Background Image */}
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          backgroundImage: `url(${backgroundImage})`,
+                          backgroundPosition: 'center center',
+                          backgroundSize: 'cover',
+                          backgroundRepeat: 'no-repeat',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      >
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-black/45" />
+                      </div>
+
+                      {/* Content Container */}
+                      {(slide.line1 || slide.description) && (
+                        <div className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12">
+                          <div className="w-full max-w-4xl text-center">
+                            {/* Line 1 - Main Heading */}
+                            {slide.line1 && (
+                              <motion.h1
+                                key={`title-${index}-${isActive}`}
+                                initial={{ opacity: 0, y: 80 }}
+                                animate={{
+                                  opacity: isActive ? 1 : 0,
+                                  y: isActive ? 0 : 80
+                                }}
+                                transition={{
+                                  duration: 0.8,
+                                  delay: 0.15,
+                                  type: "spring",
+                                  stiffness: 90,
+                                  damping: 18,
+                                }}
+                                className="font-serif text-[#FFD700] leading-tight tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] lg:tracking-[0.15em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-2 font-bold"
+                              >
+                                {slide.line1.split('.').map((part, i, arr) => (
+                                  <span key={i}>
+                                    {part}
+                                    {i < arr.length - 1 && '.'}
+                                    {i < arr.length - 1 && <><br className="hidden sm:block" /> </>}
+                                  </span>
+                                ))}
+                              </motion.h1>
+                            )}
+
+                            {/* Line 2 - Subtitle */}
+                            {slide.line2 && (
+                              <motion.p
+                                key={`subtitle-${index}-${isActive}`}
+                                initial={{ opacity: 0, y: 80 }}
+                                animate={{
+                                  opacity: isActive ? 1 : 0,
+                                  y: isActive ? 0 : 80
+                                }}
+                                transition={{
+                                  duration: 0.8,
+                                  delay: 0.35,
+                                  type: "spring",
+                                  stiffness: 90,
+                                  damping: 18,
+                                }}
+                                style={{
+                                  color: slide.textColor || '#ffffff',
+                                  borderTop: `1px solid ${slide.textColor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)'}`,
+                                  borderBottom: `1px solid ${slide.textColor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)'}`,
+                                }}
+                                className="mx-auto mt-3 sm:mt-4 inline-block px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 uppercase font-bold font-serif text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.15em] leading-tight sm:leading-snug"
+                              >
+                                {slide.line2}
+                              </motion.p>
+                            )}
+
+                            {/* Description */}
+                            {slide.description && (
+                              <motion.p
+                                key={`desc-${index}-${isActive}`}
+                                initial={{ opacity: 0, y: 80 }}
+                                animate={{
+                                  opacity: isActive ? 1 : 0,
+                                  y: isActive ? 0 : 80
+                                }}
+                                transition={{
+                                  duration: 0.8,
+                                  delay: 0.55,
+                                  type: "spring",
+                                  stiffness: 90,
+                                  damping: 18,
+                                }}
+                                style={{
+                                  color: slide.textColor || 'rgba(255, 255, 255, 0.9)',
+                                }}
+                                className="mx-auto mt-4 sm:mt-5 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl leading-relaxed sm:leading-loose text-sm sm:text-base md:text-lg px-2 sm:px-4"
+                              >
+                                {slide.description}
+                              </motion.p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+
+        <style jsx global>{`
+    @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+    .font-sacramento {
+      font-family: "Sacramento", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* Critical: Ensure swiper container takes full height */
+    .swiper,
+    .swiper-wrapper,
+    .swiper-slide {
+      height: 100vh !important;
+      overflow: hidden;
+    }
+
+    /* Force background images to cover properly on ALL devices */
+    .swiper-slide > div {
+      height: 100vh !important;
+      width: 100vw !important;
+    }
+
+    .swiper-slide > div > div[style*="backgroundImage"] {
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100vh !important;
+    }
+
+    /* Mobile specific - prevent image cutoff */
+    @media (max-width: 640px) {
+      .swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        height: 100vh !important;
+        height: -webkit-fill-available !important;
+      }
+
+      .swiper-slide > div {
+        height: 100vh !important;
+        height: -webkit-fill-available !important;
+      }
+
+      .swiper-slide > div > div[style*="backgroundImage"] {
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 100vh !important;
+        min-height: -webkit-fill-available !important;
+      }
+    }
+
+    /* Tablet optimization */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .swiper-slide > div > div[style*="backgroundImage"] {
+        background-size: cover !important;
+        background-position: center center !important;
+      }
+    }
+
+    /* Navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 640px) {
+      .swiper-button-next,
+      .swiper-button-prev {
+        margin-top: 0 !important;
+      }
+    }
+  `}</style>
       </section>
-
-
 
       <section className="py-16 bg-[#faf3ec] text-white">
         <div className="max-w-screen-2xl mx-auto px-4">
 
-          {/* Header */}
+
           <div className="mb-20 flex flex-col md:flex-row justify-between items-end">
             <h2 className="text-7xl md:text-8xl font-thin tracking-tight leading-none text-[#8dcb3f]">
               RARE<br />

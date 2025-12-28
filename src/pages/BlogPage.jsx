@@ -69,17 +69,17 @@ const BlogList = ({ blogs, navigateTo }) => {
         }}
       >
         <Helmet>
-        <title>Insights & Franchise Tips | Tea 5 cafe</title>
-        <meta 
-          name="description" 
-          content="Explore our blog for industry insights, franchise tips, and tea-culture stories. Stay ahead in the café business with Tea 5 Cafe."
-        />
-        <meta 
-          name="keywords" 
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India" 
-        />
-        <link rel="canonical" href="https://www.tea5cafe.com/blog" />
-      </Helmet>
+          <title>Insights & Franchise Tips | Tea 5 cafe</title>
+          <meta
+            name="description"
+            content="Explore our blog for industry insights, franchise tips, and tea-culture stories. Stay ahead in the café business with Tea 5 Cafe."
+          />
+          <meta
+            name="keywords"
+            content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+          />
+          <link rel="canonical" href="https://www.tea5cafe.com/blog" />
+        </Helmet>
         <div className="container mx-auto px-4 relative z-10 w-full text-center">
           <FadeInWhenVisible>
             <h2 className="text-6xl  text-[#8dcb3f] md:text-7xl lg:text-8xl font-sacramento font-bold mb-4 text-[clamp(40px,6vw,80px)]">

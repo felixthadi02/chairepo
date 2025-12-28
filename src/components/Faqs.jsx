@@ -6,6 +6,7 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useInView } from 'framer-motion';
+import image25 from '../assets/Lavender.png';
 const faqList = [
     {
         question: "What are your cafe timings?",
@@ -133,7 +134,7 @@ const Faqs = () => {
                 className="relative text-white overflow-hidden min-h-[500px] flex items-center"
                 style={{
                     backgroundImage:
-                        "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600&h=800&fit=crop')",
+                        "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/Lavender.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundAttachment: "fixed",
@@ -148,7 +149,7 @@ const Faqs = () => {
                     />
                     <meta
                         name="keywords"
-                        content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+                        content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
                     />
                     <link rel="canonical" href="https://www.tea5cafe.com/faqs" />
                 </Helmet>

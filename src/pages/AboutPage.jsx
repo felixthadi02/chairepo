@@ -77,7 +77,7 @@ export default function AboutPage() {
         />
         <meta
           name="keywords"
-          content="tea cafe franchise, coffee franchise Hyderabad, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
+          content="tea cafe franchise, coffee franchise india, low investment franchise, Tea 5 cafe, franchise opportunities India, tea franchise in India"
         />
         <link rel="canonical" href="https://www.tea5cafe.com/about-us" />
       </Helmet>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         className="relative text-white overflow-hidden min-h-[500px] flex items-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1600&h=600&fit=crop')",
+            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/coffee.PNG')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -175,7 +175,7 @@ export default function AboutPage() {
 
               <FadeInWhenVisible delay={0.3}>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Tea 5 cafe is more than a tea shop. It is a growing business that connects India's tea tradition with a modern franchise model. Through our tea cafe franchise in Hyderabad and across India, we help individuals start a low investment tea franchise and build a successful future.
+                  Tea 5 cafe is more than a tea shop. It is a growing business that connects India's tea tradition with a modern franchise model. Through our tea cafe franchise in india and across India, we help individuals start a low investment tea franchise and build a successful future.
                 </p>
               </FadeInWhenVisible>
               <FadeInWhenVisible delay={0.3}>
@@ -262,7 +262,7 @@ export default function AboutPage() {
         className="relative bg-cover bg-center py-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&h=400&fit=crop')",
+            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/coffee.PNG')",
           backgroundAttachment: 'fixed'
         }}
       >
