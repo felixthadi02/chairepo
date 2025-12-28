@@ -32,7 +32,7 @@ import ph2 from '../assets/ph2.png';
 import chaipic from '../assets/chaipic.PNG'
 import mogito from '../assets/Mojito.PNG'
 import burger from '../assets/Burger.PNG'
-import shacks from '../assets/shacks.PNG'
+import shacks from '../assets/shacks.png'
 import Rooibos from '../assets/Rooibos.png'
 import chai2 from '../assets/chai2.PNG'
 import coffee2 from '../assets/coffee2.PNG'
