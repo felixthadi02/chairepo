@@ -14,21 +14,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
-import video from "../assets/video1.mp4"
+// import video from "../assets/video1.mp4"
 import image21 from '../assets/1.png';
 import image22 from '../assets/2.png';
-import image23 from '../assets/3.png';
+
 import image24 from '../assets/4.png';
-// import image1 from '../assets/1.jpg'
-import image2 from '../assets/2.jpg'
+
+
 import image3 from '../assets/3.jpg'
 import coffee from '../assets/coffee.png'
-import image5 from '../assets/11.png';
-import image6 from '../assets/12.png';
-import image7 from '../assets/13.png';
-// import image25 from '../assets/image 25.png';
+
 import image25 from '../assets/Lavender.png';
-import ph2 from '../assets/ph2.png';
+
 import chaipic from '../assets/chaipic.png'
 import mogito from '../assets/Mojito.png'
 import burger from '../assets/Burger.png'
