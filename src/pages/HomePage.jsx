@@ -594,8 +594,8 @@ const HomePage = () => {
                   "Tea5 Cafe gives you the opportunity to run a premium tea shop under your own name, backed by a trusted brand, proven systems, and complete business support for your growth.",
               },
               {
-                image: "/coffee.png",
-                mobileImage: coffee2.PNG, // Add your mobile image here
+                image: "/coffee.PNG",
+                mobileImage: "/coffee2.PNG", // Add your mobile image here
                 line1: "Simple Setup. Smart Returns.",
                 line2: "Designed for Easy Operations",
                 buttonText: "Join Our Family",
