@@ -225,7 +225,7 @@ const HomePage = () => {
       title: 'Pure Wellness, Naturally',
       description:
         'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
-      image: burger,
+      image: "/burger.PNG",
       color: 'from-red-400 to-orange-400',
       displayOrder: 8,
     },
