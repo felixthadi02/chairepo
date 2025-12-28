@@ -27,11 +27,11 @@ import image3 from '../assets/3.jpg'
 import image25 from '../assets/Lavender.png';
 
 import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/Mojito.png'
-import burger from '../assets/Burger.png'
-import shacks from '../assets/shacks.png'
+import mogito from '../assets/mogito.PNG'
+import burger from '../assets/burger.PNG'
+import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.png'
-import chai2 from '../assets/chai2.png'
+import chai2 from '../assets/chai2.PNG'
 import coffee2 from '../assets/coffee2.png'
 
 import FloatingWhatsapp from "./floatingWhatsup";
