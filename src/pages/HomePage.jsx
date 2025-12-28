@@ -30,7 +30,7 @@ import image7 from '../assets/13.png';
 import image25 from '../assets/Lavender.png';
 import ph2 from '../assets/ph2.png';
 import chaipic from '../assets/chaipic.PNG'
-import mogito from '../assets/mojito.PNG'
+import mogito from '../assets/Mojito.PNG'
 import burger from '../assets/burger.PNG'
 import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.png'
