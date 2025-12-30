@@ -197,6 +197,7 @@ const BlogList = ({ blogs, navigateTo }) => {
                       transition={{ duration: 0.3 }}
                     >
                       <img
+                      loading="lazy"
                         src={blog.image}
                         className="rounded-2xl w-full shadow-lg"
                         alt={blog.title}
@@ -215,6 +216,7 @@ const BlogList = ({ blogs, navigateTo }) => {
                         src={blog.image}
                         className="rounded-2xl w-full shadow-lg"
                         alt={blog.title}
+                        loading="lazy"
                       />
                     </motion.div>
 

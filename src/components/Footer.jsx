@@ -463,6 +463,7 @@ export default function Footer() {
                       src="/logo2.jpg"
                       alt="Tea5 Cafe Logo"
                       className="w-full h-full object-cover"
+                      loading='lazy'
                     />
                   </div>
                 </motion.div>

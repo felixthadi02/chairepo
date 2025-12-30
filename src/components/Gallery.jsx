@@ -5,26 +5,26 @@ import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Import all images
-import image1 from '../assets/image 1.jpg';
-import image2 from '../assets/image 2.jpg';
-import image3 from '../assets/image 3.jpg';
-import image4 from '../assets/image 4.jpg';
-import image5 from '../assets/image 5.jpg';
-import image6 from '../assets/image 6.jpg';
-import image7 from '../assets/image 7.jpg';
-import image8 from '../assets/image 8.jpg';
-import image9 from '../assets/image 9.jpg';
-import image10 from '../assets/image 10.jpg';
-import image11 from '../assets/image 11.jpg';
-import image12 from '../assets/image 12.jpg';
-import image13 from '../assets/image 13.jpg';
-import image14 from '../assets/image 14.jpg';
-import image15 from '../assets/image 15.jpg';
-import image16 from '../assets/image 16.jpg';
-import image17 from '../assets/image 17.jpg';
-import image18 from '../assets/image 18.jpg';
-import image19 from '../assets/image 19.jpg';
-import image20 from '../assets/image 20.jpg';
+import image1 from '../assets/image 1.webp';
+import image2 from '../assets/image 2.webp';
+import image3 from '../assets/image 3.webp';
+import image4 from '../assets/image 4.webp';
+import image5 from '../assets/image 5.webp';
+import image6 from '../assets/image 6.webp';
+import image7 from '../assets/image 7.webp';
+import image8 from '../assets/image 8.webp';
+import image9 from '../assets/image 9.webp';
+import image10 from '../assets/image 10.webp';
+import image11 from '../assets/image 11.webp';
+import image12 from '../assets/image 12.webp';
+import image13 from '../assets/image 13.webp';
+import image14 from '../assets/image 14.webp';
+import image15 from '../assets/image 15.webp';
+import image16 from '../assets/image 16.webp';
+import image17 from '../assets/image 17.webp';
+import image18 from '../assets/image 18.webp';
+import image19 from '../assets/image 19.webp';
+import image20 from '../assets/image 20.webp';
 
 // Use one of the imported images as the hero icon, or keep the unsplash one
 const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"

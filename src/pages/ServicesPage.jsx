@@ -138,8 +138,8 @@
 // src/pages/ServicesPage.jsx
 import React, { useState } from 'react';
 import ServiceDetail from '../components/ServiceDetail';
-import bgImg2 from "../assets/bg2.jpg";
-import bgImg1 from "../assets/bg1.jpg";
+import bgImg2 from "../assets/bg2.webp";
+import bgImg1 from "../assets/bg1.webp";
 
 const ServicesPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);

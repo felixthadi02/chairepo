@@ -210,7 +210,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import icon from "../assets/logo.png";
+import icon from "../assets/logo.webp";
 
 const Header = () => {
   const location = useLocation();
@@ -313,7 +313,7 @@ const Header = () => {
                   className={`
                     c_logo_light transition-all duration-300
                     ${isSmaller ? 'h-[45px]' : 'h-[105px]'}
-                  `}
+                  `} loading="lazy"
                   style={{
                     cursor: 'pointer',
                     marginTop: isSmaller ? '10px' : '-15px',
@@ -382,6 +382,7 @@ const Header = () => {
                 alt="Logo"
                 className={`h-12 ${!isTop ? ' ' : ''}`}
                 style={{ cursor: 'pointer' }}
+                loading="lazy"
               />
             </Link>
           </div>

@@ -5,8 +5,8 @@ import {
   useInView,
   AnimatePresence,
 } from "framer-motion";
-import bg1 from "../assets/bg-1.jpg";
-import bg2 from "../assets/bg-2.jpg";
+import bg1 from "../assets/bg-1.webp";
+import bg2 from "../assets/bg-2.webp";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -15,23 +15,23 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { Helmet } from 'react-helmet-async';
 import "../index.css"
 // import video from "../assets/video1.mp4"
-import image21 from '../assets/1.png';
-import image22 from '../assets/2.png';
+import image21 from '../assets/1.webp';
+import image22 from '../assets/2.webp';
 
-import image24 from '../assets/4.png';
+import image24 from '../assets/4.webp';
 
 
-import image3 from '../assets/3.jpg'
+import image3 from '../assets/3.webp'
 // import coffee from '../assets/coffee.png'
 
-import image25 from '../assets/Lavender.png';
+import image25 from '../assets/Lavender.webp';
 
-import chaipic from '../assets/chaipic.PNG'
+import chaipic from '../assets/chaipic.webp'
 // import mogito from '../assets/mogito.PNG'
 // import burger from '../assets/burger.PNG'
 // import shacks from '../assets/shacks.PNG'
-import Rooibos from '../assets/Rooibos.png'
-import chai2 from '../assets/chai2.PNG'
+import Rooibos from '../assets/Rooibos.webp'
+import chai2 from '../assets/chai2.webp'
 // import coffee2 from '../assets/coffee2.png'
 
 import FloatingWhatsapp from "./floatingWhatsup";

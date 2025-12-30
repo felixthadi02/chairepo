@@ -14,6 +14,7 @@ const FloatingWhatsapp = () => {
         <img
           src={whatsapp}
           alt="WhatsApp"
+        
           className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
           title="Chat with Jaimax on WhatsApp"
         />

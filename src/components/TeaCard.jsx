@@ -54,6 +54,7 @@ export const TeaCard = ({ tea, index }) => {
                     className="w-full h-full object-cover object-center rounded-xl
                      transition-transform duration-700
                      group-hover:scale-105"
+                     loading="lazy"
                 />
 
                 <div

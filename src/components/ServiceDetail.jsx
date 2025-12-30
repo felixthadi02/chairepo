@@ -120,6 +120,7 @@ const ServiceDetail = ({ title, description, features, image, isLast }) => {
           <img 
             src={image || "/api/placeholder/400/300"} 
             alt={title}
+            loading='lazy'
             className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>

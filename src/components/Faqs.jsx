@@ -6,7 +6,7 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useInView } from 'framer-motion';
-import image25 from '../assets/Lavender.png';
+import image25 from '../assets/Lavender.webp';
 const faqList = [
     {
         question: "What are your cafe timings?",
