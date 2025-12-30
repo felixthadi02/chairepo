@@ -282,7 +282,7 @@ import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Rss, Dribbble, MapPin, Phone, Mail, Heart, Coffee } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BottomBar from './BottomBar';
-
+import logo from '../assets/logo2.jpg'
 export default function Footer() {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
@@ -460,7 +460,7 @@ export default function Footer() {
                 >
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img
-                      src="/logo2.jpg"
+                      src={logo}
                       alt="Tea5 Cafe Logo"
                       className="w-full h-full object-cover"
                       loading='lazy'

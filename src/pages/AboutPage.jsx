@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-
+import coffee from '../assets/coffee.PNG'
 const FadeInWhenVisible = ({ children, delay = 0 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -92,8 +92,10 @@ export default function AboutPage() {
       <section
         className="relative text-white overflow-hidden min-h-[500px] flex items-center"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/coffee.PNG')",
+          backgroundImage: `linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+  ), url(${coffee})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

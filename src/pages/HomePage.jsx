@@ -27,13 +27,13 @@ import image3 from '../assets/3.webp'
 import image25 from '../assets/Lavender.webp';
 
 import chaipic from '../assets/chaipic.webp'
-// import mogito from '../assets/mogito.PNG'
-// import burger from '../assets/burger.PNG'
-// import shacks from '../assets/shacks.PNG'
 import Rooibos from '../assets/Rooibos.webp'
 import chai2 from '../assets/chai2.webp'
 // import coffee2 from '../assets/coffee2.png'
-
+import home1 from '../assets/burger.PNG'
+import home2 from '../assets/Lavender.png'
+import home3 from '../assets/shacks.PNG'
+import home4 from '../assets/mogito.PNG'
 import FloatingWhatsapp from "./floatingWhatsup";
 import { TeaCard } from "../components/TeaCard";
 const HomePage = () => {
@@ -194,7 +194,7 @@ const HomePage = () => {
       title: 'Wholesome & Flavorful',
       description:
         'A hearty plant-based burger infused with herbs and spices. Rich in fiber and nutrients, it supports digestion and provides a satisfying, guilt-free meal option.',
-      image: "/burger.PNG",
+      image: home1,
       color: 'from-red-400 to-orange-400',
       displayOrder: 6,
     },
@@ -204,7 +204,7 @@ const HomePage = () => {
       title: 'Creamy Wellness Boost',
       description:
         'A smooth and refreshing herbal shake made with natural ingredients. Packed with antioxidants and essential nutrients, it helps energize the body and supports overall wellness.',
-      image: "/shacks.PNG",
+      image: home3,
       color: 'from-red-400 to-orange-400',
       displayOrder: 7,
     },
@@ -214,7 +214,7 @@ const HomePage = () => {
       title: 'Fresh. Cool. Revitalizing.',
       description:
         'A refreshing mint-based mojito infusion that cools the body and aids digestion. Perfect for hydration and detox, offering a crisp taste with natural goodness.',
-      image: "/mogito.PNG",
+      image: home4,
       color: 'from-red-400 to-orange-400',
       displayOrder: 8,
     },
@@ -225,7 +225,7 @@ const HomePage = () => {
       title: 'Pure Wellness, Naturally',
       description:
         'Rooibos Tea is a gentle herbal tea that contains no caffeine and is packed with antioxidants. It supports heart health, aids digestion, and helps with weight management, making it a perfect everyday wellness drink.',
-      image: "/burger.PNG",
+      image: home1,
       color: 'from-red-400 to-orange-400',
       displayOrder: 8,
     },
