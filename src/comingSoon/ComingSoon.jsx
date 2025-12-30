@@ -38,7 +38,7 @@ const ComingSoonPage = () => {
           
           <div className="text-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
             <h1 className="text-xl lg:text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">nexus</h1>
-            <p className="text-xs lg:text-sm">PUBLICATIONS test</p>
+            <p className="text-xs lg:text-sm">PUBLICATIONS test...........</p>
           </div>
           
           <div className="rounded-full border border-amber-500 px-2 py-0.5 shadow-lg shadow-amber-900/20 hover:shadow-amber-500/30 transition-shadow duration-300">
