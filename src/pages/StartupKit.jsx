@@ -1958,6 +1958,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
+import syrups from '../assets/SyrupsFlavors.webp'
 const EquipmentPackagePage = () => {
   const icon = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
   const { scrollY } = useScroll();
@@ -2070,7 +2071,8 @@ const EquipmentPackagePage = () => {
     },
     {
       title: "Syrups & Flavors",
-      image: "https://images.unsplash.com/photo-1437418747212-8d9709afab22?w=800",
+      // image: "https://images.unsplash.com/photo-1437418747212-8d9709afab22?w=800",
+      image: syrups,
       items: [
         { name: "Mix Fruit", qty: "1 Ltr" },
         { name: "Mango", qty: "1 Ltr" },

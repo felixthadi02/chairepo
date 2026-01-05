@@ -6,7 +6,7 @@ const FloatingWhatsapp = () => {
   return (
     <div className="fixed bottom-4 right-4 z-50">
       <a
-        href="https://api.whatsapp.com/send?phone=8466066425&text=Hi cafe love, I would like to know more about your services."
+        href="https://api.whatsapp.com/send?phone=9381142553&text=Hi cafe love, I would like to know more about your services."
         target="_blank"
         rel="noopener noreferrer"
          title="Chat with Jaimax Support on WhatsApp - Get Instant Help"
